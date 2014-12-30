@@ -1,0 +1,26 @@
+<main id="home">
+
+    <article class="mt30px">
+        <h1 class="text-center text-light primary fs64">Simplizity</h1>
+        <form id="login-forms" class="mt30px" action="#home" onsubmit="localStorage.setItem('login', true);">
+            <p class="input-label">
+                <input id="user-name" type="text" name="user-name" required/>
+                <label for="user-name">User name</label>
+            </p>
+            <p class="input-label">
+                <input id="password" type="password" name="password" required/>
+                <label for="password">Password</label>
+            </p>
+            <button class="btn block" type="submit">SIM LOGIN</button>
+        </form>
+
+        <hr class="center mt5em mb2em" title="Login with social account">
+
+        <div class="_column_3 full-width text-center">
+            <a class="btn larger gplus icon-gplus" href="#home" onclick="localStorage.setItem('login', true);"></a>
+            <a class="btn larger facebook icon-facebook" href="#home" onclick="localStorage.setItem('login', true);"></a>
+            <a class="btn larger twitter icon-twitter" href="#home" onclick="localStorage.setItem('login', true);"></a>
+        </div>
+    </article>
+
+</main>

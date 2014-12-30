@@ -1,0 +1,102 @@
+.mobile-overlay{
+    top        : 0;
+    right      : 0;
+    bottom     : 0;
+    left       : 0;
+    background : transparent;
+
+    &.open{
+        display : block;
+    }
+}
+
+.menu-btn{
+    padding: 0 @padding-small-horizontal;
+
+    &:before{
+        width: 20px;
+    }
+
+    &.left{
+        &:before{
+            margin-right : 5px;
+        }
+    }
+
+    &.right{
+        &:before{
+            margin-left : 5px;
+        }
+    }
+
+    &.active{
+        .rgba(#000, .1);
+    }
+}
+
+aside{
+    position : fixed;
+    z-index  : 0;
+
+    &.left, &.right{
+        top    : 0;
+        bottom : 0;
+    }
+
+    &.left{
+        left : 0;
+    }
+
+    &.right{
+        right : 0;
+    }
+
+    &.top, &.bottom{
+        left   : 0;
+        right  : 0;
+        width  : auto;
+        height : auto;
+    }
+
+    &.top{
+        top : 0;
+    }
+
+    &.bottom{
+        bottom : 0;
+    }
+}
+
+section{
+    .transition(all; 0.3s);
+    .box-shadow(0 0 15px fade(#000, 90%));
+}
+
+body.menu.open{
+    section{
+        .transition(all; 0.75s);
+    }
+    &.left{
+        section, .mobile-overlay{
+            .transform(translateX(@aside-width));
+        }
+    }
+
+    &.right{
+        section, .mobile-overlay{
+            .transform(translateX(-@aside-width));
+        }
+    }
+
+    &.top{
+        section, .mobile-overlay{
+            .transform(translateY(@aside-width));
+        }
+    }
+
+    &.bottom{
+        section, .mobile-overlay{
+            .transform(translateY(-@aside-width));
+        }
+    }
+}

@@ -1,0 +1,79 @@
+// Example code for dropdown menu
+// <span class="dropdown-btn" data-menu="_SELECTOR_" data-menu-position="top|right|center|left|bottom|centered">_SAMPLE TEXT_</span>
+
+@dropdown-bg                : #fff;
+@dropdown-color             : @text-color;
+@dropdown-width             : 250px;
+@dropdown-margin-vertical   : 10px;
+@dropdown-margin-horizontal : 5px;
+
+.dropdown-overlay{
+    background : rgba(255, 255, 255, 0);
+}
+
+.dropdown-menu{
+    background : @dropdown-bg !important;
+    color      : @dropdown-color !important;
+    position   : fixed;
+    z-index    : @mobile-bar-zindex - 1;
+    width      : @dropdown-width;
+    max-width  : 90%;
+    max-height : 70%;
+    display    : none;
+    border     : 2px solid darken(@dropdown-bg, 5%);
+    margin     : 0 !important;
+    overflow   : auto;
+    .box-shadow(0 2px 10px @gray-dark);
+
+    &.open{
+        display : block;
+    }
+
+    &.centered{
+        top    : 50%;
+//        bottom : 0;
+        left   : 0;
+        right  : 0;
+        margin : auto !important;
+        .transform(translateY(-50%));
+    }
+
+    &.center{
+        top    : 0;
+        bottom : 0;
+        left   : 0;
+        right  : 0;
+        margin : auto !important;
+    }
+
+    &.top{
+        top    : @top-block-height;
+        bottom : auto;
+    }
+
+    &.bottom{
+        bottom : @bottom-block-height;
+        top    : auto;
+    }
+
+    &.right{
+        right : @dropdown-margin-horizontal;
+        left  : auto;
+    }
+
+    &.left{
+        left  : @dropdown-margin-horizontal;
+        right : auto;
+    }
+}
+
+.dropdown-btn{
+//    .button(@button-primary-color, @button-primary-bg, @button-primary-border, base, icon);
+//
+//    &.touch{
+//        background : darken(@brand-primary, 5%);
+//    }
+//    &.active{
+//        background : darken(@brand-primary, 5%);
+//    }
+}
