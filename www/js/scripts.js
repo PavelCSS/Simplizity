@@ -1,5 +1,5 @@
-//document.addEventListener('deviceready', onDeviceReady, false);
-window.addEventListener('load', onDeviceReady, false);
+document.addEventListener('deviceready', onDeviceReady, false);
+//window.addEventListener('load', onDeviceReady, false);
 window.addEventListener('hashchange', openPage, false);
 document.addEventListener('backbutton', goBack, false);
 
@@ -23,7 +23,13 @@ $(document).on('singleTap', '.user-list .user-item', function(){
     });
 });
 
-$(document).on('singleTap', '.back-btn', goBack);
+$(document)
+    .on('singleTap', '.back-btn', goBack)
+    .on('singleTap', '#quick-pick', function(){
+        addPhoto(1, 0, function(url){
+            editPhoto(url);
+        });
+    });
 function goBack(){
     var pageName = window.location.hash.replace('#', '');
     if(pageName !== 'home'){
