@@ -11,6 +11,7 @@ var pagesList = {
     'profile'    : function(profile){
         if(typeof profile === 'undefined'){
             profile = {
+                user       : true,
                 page_name  : 'profile',
                 page_title : 'Profile',
                 user_name  : 'David Culot',
@@ -25,10 +26,11 @@ var pagesList = {
             page_title : 'Send money'
         }, false)
     },
-    'quick-pick' : function(){
-        parseTemplate('_quick-pick.htm', {
+    'quickPick'  : function(url){
+        parseTemplate('_add-wish.htm', {
             page_name  : 'quick-pick',
-            page_title : 'Take photo'
+            page_title : 'Take photo',
+            wish_image : url
         }, false)
     },
     'news'       : function(){

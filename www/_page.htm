@@ -1,5 +1,9 @@
-<main id="page-{{page-name}}">
+<main id="{{page-name}}">
 {{#header}}
+    <header class="gray-darker-bg">
+        <button class="back-btn btn icon-arrow-left6 fl-left">Back</button>
+        <button class="dropdown-btn btn icon icon-list5 fl-right" data-menu="#menu">Menu</button>
+    </header>
     <header class="{{header.class}}">{{{header.code}}}</header>
 {{/header}}
 {{#main}}

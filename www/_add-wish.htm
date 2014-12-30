@@ -1,0 +1,24 @@
+<main id="{{page-name}}" class="gray-darker-bg">
+    <article class="white-bg wish-preview responsive-image _16x9">
+        <img class="mb0-25em" src="{{wish_image}}">
+    </article>
+    <form class="p10px" action="#profile">
+        <p class="_grid_7">
+            <label class="text-bold larger">What is it?</label>
+            <input class="white" name="wish title" type="text" required>
+        </p>
+        <p class="_grid_5">
+            <label class="text-bold larger">Price</label>
+            <input class="white" name="price" type="number" required>
+        </p>
+        <p class="_grid_12">
+            <label class="text-bold larger">Description</label>
+            <textarea class="white" name="description" cols="30" rows="6"></textarea>
+        </p>
+
+        <input type="hidden" value="{{wish-image}}"/>
+
+        <button class="_grid_6 btn success large">Public SIM</button>
+        <button class="_grid_6 btn error large">Private SIM</button>
+    </form>
+</main>

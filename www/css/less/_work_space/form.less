@@ -119,6 +119,7 @@ select, textarea, input{
 
     //&:focus:not([type="submit"]):not([type="button"]){
     &:focus{
+        background: fade(#fff, 50%);
         border-color : @input-border-color-focus;
         .box-shadow(0 0 @input-shadow-size @input-border-color-focus; @input-shadow-focus);
     }

@@ -303,9 +303,14 @@
     &:before{
         font-size : @size;
 
-        & when (@parent = false){
+        & when (@parent = false) and  not(isem(@size)){
             width  : @size;
             height : @size;
+        }
+
+        & when (isem(@size)){
+            width  : 1em;
+            height : 1em;
         }
     }
 }

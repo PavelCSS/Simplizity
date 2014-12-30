@@ -330,12 +330,24 @@ ul{
     .wish-desc{
     }
     .wish-price{
+        font-size  : large;
         position   : absolute;
-        top        : 20%;
+        top        : 10%;
         right      : -10px;
-        background : @brand-info;
+        background : @brand-primary;
         color      : #fff;
         padding    : @padding-small-vertical @padding-base-horizontal;
+
+        &.left{
+            right : auto;
+            left  : -10px;
+
+            &:after{
+                right        : auto;
+                left         : 0;
+                border-color : @gray-darker @gray-darker transparent transparent;
+            }
+        }
 
         &:after{
             content      : '';
@@ -352,7 +364,7 @@ ul{
 .user-list{
     .user-item{
         .clearfix();
-//        padding : 0;
+        //        padding : 0;
     }
     .user-photo{
     }

@@ -240,3 +240,45 @@
         }
     }
 }
+
+.icon-bg{
+    position : relative;
+
+    &:before{
+        color : fade(#fff, 5%);
+    }
+
+    .content{
+        position : absolute;
+        z-index  : 0;
+        left     : 0;
+        right    : 0;
+        bottom   : 1em;
+    }
+
+    &.bg-icon12{ .icon-size(12px; false) !important; }
+    &.bg-icon14{ .icon-size(14px; false) !important; }
+    &.bg-icon16{ .icon-size(16px; false) !important; }
+    &.bg-icon18{ .icon-size(18px; false) !important; }
+    &.bg-icon24{ .icon-size(24px; false) !important; }
+    &.bg-icon32{ .icon-size(32px; false) !important; }
+    &.bg-icon48{ .icon-size(48px; false) !important; }
+    &.bg-icon64{ .icon-size(64px; false) !important; }
+    &.bg-icon80{ .icon-size(80px; false) !important; }
+    &.bg-icon96{ .icon-size(96px; false) !important; }
+    &.bg-icon112{ .icon-size(112px; false) !important; }
+
+    &.bg-icon10em{
+        .icon-size(10em; false) !important;
+    }
+}
+
+.br0-5em{
+    .border-radius(.5em);
+}
+.br1em{
+    .border-radius(1em);
+}
+.br2em{
+    .border-radius(2em);
+}

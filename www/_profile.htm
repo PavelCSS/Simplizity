@@ -1,16 +1,24 @@
 <main id="{{page_name}}">
     <header class="gray-darker-bg">
         <button class="back-btn btn icon-arrow-left6 fl-left">Back</button>
+        {{#user}}
         <button class="dropdown-btn btn icon icon-list5 fl-right" data-menu="#menu">Menu</button>
+        {{/user}}
     </header>
 
     <div class="gray-darker-bg gray-light mtH text-center clearfix">
+        {{#user}}
         <h4 class="inherit">{{page_title}}</h4>
+        {{/user}}
+        {{^user}}
+        <h2 class="inherit">{{user_name}}</h2>
+        {{/user}}
         <div class="w125px centered">
             <span class="responsive-image _1x1 img-circle">
                 <img src="{{user_photo}}" alt="{{user_name}}" width="75">
             </span>
         </div>
+        {{#user}}
         <h2 class="inherit mt10px">{{user_name}}</h2>
         <ul class="_column_3 m0px p0px">
             <li>
@@ -26,9 +34,26 @@
                 Donnations
             </li>
         </ul>
+        {{/user}}
+        {{^user}}
+        <ul class="_column_2 bottom white friend-info m0px p0px">
+            <li class="icon-bg bg-icon10em icon-exclamation-triangle">
+                <div class="content large">
+                    <i class="icon-birthday-cake icon24"></i> 28th August
+                </div>
+            </li>
+            <li class="icon-bg bg-icon10em icon-bars">
+                <div class="content large">
+                    <span class="larger">6</span> Donnations <br>
+                    <span class="primary fs32"><i class="icon-dollar3 fs48 mr-grid lh-small"></i>325.00</span>
+                </div>
+            </li>
+        </ul>
+        {{/user}}
     </div>
 
     <article class="pb0px">
+        {{#user}}
         <ul class="wish-list list-bordered m0px">
             <li class="wish-item" data-id="23">
                 <span class="wish-photo">
@@ -59,6 +84,45 @@
                 <h4 class="wish-title">Wish name</h4>
             </li>
         </ul>
+        {{/user}}
+        {{^user}}
+        <ul class="wish-list v2 list-unstyled m0px">
+            <li class="wish-item" data-id="23">
+                <span class="wish-photo">
+                    <img src="http://pixabay.com/static/uploads/photo/2013/09/18/22/03/moscow-183661_150.jpg" alt=""/>
+                    <span class="wish-price left">$123</span>
+                </span>
+                <h4 class="wish-title">Wish name</h4>
+                <div class="donnation-info error-bg wrap p5px large br0-5em">
+                    <i class="icon-man fs48 fl-left lh-small"></i>
+                    <div class="fl-left">
+                        23 <br>
+                        85%
+                    </div>
+                    <div class="wrap">
+                        $15
+                    </div>
+                </div>
+            </li>
+            <li class="wish-item" data-id="23">
+                <span class="wish-photo">
+                    <img src="http://pixabay.com/static/uploads/photo/2013/09/18/22/03/moscow-183661_150.jpg" alt=""/>
+                    <span class="wish-price left">$123</span>
+                </span>
+                <h4 class="wish-title">Wish name</h4>
+                <div class="donnation-info primary-bg wrap p5px large br0-5em">
+                    <i class="icon-man fs48 fl-left lh-small"></i>
+                    <div class="fl-left">
+                        23 <br>
+                        85%
+                    </div>
+                    <div class="wrap">
+                        $15
+                    </div>
+                </div>
+            </li>
+        </ul>
+        {{/user}}
     </article>
 
     <ul id="menu" class="list-bordered dropdown-menu top right">
