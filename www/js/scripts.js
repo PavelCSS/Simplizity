@@ -29,6 +29,7 @@ $(document)
             pagesList.quickPick(url);
         });
     });
+
 function goBack(){
     var pageName = window.location.hash.replace('#', '');
     if(pageName !== 'home'){
