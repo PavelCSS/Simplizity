@@ -1,5 +1,5 @@
 .idea/*
-Images for site/*
-temp-images/*
-concat*.css
-theme.json
+hooks/*
+platform/*
+plugins/*
+less/*
