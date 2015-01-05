@@ -7,7 +7,6 @@ function onDeviceReady(){
     $('html').addClass(device.platform.toLowerCase());
     //    FastClick.attach(document.body);
     navigator.splashscreen.hide();
-
     openPage();
 }
 

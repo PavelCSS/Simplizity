@@ -5,18 +5,18 @@
         A sample Apache Cordova application that responds to the deviceready event.
     </description>
     <author email="support@seotoaster.com" href="http://flexkit.seotoaster.com">
-        SeoToaster Team
+        PavelCSS
     </author>
 
     <preference name="permissions"                value="none" />
     <preference name="phonegap-version"           value="3.6.3" />          <!-- all: current version of PhoneGap -->
     <preference name="orientation"                value="default" />        <!-- all: default means both landscape and portrait are enabled -->
     <preference name="target-device"              value="universal" />      <!-- all: possible values handset, tablet, or universal -->
-    <preference name="fullscreen"                 value="false" />           <!-- all: hides the status bar at the top of the screen -->
+    <preference name="fullscreen"                 value="false" />          <!-- all: hides the status bar at the top of the screen -->
     <preference name="webviewbounce"              value="true" />           <!-- ios: control whether the screen 'bounces' when scrolled beyond the top -->
     <preference name="prerendered-icon"           value="true" />           <!-- ios: if icon is prerendered, iOS will not apply it's gloss to the app's icon on the user's home screen -->
     <preference name="stay-in-webview"            value="false" />          <!-- ios: external links should open in the default browser, 'true' would use the webview the app lives in -->
-    <preference name="ios-statusbarstyle"         value="black-opaque" />   <!-- ios: black-translucent will appear black because the PhoneGap webview doesn't go beneath the status bar -->
+    <preference name="ios-statusbarstyle"         value="default" />        <!-- ios: black-translucent will appear black because the PhoneGap webview doesn't go beneath the status bar -->
     <preference name="detect-data-types"          value="true" />           <!-- ios: controls whether data types (such as phone no. and dates) are automatically turned into links by the system -->
     <preference name="exit-on-suspend"            value="false" />          <!-- ios: if set to true, app will terminate when home button is pressed -->
     <preference name="show-splash-screen-spinner" value="true" />           <!-- ios: if set to false, the spinner won't appear on the splash screen during app loading -->
@@ -31,6 +31,12 @@
     <feature name="SplashScreen">
         <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
     </feature>
+
+    <preference name="DisallowOverscroll" value="true"/>
+
+    <preference name="StatusBarOverlaysWebView" value="false"/>
+    <preference name="StatusBarBackgroundColor" value="#000"/>
+    <!--<preference name="StatusBarStyle" value="default" />-->
 
     <gap:plugin name="org.apache.cordova.battery-status" />         <!-- https://github.com/apache/cordova-plugin-battery-status/blob/master/doc/index.md -->
     <gap:plugin name="org.apache.cordova.camera" />                 <!-- https://github.com/apache/cordova-plugin-camera/blob/master/doc/index.md -->

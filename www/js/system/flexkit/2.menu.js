@@ -11,9 +11,10 @@ $('.dropdown-btn').each(function(){
     $(menu).addClass('dropdown-menu ' + position).height(height);
 });
 var switchMenu = false;
-$(document).on('mousedown touchstart', function(e){
+$(document).on('touchstart', function(e){
     var container = $(".dropdown-menu");
-    if(switchMenu && (container.has(e.target).length === 0)){
+    if(switchMenu && (container.has(e.target).length === 0) && !$(e.target).hasClass('dropdown-btn')){
+        e.preventDefault();
         $('body').removeAttr('data-menu-open');
         $('.menu-btn, .dropdown-btn').removeClass('active');
         $('.dropdown-menu, .mobile-overlay').removeClass('open');
@@ -53,14 +54,15 @@ function showMenu($this){
 
 function showDropdown($this){
     var menu = $this.data('menu');
-    $('.mobile-overlay').removeClass('open');
     $('body').removeAttr('data-menu-open');
     if(!$this.hasClass('active')){
         $('.menu-btn, .dropdown-btn').removeClass('active');
         $('.dropdown-menu').removeClass('open');
-        $('.dropdown-overlay').addClass('open');
+        $this.addClass('active');
+        $(menu).addClass('open');
         switchMenu = true;
+    }else{
+        $('.dropdown-btn').removeClass('active');
+        $('.dropdown-menu').removeClass('open');
     }
-    $this.toggleClass('active');
-    $(menu).toggleClass('open');
 }
