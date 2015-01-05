@@ -1,4 +1,4 @@
-﻿/*
+﻿﻿/*
  * Copyright 2013 Research In Motion Limited.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
