@@ -12,13 +12,13 @@
 //	PAGE Style
 //==================================================
 main{
-    height                     : 100%;
-    background                 : @section-bg;
-    background-size            : cover;
-    overflow                   : auto;
-    -webkit-overflow-scrolling : touch;
-    position                   : relative;
-    z-index                    : 1;
+    height          : 100%;
+    background      : @section-bg;
+    background-size : cover;
+    overflow        : auto;
+    //    -webkit-overflow-scrolling : touch;
+    position        : relative;
+    z-index         : 1;
     .box-shadow(0 0 10px fade(#000, 50%))
 }
 
@@ -32,18 +32,6 @@ article{
     position : relative;
     z-index  : 10;
     padding  : @padding-base-vertical @padding-base-horizontal @footer-height;
-
-    header + &{
-        padding-top : @header-height;
-    }
-
-    header.large + &{
-        padding-top : @header-height * @font-size-large;
-    }
-
-    header.larger + &{
-        padding-top : @header-height * @font-size-larger;
-    }
 }
 
 //	FOOTER Style
@@ -81,4 +69,7 @@ aside{
 
     // -- NAV Style
     nav{ }
+}
+
+.dial{
 }

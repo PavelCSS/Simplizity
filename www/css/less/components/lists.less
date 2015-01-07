@@ -317,15 +317,22 @@ ul{
 
 .wish-list{
     .wish-item{
+        margin  : 0;
+        padding : 1em .5em;
         .clearfix();
+
+        &:nth-child(even){
+            background : @gray-lighter;
+        }
     }
     .wish-photo{
         position     : relative;
         float        : left;
-        margin-right : 30px;
+        margin-right : 20px;
     }
     .wish-title{
-        margin : 0 0 10px;
+        line-height : 1.2;
+        margin      : 0 0 5px;
     }
     .wish-desc{
     }

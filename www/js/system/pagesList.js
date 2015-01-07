@@ -14,8 +14,7 @@ var pagesList = {
                 user       : true,
                 page_name  : 'profile',
                 page_title : 'Profile',
-                user_name  : 'David Culot',
-                user_photo : 'https://www.seotoaster.com/media/team/small/david.jpg'
+                userData   : users[1]
             }
         }
         parseTemplate('_profile.htm', profile, false)
@@ -23,7 +22,8 @@ var pagesList = {
     'send-money' : function(){
         parseTemplate('_send-money.htm', {
             page_name  : 'send-money',
-            page_title : 'Send money'
+            page_title : 'Send money',
+            users      : users
         }, false)
     },
     'quickPick'  : function(url){
