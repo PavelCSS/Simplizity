@@ -97,41 +97,78 @@
             this.extend();
             this.o = $.extend({
                     // Config
-                    min: this.$.data('min') !== undefined ? this.$.data('min') : 0,
-                    max: this.$.data('max') !== undefined ? this.$.data('max') : 100,
-                    stopper: true,
-                    readOnly: this.$.data('readonly') || (this.$.attr('readonly') === 'readonly'),
+                    min             : this.$.data('min') !== undefined ? this.$.data('min') : 0,
+                    max             : this.$.data('max') !== undefined ? this.$.data('max') : 100,
+                    stopper         : true,
+                    readOnly        : this.$.data('readonly') || (this.$.attr('readonly') === 'readonly'),
 
                     // UI
-                    cursor: this.$.data('cursor') === true && 30
-                            || this.$.data('cursor') || 0,
-                    thickness: this.$.data('thickness')
-                               && Math.max(Math.min(this.$.data('thickness'), 1), 0.01)
-                               || 0.35,
-                    lineCap: this.$.data('linecap') || 'butt',
-                    width: this.$.data('width') || 200,
-                    height: this.$.data('height') || 200,
-                    displayInput: this.$.data('displayinput') == null || this.$.data('displayinput'),
-                    displayPrevious: this.$.data('displayprevious'),
-                    fgColor: this.$.data('fgcolor') || '#87CEEB',
-                    inputColor: this.$.data('inputcolor'),
-                    font: this.$.data('font') || 'Arial',
-                    fontWeight: this.$.data('font-weight') || 'bold',
-                    inline: false,
-                    step: this.$.data('step') || 1,
-                    rotation: this.$.data('rotation'),
+                    cursor          : this.$.data('cursor') === true && 30 || this.$.data('cursor') || 0,
+                    thickness       : this.$.data('thickness') && Math.max(Math.min(this.$.data('thickness'), 1), 0.01) || 0.35,
+                    lineCap         : this.$.data('linecap') || 'butt',
+                    width           : this.$.data('width') || 200,
+                    height          : this.$.data('height') || this.$.data('width') || 200,
+                    displayInput    : this.$.data('displayinput') == null || this.$.data('displayinput'),
+                    displayPrevious : this.$.data('displayprevious'),
+                    fgColor         : this.$.data('fgcolor') || '#87CEEB',
+                    inputColor      : this.$.data('inputcolor'),
+                    inputPrefix     : this.$.data('inputprefix') || '',
+                    inputSuffix     : this.$.data('inputsuffix') || '',
+                    font            : this.$.data('font') || 'Arial',
+                    fontWeight      : this.$.data('font-weight') || 'normal',
+                    inline          : false,
+                    step            : this.$.data('step') || 1,
+                    rotation        : this.$.data('rotation'),
 
                     // Hooks
-                    draw: null, // function () {}
-                    change: null, // function (value) {}
-                    cancel: null, // function () {}
-                    release: null, // function (value) {}
+                    draw            : function(){
+
+                        // "tron" case
+                        if(this.$.data('skin') == 'tron'){
+
+                            var a = this.angle(this.cv)  // Angle
+                                , sa = this.startAngle          // Previous start angle
+                                , sat = this.startAngle         // Start angle
+                                , ea                            // Previous end angle
+                                , eat = sat + a                 // End angle
+                                , r = true;
+
+                            this.g.lineWidth = this.lineWidth;
+
+                            this.o.cursor && (sat = eat - 0.3) && (eat = eat + 0.3);
+
+                            if(this.o.displayPrevious){
+                                ea = this.startAngle + this.angle(this.value);
+                                this.o.cursor && (sa = ea - 0.3) && (ea = ea + 0.3);
+                                this.g.beginPath();
+                                this.g.strokeStyle = this.previousColor;
+                                this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, sa, ea, false);
+                                this.g.stroke();
+                            }
+
+                            this.g.beginPath();
+                            this.g.strokeStyle = r ? this.o.fgColor : this.fgColor;
+                            this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, sat, eat, false);
+                            this.g.stroke();
+
+                            this.g.lineWidth = 2;
+                            this.g.beginPath();
+                            this.g.strokeStyle = this.o.fgColor;
+                            this.g.arc(this.xy, this.xy, this.radius - this.lineWidth - 1 + this.lineWidth * 2 / 3, 0, 2 * Math.PI, false);
+                            this.g.stroke();
+
+                            return false;
+                        }
+                    }, // function () {}
+                    change          : null, // function (value) {}
+                    cancel          : null, // function () {}
+                    release         : null, // function (value) {}
 
                     // Output formatting, allows to add unit: %, ms ...
-                    format: function(v) {
-                        return v;
+                    format          : function(v){
+                        return this.inputPrefix + v + this.inputSuffix;
                     },
-                    parse: function (v) {
+                    parse           : function(v){
                         return parseFloat(v);
                     }
                 }, this.o
@@ -189,7 +226,7 @@
 
             // wraps all elements in a div
             // add to DOM before Canvas init is triggered
-            this.$div = $('<div style="'
+            this.$div = $('<div style="position:relative;'
                 + (this.o.inline ? 'display:inline;' : '')
                 + 'width:' + this.o.width + 'px;height:' + this.o.height + 'px;'
                 + '"></div>');
@@ -252,7 +289,8 @@
 
             this.isInit = true;
 
-            this.$.val(this.o.format(this.v));
+            var valew = this.o.format(this.v);
+            this.$.val(valew);
             this._draw();
 
             return this;
@@ -509,7 +547,7 @@
                 bgColor: this.$.data('bgcolor') || '#EEEEEE',
                 angleOffset: this.$.data('angleoffset') || 0,
                 angleArc: this.$.data('anglearc') || 360,
-                inline: true
+                inline: false
             }, this.o);
         };
 
@@ -702,27 +740,28 @@
                 String(Math.abs(this.o.max)).length,
                 String(Math.abs(this.o.min)).length,
                 2
-            ) + 2;
+            );
 
-            this.o.displayInput
-                && this.i.css({
-                        'width' : ((this.w / 2 + 4) >> 0) + 'px',
-                        'height' : ((this.w / 3) >> 0) + 'px',
-                        'position' : 'absolute',
-                        'vertical-align' : 'middle',
-                        'margin-top' : ((this.w / 3) >> 0) + 'px',
-                        'margin-left' : '-' + ((this.w * 3 / 4 + 2) >> 0) + 'px',
-                        'border' : 0,
-                        'background' : 'none',
-                        'font' : this.o.fontWeight + ' ' + ((this.w / s) >> 0) + 'px ' + this.o.font,
-                        'text-align' : 'center',
-                        'color' : this.o.inputColor || this.o.fgColor,
-                        'padding' : '0px',
-                        '-webkit-appearance': 'none'
-                        }) || this.i.css({
-                            'width': '0px',
-                            'visibility': 'hidden'
-                        });
+            this.o.displayInput && this.i.css({
+                'width'              : '98%',
+                'height'             : '1.2em',
+                'position'           : 'absolute',
+                'top'                : 0,
+                'left'               : 0,
+                'right'              : 0,
+                'bottom'             : 0,
+                'margin'             : 'auto',
+                'border'             : 0,
+                'background'         : 'none',
+                'font'               : this.o.fontWeight + ' ' + ((this.w / s + 2) >> 0) + 'px ' + this.o.font,
+                'text-align'         : 'center',
+                'color'              : this.o.inputColor || this.o.fgColor,
+                'padding'            : '0',
+                '-webkit-appearance' : 'none'
+            }) || this.i.css({
+                'width'      : '0',
+                'visibility' : 'hidden'
+            });
         };
 
         this.change = function (v) {

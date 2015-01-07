@@ -12,14 +12,14 @@ function onDeviceReady(){
 
 $(document)
     .on('singleTap', '.user-list .user-item', function(){
-        var userId = $(this).data('user-id');
+        var userId = $(this).index();
         window.location.hash = 'user-' + userId;
+        console.log(users[userId]);
         pagesList['profile']({
-            users      : false,
+            user      : false,
             page_name  : 'user-' + userId,
             page_title : 'Profile',
-            user_name  : $(this).data('user-name'),
-            user_photo : $(this).find('img').attr('src')
+            userData   : users[userId]
         });
     })
     .on('singleTap', '.back-btn', goBack)

@@ -1,112 +1,31 @@
 <main id="{{page_name}}">
 
-    <header class="large">
+    <header class="fixed large">
         <button class="back-btn btn icon icon-arrow-left6 fl-left">Back</button>
         <a class="btn icon icon-user fl-right" href="#profile">Profile</a>
         <h1>{{page_title}}</h1>
     </header>
 
-    <article class="pb0em">
-        <ul class="user-list list-bordered">
-            <li class="user-item" data-user-id="23" data-user-name="michel">
+    <article class="mtH pb0em">
+        <ul class="user-list list-bordered m0px">
+            {{#users}}
+            <li class="user-item" data-user-id="{{id}}" data-user-name="{{name}}">
                 <span class="w50px fl-left mr-grid">
                     <span class="user-photo responsive-image _1x1">
-                        <img src="https://www.seotoaster.com/media/team/small/michel.jpg" alt=""/>
+                        <img src="{{photo}}" alt=""/>
                     </span>
                 </span>
                 <h3 class="user-name">
-                    User name
+                    {{name}}
+                    {{#contact}}
                     <span class="subtitle block">SIM registered users</span>
-                </h3>
-            </li>
-            <li class="user-item" data-user-id="2sds3" data-user-name="david">
-                <span class="w50px fl-left mr-grid">
-                    <span class="user-photo responsive-image _1x1">
-                        <img src="https://www.seotoaster.com/media/team/small/david.jpg" alt=""/>
-                    </span>
-                </span>
-                <h3 class="user-name">
-                    User name
+                    {{/contact}}
+                    {{^contact}}
                     <span class="subtitle block">NON registered users</span>
+                    {{/contact}}
                 </h3>
             </li>
-            <li class="user-item" data-user-id="2sd32x3" data-user-name="chris">
-                <span class="w50px fl-left mr-grid">
-                    <span class="user-photo responsive-image _1x1">
-                        <img src="https://www.seotoaster.com/media/team/small/chris.jpg" alt=""/>
-                    </span>
-                </span>
-                <h3 class="user-name">
-                    User name
-                    <span class="subtitle block">NON registered users</span>
-                </h3>
-            </li>
-            <li class="user-item" data-user-id="23e23d" data-user-name="anna">
-                <span class="w50px fl-left mr-grid">
-                    <span class="user-photo responsive-image _1x1">
-                        <img src="https://www.seotoaster.com/media/team/small/anna.jpg" alt=""/>
-                    </span>
-                </span>
-                <h3 class="user-name">
-                    User name
-                    <span class="subtitle block">SIM registered users</span>
-                </h3>
-            </li>
-            <li class="user-item" data-user-id="2d23e2ed3" data-user-name="eugenes">
-                <span class="w50px fl-left mr-grid">
-                    <span class="user-photo responsive-image _1x1">
-                        <img src="https://www.seotoaster.com/media/team/small/eugene.jpg" alt=""/>
-                    </span>
-                </span>
-                <h3 class="user-name">
-                    User name
-                    <span class="subtitle block">SIM registered users</span>
-                </h3>
-            </li>
-            <li class="user-item" data-user-id="23dfdss" data-user-name="pavel-k">
-                <span class="w50px fl-left mr-grid">
-                    <span class="user-photo responsive-image _1x1">
-                        <img src="https://www.seotoaster.com/media/team/small/pavel-k.jpg" alt=""/>
-                    </span>
-                </span>
-                <h3 class="user-name">
-                    User name
-                    <span class="subtitle block">NON registered users</span>
-                </h3>
-            </li>
-            <li class="user-item" data-user-id="2dsfds3" data-user-name="dasha">
-                <span class="w50px fl-left mr-grid">
-                    <span class="user-photo responsive-image _1x1">
-                        <img src="https://www.seotoaster.com/media/team/small/dasha.jpg" alt=""/>
-                    </span>
-                </span>
-                <h3 class="user-name">
-                    User name
-                    <span class="subtitle block">SIM registered users</span>
-                </h3>
-            </li>
-            <li class="user-item" data-user-id="23df" data-user-name="anastacia">
-                <span class="w50px fl-left mr-grid">
-                    <span class="user-photo responsive-image _1x1">
-                        <img src="https://www.seotoaster.com/media/team/small/anastacia.jpg" alt=""/>
-                    </span>
-                </span>
-                <h3 class="user-name">
-                    User name
-                    <span class="subtitle block">SIM registered users</span>
-                </h3>
-            </li>
-            <li class="user-item" data-user-id="2wd3" data-user-name="oleg">
-                <span class="w50px fl-left mr-grid">
-                    <span class="user-photo responsive-image _1x1">
-                        <img src="https://www.seotoaster.com/media/team/small/oleg.jpg" alt=""/>
-                    </span>
-                </span>
-                <h3 class="user-name">
-                    User name
-                    <span class="subtitle block">SIM registered users</span>
-                </h3>
-            </li>
+            {{/users}}
         </ul>
     </article>
 
