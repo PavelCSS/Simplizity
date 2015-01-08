@@ -26,16 +26,6 @@
 
     &.open{
         display : block;
-
-        &:after{
-            content  : '';
-            position : fixed;
-            top      : 0;
-            left     : 0;
-            right    : 0;
-            bottom   : 0;
-            z-index  : -1;
-        }
     }
 
     &.centered{
@@ -56,7 +46,7 @@
     }
 
     &.top{
-        top    : @top-block-height;
+        top    : 0;
         bottom : auto;
     }
 
@@ -77,12 +67,19 @@
 }
 
 .dropdown-btn{
-    //    .button(@button-primary-color, @button-primary-bg, @button-primary-border, base, icon);
-    //
-    //    &.touch{
-    //        background : darken(@brand-primary, 5%);
-    //    }
-    //    &.active{
-    //        background : darken(@brand-primary, 5%);
-    //    }
+    &.touch{
+    }
+
+    &.active{
+
+        &:after{
+            content  : '';
+            position : fixed;
+            top      : 0;
+            left     : 0;
+            right    : 0;
+            bottom   : 0;
+            z-index  : @mobile-bar-zindex + 1;
+        }
+    }
 }

@@ -27,8 +27,8 @@
     //style menu mobile
     line-height : @menu-height;
     position    : fixed;
-    z-index     : @mobile-bar-zindex - 1;
-    top         : @top-block-height;
+    z-index     : @mobile-bar-zindex + 2;
+    top         : 0;
     bottom      : 0;
     left        : 0;
     overflow    : auto;
@@ -141,6 +141,19 @@
                 margin-right : -8px;
                 margin-left  : 13px;
             }
+        }
+    }
+
+    &.active{
+
+        &:after{
+            content  : '';
+            position : fixed;
+            top      : 0;
+            left     : 0;
+            right    : 0;
+            bottom   : 0;
+            z-index  : @mobile-bar-zindex + 1;
         }
     }
 }

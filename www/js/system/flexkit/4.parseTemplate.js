@@ -1,4 +1,5 @@
 function parseTemplate(tmpl, json, cache, callback){
+    showLoading();
     json = (typeof json !== 'undefined') ? json : false;
 
     callback = (typeof callback == 'function') ? callback : function(html){
@@ -12,6 +13,7 @@ function parseTemplate(tmpl, json, cache, callback){
         }else{
             callback(response);
         }
+        hideLoading();
     });
 }
 
