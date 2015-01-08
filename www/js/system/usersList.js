@@ -1,27 +1,33 @@
 var users = [
     {
-        id      : 1,
-        name    : 'Michel Leconte',
-        photo   : 'http://www.seotoaster.com/media/team/small/michel.jpg',
-        contact : true,
+        id        : 1,
+        name      : 'Michel Leconte',
+        photo     : 'http://www.seotoaster.com/media/team/small/michel.jpg',
+        contact   : true,
         wish_list : [
             {
-                title    : 'Modern design watch',
-                unit     : '$',
-                price    : 2500,
-                donation : 1500,
-                photo    : 'http://pixabay.com/static/uploads/photo/2013/09/18/22/03/moscow-183661_150.jpg',
-                total    : (1500 / 2500 * 100) + '%',
-                peoples  : 23
+                id          : 20,
+                title       : 'Modern design watch',
+                description : 'Hey, Luke! May the Force be with you. Hey, Luke! May the Force be with you.',
+                unit        : '$',
+                price       : 2500,
+                donation    : 1500,
+                photo       : 'http://pixabay.com/static/uploads/photo/2013/09/18/22/03/moscow-183661_150.jpg',
+                total       : (1500 / 2500 * 100) + '%',
+                peoples     : 23,
+                balance     : 2500 - 1500
             },
             {
-                title    : 'Watch',
-                unit     : '$',
-                price    : 200,
-                donation : 100,
-                photo    : 'http://pixabay.com/static/uploads/photo/2013/09/18/22/03/moscow-183661_150.jpg',
-                total    : (100 / 200 * 100) + '%',
-                peoples  : 9
+                id          : 21,
+                title       : 'Watch',
+                description : 'Hey, Luke! May the Force be with you. Hey, Luke! May the Force be with you.',
+                unit        : '$',
+                price       : 200,
+                donation    : 100,
+                photo       : 'http://pixabay.com/static/uploads/photo/2013/09/18/22/03/moscow-183661_150.jpg',
+                total       : (100 / 200 * 100) + '%',
+                peoples     : 9,
+                balance     : 200 - 100
             }
         ]
     },
@@ -32,40 +38,52 @@ var users = [
         contact   : false,
         wish_list : [
             {
-                title    : 'Modern design watch',
-                unit     : '$',
-                price    : 2500,
-                donation : 1500,
-                photo    : 'http://pixabay.com/static/uploads/photo/2013/09/18/22/03/moscow-183661_150.jpg',
-                total    : (1500 / 2500 * 100) + '%',
-                peoples  : 23
+                id          : 22,
+                title       : 'Modern design watch',
+                description : 'Hey, Luke! May the Force be with you. Hey, Luke! May the Force be with you.',
+                unit        : '$',
+                price       : 2500,
+                donation    : 1500,
+                photo       : 'http://pixabay.com/static/uploads/photo/2013/09/18/22/03/moscow-183661_150.jpg',
+                total       : (1500 / 2500 * 100) + '%',
+                peoples     : 23,
+                balance     : 2500 - 1500
             },
             {
-                title    : 'Watch',
-                unit     : '$',
-                price    : 200,
-                donation : 100,
-                photo    : 'http://pixabay.com/static/uploads/photo/2013/09/18/22/03/moscow-183661_150.jpg',
-                total    : (100 / 200 * 100) + '%',
-                peoples  : 9
+                id          : 23,
+                title       : 'Watch',
+                description : 'Hey, Luke! May the Force be with you. Hey, Luke! May the Force be with you.',
+                unit        : '$',
+                price       : 200,
+                donation    : 100,
+                photo       : 'http://pixabay.com/static/uploads/photo/2013/09/18/22/03/moscow-183661_150.jpg',
+                total       : (100 / 200 * 100) + '%',
+                peoples     : 9,
+                balance     : 200 - 100
             },
             {
-                title    : 'Modern design watch',
-                unit     : '$',
-                price    : 2500,
-                donation : 1500,
-                photo    : 'http://pixabay.com/static/uploads/photo/2013/09/18/22/03/moscow-183661_150.jpg',
-                total    : (1500 / 2500 * 100) + '%',
-                peoples  : 23
+                id          : 24,
+                title       : 'Modern design watch',
+                description : 'Hey, Luke! May the Force be with you. Hey, Luke! May the Force be with you.',
+                unit        : '$',
+                price       : 2500,
+                donation    : 1500,
+                photo       : 'http://pixabay.com/static/uploads/photo/2013/09/18/22/03/moscow-183661_150.jpg',
+                total       : (1500 / 2500 * 100) + '%',
+                peoples     : 23,
+                balance     : 2500 - 1500
             },
             {
-                title    : 'Watch',
-                unit     : '$',
-                price    : 200,
-                donation : 100,
-                photo    : 'http://pixabay.com/static/uploads/photo/2013/09/18/22/03/moscow-183661_150.jpg',
-                total    : (100 / 200 * 100) + '%',
-                peoples  : 9
+                id          : 25,
+                title       : 'Watch',
+                description : 'Hey, Luke! May the Force be with you. Hey, Luke! May the Force be with you.',
+                unit        : '$',
+                price       : 200,
+                donation    : 100,
+                photo       : 'http://pixabay.com/static/uploads/photo/2013/09/18/22/03/moscow-183661_150.jpg',
+                total       : (100 / 200 * 100) + '%',
+                peoples     : 9,
+                balance     : 200 - 100
             }
         ]
     },
@@ -76,47 +94,59 @@ var users = [
         contact : true
     },
     {
-        id      : 4,
-        name    : 'Anna',
-        photo   : 'http://www.seotoaster.com/media/team/small/anna.jpg',
-        contact : true,
+        id        : 4,
+        name      : 'Anna',
+        photo     : 'http://www.seotoaster.com/media/team/small/anna.jpg',
+        contact   : true,
         wish_list : [
             {
-                title    : 'Modern design watch',
-                unit     : '$',
-                price    : 2500,
-                donation : 1500,
-                photo    : 'http://pixabay.com/static/uploads/photo/2013/09/18/22/03/moscow-183661_150.jpg',
-                total    : (1500 / 2500 * 100) + '%',
-                peoples  : 23
+                id          : 26,
+                title       : 'Modern design watch',
+                description : 'Hey, Luke! May the Force be with you. Hey, Luke! May the Force be with you.',
+                unit        : '$',
+                price       : 2500,
+                donation    : 1500,
+                photo       : 'http://pixabay.com/static/uploads/photo/2013/09/18/22/03/moscow-183661_150.jpg',
+                total       : (1500 / 2500 * 100) + '%',
+                peoples     : 23,
+                balance     : 2500 - 1500
             },
             {
-                title    : 'Watch',
-                unit     : '$',
-                price    : 200,
-                donation : 100,
-                photo    : 'http://pixabay.com/static/uploads/photo/2013/09/18/22/03/moscow-183661_150.jpg',
-                total    : (100 / 200 * 100) + '%',
-                peoples  : 9
+                id          : 27,
+                title       : 'Watch',
+                description : 'Hey, Luke! May the Force be with you. Hey, Luke! May the Force be with you.',
+                unit        : '$',
+                price       : 200,
+                donation    : 100,
+                photo       : 'http://pixabay.com/static/uploads/photo/2013/09/18/22/03/moscow-183661_150.jpg',
+                total       : (100 / 200 * 100) + '%',
+                peoples     : 9,
+                balance     : 200 - 100
             },
             {
+                id             : 28,
                 title          : 'Modern design watch',
+                description    : 'Hey, Luke! May the Force be with you. Hey, Luke! May the Force be with you.',
                 unit           : '$',
                 price          : 500,
                 donation       : 134,
                 donation_class : 'error-bg',
                 photo          : 'http://pixabay.com/static/uploads/photo/2013/09/18/22/03/moscow-183661_150.jpg',
                 total          : (134 / 500 * 100) + '%',
-                peoples        : 234
+                peoples        : 234,
+                balance        : 500 - 134
             },
             {
-                title    : 'Watch',
-                unit     : '$',
-                price    : 200,
-                donation : 187,
-                photo    : 'http://pixabay.com/static/uploads/photo/2013/09/18/22/03/moscow-183661_150.jpg',
-                total    : (187 / 200 * 100) + '%',
-                peoples  : 9
+                id          : 29,
+                title       : 'Watch',
+                description : 'Hey, Luke! May the Force be with you. Hey, Luke! May the Force be with you.',
+                unit        : '$',
+                price       : 200,
+                donation    : 187,
+                photo       : 'http://pixabay.com/static/uploads/photo/2013/09/18/22/03/moscow-183661_150.jpg',
+                total       : (187 / 200 * 100) + '%',
+                peoples     : 9,
+                balance     : 200 - 187
             }
         ]
     },

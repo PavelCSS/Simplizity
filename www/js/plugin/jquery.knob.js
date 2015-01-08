@@ -38,7 +38,7 @@
     k.c = {};
     k.c.d = $(document);
     k.c.t = function (e) {
-        return e.originalEvent.touches.length - 1;
+        return e.touches.length - 1;
     };
 
     /**
@@ -226,7 +226,7 @@
 
             // wraps all elements in a div
             // add to DOM before Canvas init is triggered
-            this.$div = $('<div style="position:relative;'
+            this.$div = $('<div style="position:relative;margin:auto;'
                 + (this.o.inline ? 'display:inline;' : '')
                 + 'width:' + this.o.width + 'px;height:' + this.o.height + 'px;'
                 + '"></div>');
@@ -354,8 +354,8 @@
         this._touch = function (e) {
             var touchMove = function (e) {
                 var v = s.xy2val(
-                            e.originalEvent.touches[s.t].pageX,
-                            e.originalEvent.touches[s.t].pageY
+                            e.touches[s.t].pageX,
+                            e.touches[s.t].pageY
                         );
 
                 if (v == s.cv) return;
@@ -750,6 +750,7 @@
                 'left'               : 0,
                 'right'              : 0,
                 'bottom'             : 0,
+                'z-index'            : 0,
                 'margin'             : 'auto',
                 'border'             : 0,
                 'background'         : 'none',

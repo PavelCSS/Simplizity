@@ -1,6 +1,6 @@
 <main id="{{page_name}}">
     <header class="fixed large gray-darker-bg">
-        <button class="back-btn btn icon-arrow-left6 fl-left">Back</button>
+        <button class="back-btn btn icon-arrow-left6 pl0em fl-left">Back</button>
         {{#user}}
         <!--<button class="dropdown-btn btn icon icon-list5 fl-right" data-menu="#menu">Menu</button>-->
         <a class="btn icon icon-logout fl-right" href="#login">Logout</a>
@@ -56,7 +56,7 @@
     <article class="p0px">
         <ul class="wish-list list-unstyled m0px">
             {{#userData.wish_list}}
-            <li class="wish-item" data-id="23">
+            <li class="wish-item" data-id="{{id}}">
                 <div class="fl-right ml1em _grid_6 _alpha _omega">
                     <h4 class="wish-title">{{title}}</h4>
                     <div class="donnation-info {{donation_class}} {{^donation_class}}primary-bg{{/donation_class}} wrap p5px large br0-5em">
@@ -83,7 +83,7 @@
                     <span class="responsive-image _4x3">
                         <img src="{{photo}}" alt="{{title}}" width="150" height="100"/>
                     </span>
-                    <span class="wish-price">{{unit}}{{price}}</span>
+                    <span class="wish-price large">{{unit}}{{price}}</span>
                 </div>
             </li>
             {{/userData.wish_list}}

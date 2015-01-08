@@ -37,6 +37,9 @@ article{
 //	FOOTER Style
 //==================================================
 footer{
+    background : @footer-bg;
+    color      : @footer-color;
+
     &.fixed{
         position   : fixed;
         bottom     : 0;
@@ -44,8 +47,6 @@ footer{
         right      : 0;
         z-index    : 100;
         min-height : @footer-height;
-        background : @footer-bg;
-        color      : @footer-color;
     }
 
     .footer-box{ }
@@ -72,4 +73,18 @@ aside{
 }
 
 .dial{
+}
+
+#donate{
+    .dial{
+        top : 50px !important;
+    }
+}
+
+canvas{
+    position : relative;
+    z-index  : 1;
+}
+.friend-info{
+    margin-top : -40px !important;
 }

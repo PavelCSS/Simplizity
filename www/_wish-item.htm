@@ -1,0 +1,34 @@
+<main id="wish-{{id}}" class="gray-darker-bg flexbox">
+    <header class="large fade">
+        <button class="back-btn btn pl0em icon-arrow-left6 fl-left">Back</button>
+        <a class="btn icon icon-logout fl-right" href="#login">Logout</a>
+    </header>
+
+    <div class="flex-size_1 scroll">
+        <div class="wish-photo white-bg left p0px">
+            <img src="{{photo}}" alt="{{title}}"/>
+            <span class="wish-price larger bottom ml0-25em shadow">{{unit}}{{price}}</span>
+        </div>
+
+        <article class="p10px">
+            <h1 class="inherit larger text-center">{{title}}</h1>
+            <p class="gray-light">{{description}}</p>
+        </article>
+    </div>
+
+    <footer class="donate-info large p10px inherit">
+        <button id="donate-btn"
+                class="btn success fl-right"
+                data-id="{{id}}">Donate</button>
+        <div class="wrap">
+            <i class="icon-man fs48 fl-left lh-small" style="margin-left: -10px"></i>
+            <div class="fl-left mr1em" style="margin-left: -10px">
+                {{peoples}} <br>
+                {{total}}
+            </div>
+            <div class="wrap mt0-75em">
+                {{unit}}{{donation}}
+            </div>
+        </div>
+    </footer>
+</main>
