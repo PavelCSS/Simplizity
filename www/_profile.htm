@@ -1,8 +1,9 @@
 <main id="{{page_name}}">
-    <header class="fixed gray-darker-bg">
+    <header class="fixed large gray-darker-bg">
         <button class="back-btn btn icon-arrow-left6 fl-left">Back</button>
         {{#user}}
-        <button class="dropdown-btn btn icon icon-list5 fl-right" data-menu="#menu">Menu</button>
+        <!--<button class="dropdown-btn btn icon icon-list5 fl-right" data-menu="#menu">Menu</button>-->
+        <a class="btn icon icon-logout fl-right" href="#login">Logout</a>
         {{/user}}
     </header>
 
@@ -37,12 +38,12 @@
         {{/user}}
         {{^user}}
         <ul class="_column_2 bottom white friend-info m0px p0px">
-            <li class="icon-bg bg-icon10em icon-exclamation-triangle">
+            <li class="icon-bg bg-icon9em icon-birthday-cake">
                 <div class="content large">
-                    <i class="icon-birthday-cake icon24"></i> 28th August
+                    28th August
                 </div>
             </li>
-            <li class="icon-bg bg-icon10em icon-bars">
+            <li class="icon-bg bg-icon9em icon-bars">
                 <div class="content large">
                     <span class="larger">6</span> Donnations <br>
                     <span class="primary fs32"><i class="icon-dollar3 fs48 mr-grid lh-small"></i>325.00</span>
@@ -55,30 +56,34 @@
     <article class="p0px">
         <ul class="wish-list list-unstyled m0px">
             {{#userData.wish_list}}
-            <li class="wish-item {{^user}}pl1em{{/user}}" data-id="23">
-                <span class="wish-photo">
-                    <img src="{{photo}}" alt="{{title}}" width="150" height="100"/>
-                    <span class="wish-price {{^user}}left{{/user}}">{{unit}}{{price}}</span>
-                </span>
-                <h4 class="wish-title">{{title}}</h4>
-                <div class="donnation-info {{donation_class}} {{^donation_class}}primary-bg{{/donation_class}} wrap p5px large br0-5em">
-                    <i class="icon-man fs48 fl-left lh-small"></i>
-                    <div class="fl-left">
-                        {{peoples}} <br>
-                        {{total}}
+            <li class="wish-item" data-id="23">
+                <div class="fl-right ml1em _grid_6 _alpha _omega">
+                    <h4 class="wish-title">{{title}}</h4>
+                    <div class="donnation-info {{donation_class}} {{^donation_class}}primary-bg{{/donation_class}} wrap p5px large br0-5em">
+                        <i class="icon-man fs48 fl-left lh-small" style="margin-left: -10px"></i>
+                        <div class="fl-left" style="margin-left: -10px">
+                            {{peoples}} <br>
+                            {{total}}
+                        </div>
+                        <div class="wrap fl-right">
+                            <input class="dial" type="text" value="{{donation}}"
+                                    data-width="55"
+                                    data-max="{{price}}"
+                                    data-readOnly="true"
+                                    data-inputcolor="#fff"
+                                    data-fgColor="rgba(255,255,255,.75)"
+                                    data-bgColor="rgba(0,0,0,.1)"
+                                    data-thickness=".1"
+                                    data-inputprefix="{{unit}}"
+                                    data-linecap="linecap">
+                        </div>
                     </div>
-                    <div class="wrap fl-right">
-                        <input class="dial" type="text" value="{{donation}}"
-                                data-width="55"
-                                data-max="{{price}}"
-                                data-readOnly="true"
-                                data-inputcolor="#fff"
-                                data-fgColor="rgba(255,255,255,.75)"
-                                data-bgColor="rgba(0,0,0,.1)"
-                                data-thickness=".1"
-                                data-inputprefix="{{unit}}"
-                                data-linecap="linecap">
-                    </div>
+                </div>
+                <div class="wish-photo wrap {{^user}}left{{/user}}">
+                    <span class="responsive-image _4x3">
+                        <img src="{{photo}}" alt="{{title}}" width="150" height="100"/>
+                    </span>
+                    <span class="wish-price">{{unit}}{{price}}</span>
                 </div>
             </li>
             {{/userData.wish_list}}
