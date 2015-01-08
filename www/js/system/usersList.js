@@ -13,7 +13,7 @@ var users = [
                 price       : 2500,
                 donation    : 1500,
                 photo       : 'http://pixabay.com/static/uploads/photo/2013/09/18/22/03/moscow-183661_150.jpg',
-                total       : (1500 / 2500 * 100) + '%',
+                total       : (1500 / 2500 * 100).toFixed(1) + '%',
                 peoples     : 23,
                 balance     : 2500 - 1500
             },
@@ -25,7 +25,7 @@ var users = [
                 price       : 200,
                 donation    : 100,
                 photo       : 'http://pixabay.com/static/uploads/photo/2013/09/18/22/03/moscow-183661_150.jpg',
-                total       : (100 / 200 * 100) + '%',
+                total       : (100 / 200 * 100).toFixed(1) + '%',
                 peoples     : 9,
                 balance     : 200 - 100
             }
@@ -45,7 +45,7 @@ var users = [
                 price       : 2500,
                 donation    : 1500,
                 photo       : 'http://pixabay.com/static/uploads/photo/2013/09/18/22/03/moscow-183661_150.jpg',
-                total       : (1500 / 2500 * 100) + '%',
+                total       : (1500 / 2500 * 100).toFixed(1) + '%',
                 peoples     : 23,
                 balance     : 2500 - 1500
             },
@@ -57,7 +57,7 @@ var users = [
                 price       : 200,
                 donation    : 100,
                 photo       : 'http://pixabay.com/static/uploads/photo/2013/09/18/22/03/moscow-183661_150.jpg',
-                total       : (100 / 200 * 100) + '%',
+                total       : (100 / 200 * 100).toFixed(1) + '%',
                 peoples     : 9,
                 balance     : 200 - 100
             },
@@ -69,7 +69,7 @@ var users = [
                 price       : 2500,
                 donation    : 1500,
                 photo       : 'http://pixabay.com/static/uploads/photo/2013/09/18/22/03/moscow-183661_150.jpg',
-                total       : (1500 / 2500 * 100) + '%',
+                total       : (1500 / 2500 * 100).toFixed(1) + '%',
                 peoples     : 23,
                 balance     : 2500 - 1500
             },
@@ -81,7 +81,7 @@ var users = [
                 price       : 200,
                 donation    : 100,
                 photo       : 'http://pixabay.com/static/uploads/photo/2013/09/18/22/03/moscow-183661_150.jpg',
-                total       : (100 / 200 * 100) + '%',
+                total       : (100 / 200 * 100).toFixed(1) + '%',
                 peoples     : 9,
                 balance     : 200 - 100
             }
@@ -107,7 +107,7 @@ var users = [
                 price       : 2500,
                 donation    : 1500,
                 photo       : 'http://pixabay.com/static/uploads/photo/2013/09/18/22/03/moscow-183661_150.jpg',
-                total       : (1500 / 2500 * 100) + '%',
+                total       : (1500 / 2500 * 100).toFixed(1) + '%',
                 peoples     : 23,
                 balance     : 2500 - 1500
             },
@@ -119,7 +119,7 @@ var users = [
                 price       : 200,
                 donation    : 100,
                 photo       : 'http://pixabay.com/static/uploads/photo/2013/09/18/22/03/moscow-183661_150.jpg',
-                total       : (100 / 200 * 100) + '%',
+                total       : (100 / 200 * 100).toFixed(1) + '%',
                 peoples     : 9,
                 balance     : 200 - 100
             },
@@ -132,7 +132,7 @@ var users = [
                 donation       : 134,
                 donation_class : 'error-bg',
                 photo          : 'http://pixabay.com/static/uploads/photo/2013/09/18/22/03/moscow-183661_150.jpg',
-                total          : (134 / 500 * 100) + '%',
+                total          : (134 / 500 * 100).toFixed(1) + '%',
                 peoples        : 234,
                 balance        : 500 - 134
             },
@@ -144,7 +144,7 @@ var users = [
                 price       : 200,
                 donation    : 187,
                 photo       : 'http://pixabay.com/static/uploads/photo/2013/09/18/22/03/moscow-183661_150.jpg',
-                total       : (187 / 200 * 100) + '%',
+                total       : (187 / 200 * 100).toFixed(1) + '%',
                 peoples     : 9,
                 balance     : 200 - 187
             }

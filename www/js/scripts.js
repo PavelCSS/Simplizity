@@ -24,8 +24,8 @@ $(document)
         parseTemplate('_wish-item.htm', current_user.currentWish, false);
     })
     .on('singleTap', '#donate-btn', function(){
-        window.location.hash = 'donate-' + current_user.currentWish.id;
-        parseTemplate('_donate.htm', {
+        window.location.hash = 'contribute-' + current_user.currentWish.id;
+        parseTemplate('_contribute.htm', {
             user : current_user.userData,
             wish : current_user.currentWish
         }, false)
@@ -33,13 +33,18 @@ $(document)
     .on('singleTap', '.back-btn', goBack)
     .on('singleTap', '#quick-pick', function(){
         addPhoto(0, 1, function(url){
-            pagesList.quickPick(url);
+            pagesList.add_wish(url);
+        });
+    })
+    .on('singleTap', '#wish-preview', function(){
+        addPhoto(0, 1, function(url){
+            $('#wish-preview img').attr('src', url);
         });
     }).on('submit', '#donate-form', function(){
         event.preventDefault();
         var newDonation = current_user.currentWish.donation + parseInt($(this).find('.dial').val().replace('$', ''));
         users[current_user['userIndex']].wish_list[current_user['wishIndex']].donation = newDonation;
-        users[current_user['userIndex']].wish_list[current_user['wishIndex']].total = newDonation / current_user.currentWish.price * 100 + '%';
+        users[current_user['userIndex']].wish_list[current_user['wishIndex']].total = (newDonation / current_user.currentWish.price * 100).toFixed(1) + '%';
         users[current_user['userIndex']].wish_list[current_user['wishIndex']].balance = current_user.currentWish.price - newDonation;
         goBack();
     });

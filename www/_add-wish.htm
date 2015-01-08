@@ -1,14 +1,20 @@
 <main id="{{page-name}}" class="gray-darker-bg">
-    <article class="white-bg wish-preview responsive-image _16x9">
+    <header class="fixed fade">
+        <button class="back-btn btn pl0em icon-arrow-left6 fl-left">Back</button>
+        <a class="btn icon icon-logout fl-right" href="#login">Logout</a>
+    </header>
+
+    <article id="wish-preview" class="wish-preview responsive-image _16x9 icon-camera">
         <img class="mb0-25em" src="{{wish_image}}">
     </article>
+
     <form class="p10px" action="#profile">
         <p class="_grid_7">
-            <label class="text-bold larger">What is it?</label>
-            <input class="white" name="wish title" type="text" required>
+            <label class="text-bold larger required">What is it?</label>
+            <input class="white" name="wish title" type="text" value="" required>
         </p>
         <p class="_grid_5">
-            <label class="text-bold larger">Price</label>
+            <label class="text-bold larger required">Price</label>
             <input class="white" name="price" type="number" required>
         </p>
         <p class="_grid_12">
