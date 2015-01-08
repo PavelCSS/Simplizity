@@ -88,3 +88,24 @@ canvas{
 .friend-info{
     margin-top : -40px !important;
 }
+
+.wish-preview{
+
+    &:before{
+        position  : absolute;
+        left      : 0;
+        top       : 0;
+        bottom    : 0;
+        right     : 0;
+        z-index   : 0;
+        margin    : auto;
+        width     : 1em;
+        height    : 1em;
+        font-size : 7em;
+        color     : @gray-dark;
+    }
+
+    img{
+        z-index : 1;
+    }
+}

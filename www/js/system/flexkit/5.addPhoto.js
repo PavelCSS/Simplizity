@@ -26,5 +26,5 @@ function onSuccessImage(imageData){
 
 function onFailImage(message){
     hideLoading();
-    alert('Failed because: '+message);
+    console.log('Failed because: '+message);
 }

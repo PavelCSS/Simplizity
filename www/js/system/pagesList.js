@@ -26,17 +26,11 @@ var pagesList = {
             users      : users
         }, false)
     },
-    'quickPick'  : function(url){
+    'add_wish'       : function(url){
         parseTemplate('_add-wish.htm', {
-            page_name  : 'quick-pick',
-            page_title : 'Take photo',
-            wish_image : url
-        }, false)
-    },
-    'news'       : function(){
-        parseTemplate('_news.htm', {
-            page_name  : 'news',
-            page_title : 'News'
+            page_name  : 'Add wish',
+            page_title : 'Add wish',
+            wish_image : url || ''
         }, false)
     }
 }
