@@ -14,7 +14,6 @@ $(document)
     .on('singleTap', '.user-list .user-item', function(){
         var userId = $(this).index();
         window.location.hash = 'user-' + userId;
-        console.log(users[userId]);
         pagesList['profile']({
             user      : false,
             page_name  : 'user-' + userId,
@@ -38,7 +37,6 @@ function goBack(){
 
 function openPage(){
     //    event.preventDefault();
-    switchMenu = false;
     var pageName = window.location.hash.replace('#', '');
 
     pageName = (!pageName && (localStorage.getItem("login") === 'true')) ? 'home' : pageName;
