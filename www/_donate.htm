@@ -1,0 +1,48 @@
+<main id="donate" class="gray-darker-bg flexbox">
+    <header class="large fade">
+        <button class="back-btn btn pl0em icon-arrow-left6 fl-left">Back</button>
+        You are donating to {{user.name}}
+        <img src="{{user.photo}}" alt="{{user.name}}" width="35" height="35"/>
+    </header>
+    <article class="flex-size_1 gray-darker-bg p0px">
+        <div class="white-bg gray clearfix p5px pt0-75em pb0-75em">
+            <div class="wish-photo _grid_5 _alpha">
+                <img src="{{wish.photo}}" alt="{{wish.title}}" width="150" height="100"/>
+                <span class="wish-price large">{{wish.unit}}{{wish.price}}</span>
+            </div>
+            <div class="_grid_7 _omega">
+                <h4 class="wish-title">{{wish.title}}</h4>
+                <p class="mini m0px">{{wish.description}}</p>
+            </div>
+        </div>
+
+        <form id="donate-form" class="p10px text-center">
+            <label class="large mb1em"><input type="checkbox"/> Yes, I want to Donate for this item</label>
+            <input class="dial" type="text" value="25"
+                    data-width="250"
+                    data-height="200"
+                    data-max="{{wish.balance}}"
+                    data-inputcolor="#20be52"
+                    data-fgColor="#20be52"
+                    data-bgColor="#eee"
+                    data-angleOffset="-125"
+                    data-angleArc="250"
+                    data-inputprefix="{{wish.unit}}">
+            <span id="balance" class="block text-center fs32 gray"
+                  style="margin-top: -50px;"
+                  data-value="{{wish.balance}}"
+                  data-unit="{{wish.unit}}">{{wish.unit}}{{wish.balance}}</span>
+            <button class="btn success large br0-5em outline-bg mt2em">Donate</button>
+        </form>
+    </article>
+
+    <script>
+        var balanceVal = $('#balance').data('value') * 1;
+        var balanceUnit = $('#balance').data('unit');
+        $(".dial").knob({
+            'change' : function (v) {
+                $('#balance').text(balanceUnit + (balanceVal - Math.round(v)));
+            }
+        });
+    </script>
+</main>
