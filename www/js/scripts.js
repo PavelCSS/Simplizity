@@ -34,12 +34,17 @@ $(document)
     })
     .on('singleTap', '.back-btn', goBack)
     .on('singleTap', '#quick-pick', function(){
-        addPhoto(0, 1, function(url){
-            pagesList.add_wish(url);
+        pagesList.add_wish();
+        addPhoto(1, 1, function(url){
+            var img = document.createElement('img');
+            img.src = url;
+            document.getElementById('wish-preview').appendChild(img);
+        }, function(){
+            window.location.hash = 'home';
         });
     })
     .on('singleTap', '#wish-preview', function(){
-        addPhoto(0, 1, function(url){
+        addPhoto(1, 1, function(url){
             var img = document.createElement('img');
             img.src = url;
             document.getElementById('wish-preview').appendChild(img);
