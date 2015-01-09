@@ -7,7 +7,7 @@
         {{/user}}
     </header>
 
-    <div class="gray-darker-bg gray-light mtH text-center clearfix">
+    <div class="gray-darker-bg gray-lighter mtH text-center clearfix">
         {{#user}}
         <h4 class="inherit">{{page_title}}</h4>
         {{/user}}
@@ -37,6 +37,7 @@
         </ul>
         {{/user}}
         {{^user}}
+        {{#userData.contact}}
         <ul class="_column_2 bottom white friend-info m0px p0px">
             <li class="icon-bg bg-icon9em icon-birthday-cake">
                 <div class="content large">
@@ -50,10 +51,16 @@
                 </div>
             </li>
         </ul>
+        {{/userData.contact}}
+        {{^userData.contact}}
+            <h4 class="large inherit">{{userData.name}} is not a SIM user yet</h4>
+            <p class="fs32"><i class="icon-phone2"></i> {{userData.phone}}</p>
+        {{/userData.contact}}
         {{/user}}
     </div>
 
     <article class="p0px">
+        {{#user}}
         <ul class="wish-list list-unstyled m0px">
             {{#userData.wish_list}}
             <li class="wish-item" data-id="{{id}}">
@@ -88,6 +95,51 @@
             </li>
             {{/userData.wish_list}}
         </ul>
+        {{/user}}
+        {{^user}}
+        {{#userData.contact}}
+        <ul class="wish-list list-unstyled m0px">
+            {{#userData.wish_list}}
+            <li class="wish-item" data-id="{{id}}">
+                <div class="fl-right ml1em _grid_6 _alpha _omega">
+                    <h4 class="wish-title">{{title}}</h4>
+                    <div class="donnation-info {{donation_class}} {{^donation_class}}primary-bg{{/donation_class}} wrap p5px large br0-5em">
+                        <i class="icon-man fs48 fl-left lh-small" style="margin-left: -10px"></i>
+                        <div class="fl-left" style="margin-left: -10px">
+                            {{peoples}} <br>
+                            {{total}}
+                        </div>
+                        <div class="wrap fl-right">
+                            <input class="dial" type="text" value="{{donation}}"
+                                    data-width="55"
+                                    data-max="{{price}}"
+                                    data-readOnly="true"
+                                    data-inputcolor="#fff"
+                                    data-fgColor="rgba(255,255,255,.75)"
+                                    data-bgColor="rgba(0,0,0,.1)"
+                                    data-thickness=".1"
+                                    data-inputprefix="{{unit}}"
+                                    data-linecap="linecap">
+                        </div>
+                    </div>
+                </div>
+                <div class="wish-photo wrap {{^user}}left{{/user}}">
+                    <span class="responsive-image _4x3">
+                        <img src="{{photo}}" alt="{{title}}" width="150" height="100"/>
+                    </span>
+                    <span class="wish-price large">{{unit}}{{price}}</span>
+                </div>
+            </li>
+            {{/userData.wish_list}}
+        </ul>
+        {{/userData.contact}}
+        {{^userData.contact}}
+        <div class="text-center p10px clearfix large">
+            <p class="_grid_10 _suffix_1 _prefix_1 mt0-5em">Invite {{userData.name}} to join Simpliziti and share a simlist</p>
+            <button id="invite" class="btn info large">Invite Now</button>
+        </div>
+        {{/userData.contact}}
+        {{/user}}
     </article>
 
     {{#user}}
