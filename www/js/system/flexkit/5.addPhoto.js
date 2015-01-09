@@ -1,7 +1,8 @@
-var typeAdd, callBack;
-function addPhoto(type, source, callback){
+var typeAdd, callBack, errorCallBack;
+function addPhoto(type, source, callback, errorCallback){
     showLoading();
     callBack = (typeof callback == 'function') ? callback : '';
+    errorCallBack = (typeof errorCallback == 'function') ? errorCallback : '';
     typeAdd = type;
     navigator.camera.getPicture(onSuccessImage, onFailImage, {
         quality          : 80,
@@ -9,7 +10,7 @@ function addPhoto(type, source, callback){
         destinationType  : type,
         sourceType       : source,
         mediaType        : 0
-//        saveToPhotoAlbum : true
+        //        saveToPhotoAlbum : true
     });
 }
 
@@ -25,6 +26,7 @@ function onSuccessImage(imageData){
 }
 
 function onFailImage(message){
+    errorCallBack();
     hideLoading();
     console.log('Failed because: '+message);
 }
