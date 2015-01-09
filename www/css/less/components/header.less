@@ -37,15 +37,16 @@ header{
         letter-spacing : 3px;
     }
 
+    /* iOS STYLES */
     .ios & when (@os-ios = true){
-        padding-top : 20px;
-        .box-sizing(content-box);
-        //        border-bottom : 1px solid darken(@brand-primary, 3%);
+        & when (@status-bar = true){
+            padding-top : 20px;
+            .box-sizing(content-box);
+        }
     }
 
     /* ANDROID STYLES */
     .android & when (@os-android = true){
-        //        border-bottom : 2px solid darken(@brand-primary, 3%);
     }
 
     /* WINDOWS PHONE STYLES */
@@ -64,41 +65,41 @@ header{
         margin-top : @header-height * @font-size-larger !important;
     }
 }
-.ios{
-    .mtH{
-        margin-top : @header-height + (20 / @font-size-base) !important;
-    }
-
-    header.large ~ .mtH{
-        margin-top : @header-height * @font-size-large + (20 / @font-size-base) !important;
-    }
-
-    header.larger ~ .mtH{
-        margin-top : @header-height * @font-size-larger + (20 / @font-size-base) !important;
-    }
-}
 
 .ptH{
-    margin-top : @header-height !important;
+    padding-top : @header-height !important;
 
     header.large ~ &{
-        margin-top : @header-height * @font-size-large !important;
+        padding-top : @header-height * @font-size-large !important;
     }
 
     header.larger ~ &{
-        margin-top : @header-height * @font-size-larger !important;
+        padding-top : @header-height * @font-size-larger !important;
     }
 }
-.ios{
-    .ptH{
+.ios when (@status-bar = true){
+    .mtH{
         margin-top : @header-height + (20 / @font-size-base) !important;
     }
-
-    header.large ~ .ptH{
-        margin-top : @header-height * @font-size-large + (20 / @font-size-base) !important;
+    .ptH{
+        padding-top : @header-height + (20 / @font-size-base) !important;
     }
 
-    header.larger ~ .ptH{
-        margin-top : @header-height * @font-size-larger + (20 / @font-size-base) !important;
+    header.large{
+        & ~ .mtH{
+            margin-top : @header-height * @font-size-large + (20 / @font-size-base) !important;
+        }
+        & ~ .ptH{
+            padding-top : @header-height * @font-size-large + (20 / @font-size-base) !important;
+        }
+    }
+
+    header.larger{
+        & ~ .mtH{
+            margin-top : @header-height * @font-size-larger + (20 / @font-size-base) !important;
+        }
+        & ~ .ptH{
+            padding-top : @header-height * @font-size-larger + (20 / @font-size-base) !important;
+        }
     }
 }

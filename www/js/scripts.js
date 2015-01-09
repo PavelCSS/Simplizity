@@ -4,11 +4,13 @@ window.addEventListener('hashchange', openPage, false);
 document.addEventListener('backbutton', goBack, false);
 
 function onDeviceReady(){
+    StatusBar.hide();
     $('html').addClass(device.platform.toLowerCase());
     //    FastClick.attach(document.body);
     navigator.splashscreen.hide();
     openPage();
 }
+
 var current_user = {};
 $(document)
     .on('singleTap', '.user-list .user-item', function(){
@@ -28,7 +30,7 @@ $(document)
         parseTemplate('_contribute.htm', {
             user : current_user.userData,
             wish : current_user.currentWish
-        }, false)
+        }, false);
     })
     .on('singleTap', '.back-btn', goBack)
     .on('singleTap', '#quick-pick', function(){
@@ -38,15 +40,23 @@ $(document)
     })
     .on('singleTap', '#wish-preview', function(){
         addPhoto(0, 1, function(url){
-            $('#wish-preview img').attr('src', url);
+            var img = document.createElement('img');
+            img.src = url;
+            document.getElementById('wish-preview').appendChild(img);
         });
-    }).on('submit', '#donate-form', function(){
+    })
+    .on('submit', '#donate-form', function(){
         event.preventDefault();
-        var newDonation = current_user.currentWish.donation + parseInt($(this).find('.dial').val().replace('$', ''));
-        users[current_user['userIndex']].wish_list[current_user['wishIndex']].donation = newDonation;
-        users[current_user['userIndex']].wish_list[current_user['wishIndex']].total = (newDonation / current_user.currentWish.price * 100).toFixed(1) + '%';
-        users[current_user['userIndex']].wish_list[current_user['wishIndex']].balance = current_user.currentWish.price - newDonation;
-        goBack();
+        var donate = parseInt($(this).find('.dial').val().replace('$', ''));
+        var newDonate = current_user.currentWish.donation + donate;
+        users[current_user['userIndex']].wish_list[current_user['wishIndex']].donation = newDonate;
+        users[current_user['userIndex']].wish_list[current_user['wishIndex']].total = (newDonate / current_user.currentWish.price * 100).toFixed(1) + '%';
+        users[current_user['userIndex']].wish_list[current_user['wishIndex']].balance = current_user.currentWish.price - newDonate;
+        parseTemplate('_contribute.htm', {
+            user   : current_user.userData,
+            wish   : current_user.currentWish,
+            donate : donate
+        }, false);
     });
 
 function goUserPage(){

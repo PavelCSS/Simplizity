@@ -4,6 +4,7 @@ var users = [
         name      : 'Michel Leconte',
         photo     : 'http://www.seotoaster.com/media/team/small/michel.jpg',
         contact   : true,
+        phone     : '(123) 456 7890',
         wish_list : [
             {
                 id          : 20,
@@ -32,10 +33,18 @@ var users = [
         ]
     },
     {
-        id        : 2,
-        name      : 'David Culot',
-        photo     : 'http://www.seotoaster.com/media/team/small/david.jpg',
-        contact   : false,
+        id      : 2,
+        name    : 'David Culot',
+        photo   : 'http://www.seotoaster.com/media/team/small/david.jpg',
+        contact : false,
+        phone   : '(123) 456 7890'
+    },
+    {
+        id        : 3,
+        name      : 'Chris',
+        photo     : 'http://www.seotoaster.com/media/team/small/chris.jpg',
+        contact   : true,
+        phone     : '(123) 456 7890',
         wish_list : [
             {
                 id          : 22,
@@ -88,16 +97,11 @@ var users = [
         ]
     },
     {
-        id      : 3,
-        name    : 'Chris',
-        photo   : 'http://www.seotoaster.com/media/team/small/chris.jpg',
-        contact : true
-    },
-    {
         id        : 4,
         name      : 'Anna',
         photo     : 'http://www.seotoaster.com/media/team/small/anna.jpg',
         contact   : true,
+        phone     : '(123) 456 7890',
         wish_list : [
             {
                 id          : 26,
@@ -154,24 +158,78 @@ var users = [
         id      : 5,
         name    : 'Eugene',
         photo   : 'http://www.seotoaster.com/media/team/small/eugene.jpg',
-        contact : false
+        contact : false,
+        phone   : '(123) 456 7890'
     },
     {
-        id      : 6,
-        name    : 'Pavel',
-        photo   : 'http://www.seotoaster.com/media/team/small/pavel-k.jpg',
-        contact : true
+        id        : 6,
+        name      : 'Pavel',
+        photo     : 'http://www.seotoaster.com/media/team/small/pavel-k.jpg',
+        contact   : true,
+        phone     : '(123) 456 7890',
+        wish_list : [
+            {
+                id          : 22,
+                title       : 'Modern design watch',
+                description : 'Hey, Luke! May the Force be with you. Hey, Luke! May the Force be with you.',
+                unit        : '$',
+                price       : 2500,
+                donation    : 1500,
+                photo       : 'http://pixabay.com/static/uploads/photo/2013/09/18/22/03/moscow-183661_150.jpg',
+                total       : (1500 / 2500 * 100).toFixed(1) + '%',
+                peoples     : 23,
+                balance     : 2500 - 1500
+            },
+            {
+                id          : 23,
+                title       : 'Watch',
+                description : 'Hey, Luke! May the Force be with you. Hey, Luke! May the Force be with you.',
+                unit        : '$',
+                price       : 200,
+                donation    : 100,
+                photo       : 'http://pixabay.com/static/uploads/photo/2013/09/18/22/03/moscow-183661_150.jpg',
+                total       : (100 / 200 * 100).toFixed(1) + '%',
+                peoples     : 9,
+                balance     : 200 - 100
+            },
+            {
+                id          : 24,
+                title       : 'Modern design watch',
+                description : 'Hey, Luke! May the Force be with you. Hey, Luke! May the Force be with you.',
+                unit        : '$',
+                price       : 2500,
+                donation    : 1500,
+                photo       : 'http://pixabay.com/static/uploads/photo/2013/09/18/22/03/moscow-183661_150.jpg',
+                total       : (1500 / 2500 * 100).toFixed(1) + '%',
+                peoples     : 23,
+                balance     : 2500 - 1500
+            },
+            {
+                id          : 25,
+                title       : 'Watch',
+                description : 'Hey, Luke! May the Force be with you. Hey, Luke! May the Force be with you.',
+                unit        : '$',
+                price       : 200,
+                donation    : 100,
+                photo       : 'http://pixabay.com/static/uploads/photo/2013/09/18/22/03/moscow-183661_150.jpg',
+                total       : (100 / 200 * 100).toFixed(1) + '%',
+                peoples     : 9,
+                balance     : 200 - 100
+            }
+        ]
     },
     {
         id      : 7,
         name    : 'Dasha',
         photo   : 'http://www.seotoaster.com/media/team/small/dasha.jpg',
-        contact : false
+        contact : false,
+        phone   : '(123) 456 7890'
     },
     {
         id      : 8,
         name    : 'Anastacia',
         photo   : 'http://www.seotoaster.com/media/team/small/anastacia.jpg',
-        contact : false
+        contact : false,
+        phone   : '(123) 456 7890'
     }
 ]

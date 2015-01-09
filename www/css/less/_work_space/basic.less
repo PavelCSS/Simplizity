@@ -75,9 +75,15 @@ aside{
 .dial{
 }
 
-#donate{
+#donate-form{
     .dial{
         top : 50px !important;
+    }
+}
+#donated{
+    canvas{
+        background: @brand-success;
+        .border-radius(10em);
     }
 }
 
@@ -107,5 +113,9 @@ canvas{
 
     img{
         z-index : 1;
+
+        [src=""]{
+            display : none;
+        }
     }
 }
