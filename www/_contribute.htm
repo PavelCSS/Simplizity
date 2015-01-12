@@ -1,10 +1,16 @@
-<main id="donate" class="gray-darker-bg">
-    <header class="large fixed inherit">
+<main id="donate" class="gray-darker-bg {{#donate}}flexbox-column{{/donate}}">
+    <header class="large {{^donate}}fixed{{/donate}} inherit">
+        {{^donate}}
         <button class="back-btn btn pl0em icon-arrow-left6 fl-left">
-            <span class="mini">You are contributing to {{user.name}}</span>
+            You are contributing to {{user.name}}
         </button>
+        {{/donate}}
+        {{#donate}}
+        <button class="back-btn btn pl0em icon-arrow-left6 fl-left">Back</button>
+        {{/donate}}
     </header>
 
+    {{^donate}}
     <div class="white-bg gray clearfix p5px pt0-75em  pb0-75em mtH hidden">
         <div class="wish-photo _grid_5 _alpha">
             <img src="{{wish.photo}}" alt="{{wish.title}}" width="150" height="100"/>
@@ -15,8 +21,9 @@
             <p class="mini m0px">{{wish.description}}</p>
         </div>
     </div>
+    {{/donate}}
 
-    <article class="p0px mb2-75em mtH">
+    <article class="p0px {{^donate}}mb2-75em mtH{{/donate}} {{#donate}}flex-size_1 flexbox-column{{/donate}}">
 
         {{^donate}}
         <form id="donate-form" class="p10px text-center">
@@ -28,7 +35,7 @@
                     data-inputcolor="#20be52"
                     data-fgColor="#20be52"
                     data-bgColor="#eee"
-                    data-angleOffset="-125"
+                    data-angleOffset="235"
                     data-angleArc="250"
                     data-inputprefix="{{wish.unit}}">
             <span id="balance" class="block text-center fs32 gray"
@@ -45,17 +52,19 @@
         </form>
         {{/donate}}
         {{#donate}}
-        <div id="donated" class="p10px text-center">
+        <div id="donated" class="p10px text-center flex-size_1 flexbox-column">
             <h2 class="inherit">You just sent money to {{user.name}}!</h2>
-            <input class="dial" type="text" value="{{donate}}"
-                    data-readOnly="true"
-                    data-width="200"
-                    data-max="{{donate}}"
-                    data-inputcolor="#fff"
-                    data-fgColor="#eee"
-                    data-bgColor="#eee"
-                    data-thickness=".2"
-                    data-inputprefix="{{wish.unit}}">
+            <div class="flex-size_1 flexbox flex-item-align-center">
+                <input class="dial" type="text" value="{{donate}}"
+                        data-readOnly="true"
+                        data-width="200"
+                        data-max="{{donate}}"
+                        data-inputcolor="#fff"
+                        data-fgColor="#eee"
+                        data-bgColor="#eee"
+                        data-thickness=".2"
+                        data-inputprefix="{{wish.unit}}">
+            </div>
         </div>
         {{/donate}}
     </article>
