@@ -13,6 +13,9 @@ function onDeviceReady(){
 
 var current_user = {};
 $(document)
+    .on('swipeRight', function(){
+        alert('swipe');
+    })
     .on('tap', '.user-list .user-item', function(){
         var userIndex = $(this).index();
         current_user['userIndex'] = userIndex;
@@ -25,7 +28,8 @@ $(document)
         window.location.hash = 'wish-' + current_user.currentWish.id;
         parseTemplate('_wish-item.htm', current_user.currentWish, false);
     })
-    .on('tap', '#donate-btn', function(){
+    .on('tap', '#donate-btn', function(e){
+        event.stopImmediatePropagation();
         window.location.hash = 'contribute-' + current_user.currentWish.id;
         parseTemplate('_contribute.htm', {
             user : current_user.userData,

@@ -3,13 +3,13 @@ $('.dropdown-btn').each(function(){
     $(menu).addClass('dropdown-menu ' + position).height(height);
 });
 
-$(document).on('singleTap', '.menu-btn',function(e){
+$(document).on('tap', '.menu-btn',function(e){
     event.preventDefault();
     showMenu($(this))
-}).on('singleTap', '.dropdown-btn',function(){
+}).on('tap', '.dropdown-btn',function(){
     event.preventDefault();
     showDropdown($(this))
-}).on('singleTap', '.sub-menu-btn', function(){
+}).on('tap', '.sub-menu-btn', function(){
     event.preventDefault();
     $(this).toggleClass('active').nextAll('ul').toggleClass('open');
 });
