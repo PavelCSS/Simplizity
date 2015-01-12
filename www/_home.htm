@@ -1,19 +1,97 @@
-<main id="{{page_name}}" class="flexbox-column">
+<main id="{{page_name}}" class="flexbox-column wrap">
 
-    <header class="large">
+    <header class="large fixed">
         <!--<button class="back-btn btn icon icon-arrow-left6 fl-left">Back</button>-->
         <a class="btn icon icon-user fl-right" href="#profile">Profile</a>
         <span class="ml1em mr1em">{{page_title}}</span>
     </header>
 
-    <article class="flex-size_1 flexbox-row flex-item-align-center">
-        <div class="flex-size_1 text-center">
-            <i class="icon-dollar2 gray-lighter fs7em lh-small block"></i>
-            <strong class="price primary fs4em">$1200</strong>
+    <article class="p0px scroll ptH pb5em">
+        <div class="gray-lighter-bg p5px" style="border-bottom: 2px solid rgba(0,0,0,.1);">
+            <span class="text-bold text-center fl-right small gray-dark mr0-5em">Some people<br> sent you money</span>
+            <div class="scroll text-overflow">
+                <img onclick="window.location.hash = 'profile'" src="http://www.seotoaster.com/media/team/small/michel.jpg" alt="Michel Leconte" width="45"/>
+                <img onclick="window.location.hash = 'profile'" src="http://www.seotoaster.com/media/team/small/chris.jpg" alt="Chris" width="45"/>
+            </div>
         </div>
+
+        <ul class="list-bordered m0px p5px gray-lighter-bg">
+            <li class="p5px m5px white-bg">
+                <img src="http://pixabay.com/static/uploads/photo/2013/09/18/22/03/moscow-183661_150.jpg"
+                        alt="Modern design watch" width="75"
+                        class="fl-left mr1em"/>
+                <h4 class="text-bold m0px">Modern design watch</h4>
+
+                <div class="wrap error">
+                    <i class="icon-man fs32 fl-left lh-small" style="margin-left: -5px"></i>
+                    <div class="fl-left mt0-25em mr0-5em lh-small" style="margin-left: -5px">
+                        5 <br>
+                        43%
+                    </div>
+                    <div class="wrap primary larger mt0-25em text-bold">
+                        $137 to go
+                    </div>
+                </div>
+            </li>
+            <li class="p5px m5px white-bg">
+                <img src="http://pixabay.com/static/uploads/photo/2013/09/18/22/03/moscow-183661_150.jpg"
+                        alt="Modern design watch" width="75"
+                        class="fl-left mr1em"/>
+                <h4 class="text-bold m0px">Modern design watch</h4>
+
+                <div class="wrap error">
+                    <i class="icon-man fs32 fl-left lh-small" style="margin-left: -5px"></i>
+                    <div class="fl-left mt0-25em mr0-5em lh-small" style="margin-left: -5px">
+                        3 <br>
+                        87%
+                    </div>
+                    <div class="wrap primary larger mt0-25em text-bold">
+                        $22 to go
+                    </div>
+                </div>
+                <ul class="list-unstyled">
+                    <li class="m5px ml1em p5px message primary">
+                        <img onclick="window.location.hash = 'profile'" src="http://www.seotoaster.com/media/team/small/chris.jpg" alt="Chris" width="45"
+                                class="fl-left mr0-5em img-circle"/>
+                        <p class="small m0px">You are a part of the Rebel Alliance and a traitor! Take her away! You don't believe in the Force, do you?</p>
+                    </li>
+                    <li class="m5px ml1em p5px message gray right">
+                        <img onclick="window.location.hash = 'profile'" src="http://www.seotoaster.com/media/team/small/david.jpg" alt="David Culot" width="45"
+                                class="fl-right ml0-5em img-circle"/>
+                        <p class="small m0px">You are a part of the Rebel Alliance and a traitor! Take her away! You don't believe in the Force, do you?</p>
+                    </li>
+                </ul>
+            </li>
+            <li class="p5px m5px white-bg">
+                <img src="http://pixabay.com/static/uploads/photo/2013/09/18/22/03/moscow-183661_150.jpg"
+                        alt="Modern design watch" width="75"
+                        class="fl-left mr1em"/>
+                <h4 class="text-bold m0px">Modern design watch</h4>
+
+                <div class="wrap error">
+                    <i class="icon-man fs32 fl-left lh-small" style="margin-left: -5px"></i>
+                    <div class="fl-left mt0-25em mr0-5em lh-small" style="margin-left: -5px">
+                        3 <br>
+                        87%
+                    </div>
+                    <div class="wrap primary larger mt0-25em text-bold">
+                        $22 to go
+                    </div>
+                </div>
+            </li>
+            <li class="p5px m5px white-bg clearfix">
+                <h4>Some birthdays in your contacts coming soon!</h4>
+                <span class="fl-right text-center small ml0-5em">See their projects<br> and contribute</span>
+                <div class="scroll text-overflow">
+                    <img onclick="window.location.hash = 'profile'" src="http://www.seotoaster.com/media/team/small/michel.jpg" alt="Michel Leconte" width="45"/>
+                    <img onclick="window.location.hash = 'profile'" src="http://www.seotoaster.com/media/team/small/chris.jpg" alt="Chris" width="45"/>
+                    <img onclick="window.location.hash = 'profile'" src="http://www.seotoaster.com/media/team/small/david.jpg" alt="David" width="45"/>
+                </div>
+            </li>
+        </ul>
     </article>
 
-    <footer class="_column_3 one-line margin-none">
+    <footer class="_column_3 one-line margin-none fixed">
         <a class="btn btn-caption small" href="#send-money">
             <i class="icon-dollar fs48 block"></i>
             Send money
