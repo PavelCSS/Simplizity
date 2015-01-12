@@ -29,5 +29,5 @@ var stop = function(e) {
     }, 10);
 };
 
-//$('body').on(events[0], start);
-//$('body').on(events[1], stop);
+$('body').on(events[0], start);
+$('body').on(events[1], stop);
