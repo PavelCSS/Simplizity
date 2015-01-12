@@ -1,114 +1,72 @@
-.mobile-overlay{
-    top        : 0;
-    right      : 0;
-    bottom     : 0;
-    left       : 0;
-    background : transparent;
-
-    &.open{
-        display : block;
-    }
+.mobile-menu{
 }
 
 .menu-btn{
-    padding : 0 @padding-small-horizontal;
-
-    &:before{
-        width : 20px;
-    }
 
     &.left{
         &:before{
-            margin-right : 5px;
+        }
+
+        &.active{
+            &:before{
+            }
         }
     }
 
     &.right{
+
         &:before{
-            margin-left : 5px;
+        }
+
+        &.active{
+            &:before{
+            }
         }
     }
 
     &.active{
-        .rgba(#000, .1);
 
         &:after{
-            content  : '';
-            position : fixed;
-            top      : 0;
-            left     : 0;
-            right    : 0;
-            bottom   : 0;
-            z-index  : @mobile-bar-zindex + 1;
-            .rgba(#000; .5);
         }
 
     }
 }
 
-aside{
-    position : fixed;
-    z-index  : 0;
-
-    &.left, &.right{
-        top    : 0;
-        bottom : 0;
-    }
-
-    &.left{
-        left : 0;
-    }
-
-    &.right{
-        right : 0;
-    }
-
-    &.top, &.bottom{
-        left   : 0;
-        right  : 0;
-        width  : auto;
-        height : auto;
-    }
-
-    &.top{
-        top : 0;
-    }
-
-    &.bottom{
-        bottom : 0;
-    }
-}
-
-section{
+main{
     .transition(all; 0.3s);
     .box-shadow(0 0 15px fade(#000, 90%));
 }
 
-body.menu.open{
-    section{
-        .transition(all; 0.75s);
+body{
+
+    &[data-menu-open]{
+        main{
+            overflow : hidden;
+            .transition(all; 0.75s);
+        }
     }
-    &.left{
-        section, .mobile-overlay{
+
+    &[data-menu-open="left"]{
+        main{
             .transform(translateX(@aside-width));
         }
     }
 
-    &.right{
-        section, .mobile-overlay{
+    &[data-menu-open="right"]{
+        main{
             .transform(translateX(-@aside-width));
         }
     }
 
-    &.top{
-        section, .mobile-overlay{
-            .transform(translateY(@aside-width));
+    &[data-menu-open="top"]{
+        main{
+            .transform(translateY(@aside-height));
         }
     }
 
-    &.bottom{
-        section, .mobile-overlay{
-            .transform(translateY(-@aside-width));
+    &[data-menu-open="bottom"]{
+        main{
+            .transform(translateY(-@aside-height));
         }
     }
 }

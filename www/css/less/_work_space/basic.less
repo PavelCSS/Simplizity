@@ -13,13 +13,16 @@
 //==================================================
 main{
     height          : 100%;
-    background      : @section-bg;
     background-size : cover;
     overflow        : auto;
-    //    -webkit-overflow-scrolling : touch;
+    -webkit-overflow-scrolling : touch;
     position        : relative;
     z-index         : 1;
-    .box-shadow(0 0 10px fade(#000, 50%))
+    .box-shadow(0 0 10px fade(#000, 50%));
+
+    & when not (@main-bg = @body-bg){
+        background : @main-bg;
+    }
 }
 
 //	HEADER Style
@@ -29,28 +32,21 @@ main{
 //	Aricle Style
 //==================================================
 article{
-    position : relative;
-    z-index  : 10;
-    padding  : @padding-base-vertical @padding-base-horizontal @footer-height;
+    width   : 100%;
+    padding : @padding-base-vertical @padding-base-horizontal;
+
+    & when not (@article-bg = @body-bg){
+        background : @article-bg;
+    }
+
+    & when not (@article-color = @text-color){
+        background : @article-color;
+    }
 }
 
 //	FOOTER Style
 //==================================================
-footer{
-    background : @footer-bg;
-    color      : @footer-color;
-
-    &.fixed{
-        position   : fixed;
-        bottom     : 0;
-        left       : 0;
-        right      : 0;
-        z-index    : 100;
-        min-height : @footer-height;
-    }
-
-    .footer-box{ }
-}
+@import "../components/footer";
 
 //	SIDEBAR Style
 //==================================================
@@ -69,7 +65,17 @@ aside{
     }
 
     // -- NAV Style
-    nav{ }
+    nav{
+        a{
+            display       : block;
+            padding       : 0 @padding-base-horizontal;
+            border-bottom : 1px solid rgba(0, 0, 0, .05);
+
+            &.touch{
+                .rgba(#000; .05);
+            }
+        }
+    }
 }
 
 .dial{

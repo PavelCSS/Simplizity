@@ -150,6 +150,15 @@
 .fade{
     background: fade(#000, 25%);
 }
+.fade25{
+    .rgba(#000; .25);
+}
+.fade50{
+    .rgba(#000; .50);
+}
+.fade75{
+    .rgba(#000; .75);
+}
 
 .gray-darker{ color : @gray-darker; }
 .gray-dark{ color : @gray-dark; }
@@ -289,6 +298,9 @@
 
 .flexbox{
     .flexbox();
+}
+.flexbox-column{
+    .flexbox(column);
 }
 .flexbox-row{
     .flexbox(row);

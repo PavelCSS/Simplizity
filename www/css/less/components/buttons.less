@@ -158,13 +158,6 @@
         }
     }
 
-    &.outline when (@button-type-outline = true) and (@button-types = true){
-        & when (@button-border-width = 0) and (@button-border-width < 2){
-            padding-top    : @button-border-outline;
-            padding-bottom : @button-border-outline;
-        }
-    }
-
     &.outline-bg when (@button-type-outline = true) and (@button-types = true){
         & when (@button-border-width = 0) and (@button-border-width < 2){
             border : @button-border-outline solid;
@@ -249,6 +242,10 @@
 
     &.circle{
         .border-radius(10em);
+    }
+
+    &.back-btn{
+        padding-left : 0;
     }
 }
 

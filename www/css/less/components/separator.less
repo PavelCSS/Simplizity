@@ -4,12 +4,8 @@ hr{
     border-top  : @hr-size solid @hr-color;
     line-height : 0;
     margin      : 1em 0;
-    background  : @content-bg;
+    background  : @article-bg;
     color       : @hr-color;
-
-    &.bg-inherit{
-        background : inherit;
-    }
 
     &.small when (unit(@hr-size) > 1){
         border-top-width : 1px;

@@ -1,8 +1,8 @@
-<main id="home">
+<main id="{{page_name}}" class="flexbox flex-item-align-center">
 
-    <article class="mt3em">
-        <h1 class="text-center text-light primary fs64">Simpliziti</h1>
-        <form id="login-forms" class="mt3em" action="#home" onsubmit="localStorage.setItem('login', true);">
+    <article class="pt0em pb0em">
+        <h1 class="text-center text-light primary fs64">{{page_title}}</h1>
+        <form id="login-forms" class="" action="#home" onsubmit="localStorage.setItem('login', true);">
             <p class="input-label">
                 <input id="user-name" type="text" name="user-name" required/>
                 <label for="user-name">User name</label>
@@ -14,12 +14,12 @@
             <button class="btn block" type="submit">SIM LOGIN</button>
         </form>
 
-        <hr class="center mt4em mb2em" title="Login with social account">
+        <hr class="center mt2em mb2em" title="Login with social account">
 
-        <div class="_column_3 full-width text-center">
-            <a class="btn larger gplus icon-gplus" href="#home" onclick="localStorage.setItem('login', true);"></a>
-            <a class="btn larger facebook icon-facebook" href="#home" onclick="localStorage.setItem('login', true);"></a>
-            <a class="btn larger twitter icon-twitter" href="#home" onclick="localStorage.setItem('login', true);"></a>
+        <div class="_column_3 full-width">
+            <a class="btn icon larger gplus icon-gplus" href="#home" onclick="localStorage.setItem('login', true);">gplus</a>
+            <a class="btn icon larger facebook icon-facebook" href="#home" onclick="localStorage.setItem('login', true);">facebook</a>
+            <a class="btn icon larger twitter icon-twitter" href="#home" onclick="localStorage.setItem('login', true);">twitter</a>
         </div>
     </article>
 

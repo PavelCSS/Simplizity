@@ -3,7 +3,6 @@ header{
     line-height : @header-height;
     background  : @header-bg;
     color       : @header-color;
-    text-align  : center;
 
     &.fixed{
         position : fixed;
@@ -17,24 +16,12 @@ header{
         font-size  : inherit;
         color      : inherit;
         background : none;
-        cursor     : pointer;
         outline    : none;
         border     : none;
 
         &.touch, &:active, &.active{
             background : rgba(0, 0, 0, .25);
         }
-    }
-
-    h1{
-        margin         : 0;
-        font-size      : 1.5em;
-        overflow       : hidden;
-        white-space    : nowrap;
-        text-overflow  : ellipsis;
-        font-weight    : normal;
-        color          : inherit;
-        letter-spacing : 3px;
     }
 
     /* iOS STYLES */

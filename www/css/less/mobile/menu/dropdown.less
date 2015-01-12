@@ -4,7 +4,7 @@
 @dropdown-bg                : #fff;
 @dropdown-color             : @text-color;
 @dropdown-width             : 250px;
-@dropdown-margin-vertical   : 10px;
+@dropdown-margin-vertical   : 5px;
 @dropdown-margin-horizontal : 5px;
 
 .dropdown-overlay{
@@ -21,6 +21,7 @@
     max-height : 70%;
     display    : none;
     margin     : 0 !important;
+    padding    : @padding-base-vertical @padding-base-horizontal;
     overflow   : auto;
     .box-shadow(0 2px 10px @gray-dark);
 
@@ -46,12 +47,12 @@
     }
 
     &.top{
-        top    : 0;
+        top    : @dropdown-margin-vertical;
         bottom : auto;
     }
 
     &.bottom{
-        bottom : @bottom-block-height;
+        bottom : @dropdown-margin-vertical;
         top    : auto;
     }
 

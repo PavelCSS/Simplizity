@@ -43,7 +43,7 @@
 // [Grid system]
 //==================================================
 //Width for container
-@grid-container-width : 960px;
+@grid-container-width : 100%;
 
 // Number of columns in the grid system
 @grid-columns         : 12;
@@ -128,7 +128,7 @@
 @text-select-bg           : @primary-bg;
 @text-select-color        : @primary-color;
 
-@section-bg               : @body-bg;
+@main-bg                  : @body-bg;
 
 // variables for Header
 @header-height            : unit(@button-line-height * 2, em);
@@ -136,20 +136,20 @@
 @header-color             : @primary-color;
 
 // variables for Content
-@content-bg               : #FFF;
-@content-color            : @text-color;
+@article-bg               : #FFF;
+@article-color            : @text-color;
 
 // variables for Aside
-@aside-width              : 300px;
-@aside-bg                 : @gray-dark;
-@aside-color              : #fff;
+@aside-width              : 300px; // use for horizontal aside
+@aside-height             : 200px; // use for vertical aside
+@aside-bg                 : #fff;
+@aside-color              : @text-color;
 @aside-link-color         : inherit;
 
 // variables for Footer
-@footer-height            : @button-height-base;
+@footer-height            : unit(@button-line-height * 2, em);
 @footer-bg                : transparent;
 @footer-color             : @text-color;
-@footer-heading-color     : @heading-color;
 
 // variables for Main Menu
 @nav-bg                           : @primary-bg;
@@ -276,8 +276,7 @@
 @button-info-border    : softlight(@brand-info, #000);
 
 // [Forms]
-//======================================
-//============
+//==================================================
 @input-color              : fade(#FFF, 50%);
 
 @input-bg                 : fade(#FFF, 15%);
@@ -364,7 +363,7 @@
 @tabs-nav-li-color-hover   : @tabs-nav-li-color;
 @tabs-nav-li-border-hover  : @tabs-nav-li-border;
 
-@tabs-nav-li-bg-active     : @content-bg;
+@tabs-nav-li-bg-active     : @article-bg;
 @tabs-nav-li-color-active  : @brand-primary;
 @tabs-nav-li-border-active : @brand-primary;
 
