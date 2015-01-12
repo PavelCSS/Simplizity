@@ -13,27 +13,27 @@ function onDeviceReady(){
 
 var current_user = {};
 $(document)
-    .on('singleTap', '.user-list .user-item', function(){
+    .on('tap', '.user-list .user-item', function(){
         var userIndex = $(this).index();
         current_user['userIndex'] = userIndex;
         current_user['userData'] = users[current_user['userIndex']];
         goUserPage();
     })
-    .on('singleTap', '.wish-list .wish-item', function(){
+    .on('tap', '.wish-list .wish-item', function(){
         current_user['wishIndex'] = $(this).index();
         current_user['currentWish'] = users[current_user['userIndex']].wish_list[current_user['wishIndex']];
         window.location.hash = 'wish-' + current_user.currentWish.id;
         parseTemplate('_wish-item.htm', current_user.currentWish, false);
     })
-    .on('singleTap', '#donate-btn', function(){
+    .on('tap', '#donate-btn', function(){
         window.location.hash = 'contribute-' + current_user.currentWish.id;
         parseTemplate('_contribute.htm', {
             user : current_user.userData,
             wish : current_user.currentWish
         }, false);
     })
-    .on('singleTap', '.back-btn', goBack)
-    .on('singleTap', '#quick-pick', function(){
+    .on('tap', '.back-btn', goBack)
+    .on('tap', '#quick-pick', function(){
         pagesList.add_wish();
         addPhoto(1, 1, function(url){
             var img = document.createElement('img');
@@ -43,7 +43,7 @@ $(document)
             window.location.hash = 'home';
         });
     })
-    .on('singleTap', '#wish-preview', function(){
+    .on('tap', '#wish-preview', function(){
         addPhoto(1, 1, function(url){
             var img = document.createElement('img');
             img.src = url;

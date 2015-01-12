@@ -1,6 +1,6 @@
 // Font-face
 //==================================================
-.font-face(@fontname; @fontfile; @fontweight : normal; @fontstyle: normal) {
+.font-face(@fontname; @fontfile; @fontweight : normal; @fontstyle: normal) when (@ie = true) {
     @font-face{
         font-family : "@{fontname}";
         src         : url("@{fontfile}.eot");
@@ -13,12 +13,23 @@
         font-style  : @fontstyle;
     }
 }
+.font-face(@fontname; @fontfile; @fontweight : normal; @fontstyle: normal) when not (@ie = true) {
+    @font-face{
+        font-family : "@{fontname}";
+        src         : url("@{fontfile}.woff") format("woff"),
+                      url("@{fontfile}.ttf") format("truetype");
+        font-weight : @fontweight;
+        font-style  : @fontstyle;
+    }
+}
 
 // Column-grid system
 //==================================================
 .column() when (@column-system = true){
     & when (@responsive = true){
-        .column-list(@prefix: _);
+        & when (@column-global-classes = true){
+            .column-list(@prefix: _);
+        }
         @responsive-size-tablet-over : (@responsive-size-tablet + 1);
         @media only screen and (min-width : @responsive-size-tablet-over){
             .column-list();
@@ -68,8 +79,9 @@
 //==================================================
 .grid() when (@grid-system = true){
     & when (@responsive = true){
-        .grid-list(@prefix: _);
-
+        & when (@grid-global-classes = true){
+            .grid-list(@prefix: _);
+        }
         @responsive-size-tablet-over : (@responsive-size-tablet + 1);
         @media only screen and (min-width : @responsive-size-tablet-over){
             .grid-list();
