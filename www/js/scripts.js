@@ -12,10 +12,7 @@ function onDeviceReady(){
 }
 
 var current_user = {};
-$(document)
-    .on('swipeRight', function(){
-        alert('swipe');
-    })
+$('body')
     .on('tap', '.user-list .user-item', function(){
         var userIndex = $(this).index();
         current_user['userIndex'] = userIndex;
