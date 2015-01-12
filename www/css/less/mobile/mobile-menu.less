@@ -1,0 +1,168 @@
+// Example code for dropdown menu
+// <span class="menu-btn _BUTTON POSITION_" data-menu-position="top|right|left|bottom">_SAMPLE TEXT_</span>
+// _BUTTON POSITION_ - left|right
+
+// Example code for sub main menu
+//{ifpages}
+//  <span class="sub-menu-btn d-hide"></span> - button for sub menu
+//{/ifpages}
+
+@mobile-bar-zindex : 100;
+
+@top-block        : true;
+@top-block-height : unit(@button-line-height * 2, em);
+@top-block-bg     : @primary-bg;
+@top-block-color  : @primary-color;
+
+@bottom-block        : false;
+@bottom-block-height : unit(@button-line-height * 2, em);
+@bottom-block-bg     : @primary-bg;
+@bottom-block-color  : @primary-color;
+
+@menu-height                       : unit(@button-line-height * 2, em);
+
+@menu-bg                           : @aside-bg;
+@menu-color                        : @aside-color;
+
+body{
+    &[data-menu-open]{
+        overflow : hidden;
+    }
+}
+
+.mobile-menu{
+    // reset style for menu
+    float       : none;
+    height      : auto;
+    text-align  : left;
+    margin      : 0 !important;
+    padding     : 0;
+    //style menu mobile
+    width       : 80%;
+    max-width   : 300px;
+    line-height : @menu-height;
+    position    : fixed;
+    z-index     : 0;
+    overflow    : auto;
+    background  : @menu-bg;
+    color       : @menu-color;
+
+    &.left, &.right{
+        top    : 0;
+        bottom : 0;
+    }
+
+    &.left{
+        left : 0;
+    }
+
+    &.right{
+        right : 0;
+    }
+
+    &.top, &.bottom{
+        left      : 0;
+        right     : 0;
+        width     : auto;
+        height    : auto;
+        max-width : none;
+    }
+
+    &.top{
+        top : 0;
+    }
+
+    &.bottom{
+        bottom : 0;
+    }
+}
+
+.menu-btn{
+    cursor         : pointer;
+    background     : transparent;
+    padding        : 0 @padding-base-horizontal;
+//    text-transform : uppercase;
+    .user-select();
+
+    &:before{
+        content    : '';
+        height     : @top-block-height / 2;
+        width      : @top-block-height / 2;
+        margin-top : @top-block-height / 4;
+        .transition();
+        .gradient-vertical(#fff 0%, #fff 20%, transparent 20%, transparent 40%, #fff 40%, #fff 60%, transparent 60%, transparent 80%, #fff 80%, #fff 100%);
+    }
+
+    &.left{
+        float : left;
+
+        &:before{
+            margin-right : @top-block-height / 10;
+            float        : left;
+        }
+    }
+    &.right{
+        float      : right;
+        text-align : right;
+
+        &:before{
+            margin-left : @top-block-height / 10;
+            float       : right;
+        }
+    }
+
+    &.icon{
+        width       : @top-block-height;
+        text-indent : -9999px;
+
+        &:before{
+            margin-right : 0;
+            margin-left  : 0;
+        }
+    }
+
+    &.active{
+
+        &:after{
+            content  : '';
+            position : fixed;
+            top      : 0;
+            left     : 0;
+            right    : 0;
+            bottom   : 0;
+            z-index  : @mobile-bar-zindex + 1;
+            //            .rgba(#000; .5);
+        }
+
+    }
+}
+
+.sub-menu-btn{
+    float      : right;
+    width      : unit(@button-line-height * 2, em);
+    text-align : center;
+    color      : @primary-color;
+    .rgba(#000, .1);
+
+    &:before{
+        content : '';
+        height  : 20px;
+        width   : 20px;
+        .inline-block();
+        .gradient-vertical(#fff 0%, #fff 20%, transparent 20%, transparent 40%, #fff 40%, #fff 60%, transparent 60%, transparent 80%, #fff 80%, #fff 100%);
+    }
+
+    &.touch, &.active{
+        .rgba(#000, .2);
+    }
+}
+
+& when (@mobile-menu-over = true){
+    @import "menu/over";
+}
+& when (@mobile-menu-under = true) and not (@mobile-menu-over = true){
+    @import "menu/under";
+}
+& when (@mobile-dropdown = true){
+    @import "menu/dropdown";
+}

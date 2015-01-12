@@ -1,0 +1,38 @@
+footer{
+    background : @footer-bg;
+    color      : @footer-color;
+
+    &.fixed{
+        position    : fixed;
+        bottom      : 0;
+        left        : 0;
+        right       : 0;
+        z-index     : 100;
+        line-height : @footer-height;
+        min-height  : @footer-height;
+    }
+}
+
+.mbH{
+    margin-bottom : @footer-height !important;
+
+    &_large{
+        margin-bottom : @footer-height * @font-size-large !important;
+    }
+
+    &_larger{
+        margin-bottom : @footer-height * @font-size-larger !important;
+    }
+}
+
+.pbH{
+    padding-bottom : @footer-height !important;
+
+    &_large{
+        padding-bottom : @footer-height * @font-size-large !important;
+    }
+
+    &_larger{
+        padding-bottom : @footer-height * @font-size-larger !important;
+    }
+}
