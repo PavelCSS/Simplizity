@@ -2,8 +2,8 @@
     <header class="fixed large gray-darker-bg">
         <button class="back-btn btn icon-arrow-left6 pl0em fl-left">{{page_title}}</button>
         {{#user}}
-        <!--<button class="dropdown-btn btn icon icon-list5 fl-right" data-menu="#menu">Menu</button>-->
-        <a class="btn icon icon-logout fl-right" href="#login">Logout</a>
+        <button class="dropdown-btn btn icon icon-list5 fl-right" data-menu="#menu">Menu</button>
+        <!--<a class="btn icon icon-logout fl-right" href="#login">Logout</a>-->
         {{/user}}
     </header>
 
@@ -143,14 +143,11 @@
     </article>
 
     {{#user}}
-    <ul id="menu" class="list-bordered dropdown-menu top right mtH">
-        <li class="pl0-25em pr0-25em">
-            <a class="icon-cogs block inherit" href="#settings"> Settings</a>
-        </li>
-        <li class="pl0-25em pr0-25em">
-            <a class="icon-logout block inherit" href="#login"> Logout</a>
-        </li>
-    </ul>
+    <nav id="menu" class="dropdown-menu top right mtH large">
+        <a class="icon-folder-download block pt0-5em pb0-5em inherit" onclick="window.open('https://build.phonegap.com/apps/1248959/download/android', '_system')" href="javascript:;"> Download Android</a>
+        <a class="icon-folder-download block pt0-5em pb0-5em inherit" onclick="window.open('https://build.phonegap.com/apps/1248959/download/ios', '_system')" href="javascript:;"> Download iOS</a>
+        <a class="icon-logout block inherit pt0-5em pb0-5em" href="#login"> Logout</a>
+    </nav>
     {{/user}}
 
     <script>
