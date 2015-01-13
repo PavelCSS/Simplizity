@@ -66,6 +66,26 @@ $('body')
             wish   : current_user.currentWish,
             donate : donate
         }, false);
+    })
+    .on('submit', '#new-wish', function(){
+        event.preventDefault();
+        var newProfile = {
+            wish_list : []
+        };
+        newProfile.wish_list.push({
+            id          : Math.floor((Math.random() * 100) + 1),
+            title       : $(this).find('#wishTitle').val(),
+            description : $(this).find('#wishDescription').val(),
+            unit        : '$',
+            price       : $(this).find('#wishPrice').val(),
+            donation    : 0,
+            photo       : $(this).find('#wishPhoto').val(),
+            total       : '0%',
+            peoples     : 0,
+            balance     : $(this).find('#wishPrice').val()
+        });
+        addLocalStorage('profile', newProfile);
+        window.location.hash = 'profile';
     });
 
 function goUserPage(){
