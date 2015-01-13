@@ -9,8 +9,8 @@ function addPhoto(type, source, callback, errorCallback){
         encodingType    : 0,
         destinationType : type,
         sourceType      : source,
-        allowEdit       : true,
         mediaType       : 0,
+        allowEdit       : true,
         targetWidth     : 500,
         targetHeight    : 500
         //        saveToPhotoAlbum : true

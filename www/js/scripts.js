@@ -35,7 +35,7 @@ $('body')
     })
     .on('tap', '.back-btn', goBack)
     .on('tap', '#quick-pick', function(){
-        addPhoto(0, 1, function(url){
+        addPhoto(1, 1, function(url){
                 window.location.hash = 'add_wish';
 //            var img = document.createElement('img');
 //            img.src = url;
@@ -46,7 +46,7 @@ $('body')
         });
     })
     .on('tap', '#wish-preview', function(){
-        addPhoto(0, 1, function(url){
+        addPhoto(1, 1, function(url){
             var img = document.createElement('img');
             img.src = url;
             document.getElementById('wish-preview').appendChild(img);
