@@ -57,6 +57,7 @@
     <gap:plugin name="org.apache.cordova.splashscreen" />           <!-- https://github.com/apache/cordova-plugin-splashscreen/blob/master/doc/index.md -->
     <gap:plugin name="org.apache.cordova.statusbar" />              <!-- https://github.com/apache/cordova-plugin-statusbar/blob/master/doc/index.md -->
     <!--<gap:plugin name="org.apache.cordova.vibration" />              &lt;!&ndash; https://github.com/apache/cordova-plugin-vibration/blob/master/doc/index.md &ndash;&gt;-->
+    <gap:plugin name="de.appplant.cordova.plugin.local-notification" /> <!-- https://github.com/katzer/cordova-plugin-local-notifications/ -->
 
     <icon src="www/images/icon.png" />
     <icon gap:platform="android" gap:qualifier="ldpi" src="www/images/icon/android/icon-36-ldpi.png" />
