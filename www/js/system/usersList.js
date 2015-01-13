@@ -1,3 +1,23 @@
+var profile = {
+    id        : 1,
+    name      : 'David Culot',
+    photo     : 'http://www.seotoaster.com/media/team/small/david.jpg',
+    contact   : true,
+    phone     : '(123) 456 7890'
+};
+
+addLocalStorage('profile', profile);
+
+function addLocalStorage(objName, obj){
+    if(typeof localStorage[objName] !== 'undefined'){
+        var parseLocalStorage = JSON.parse(localStorage[objName]);
+        var json = $.extend(parseLocalStorage, obj);
+        localStorage[objName] = JSON.stringify(json);
+    }else{
+        localStorage[objName] = JSON.stringify(obj);
+    }
+}
+
 var users = [
     {
         id        : 1,

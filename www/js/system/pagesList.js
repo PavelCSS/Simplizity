@@ -18,7 +18,7 @@ var pagesList = {
                 user       : true,
                 page_name  : 'profile',
                 page_title : 'Profile',
-                userData   : users[1]
+                userData   : JSON.parse(localStorage.profile)
             }
         }
         parseTemplate('_profile.htm', profile, false)
