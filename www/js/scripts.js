@@ -26,7 +26,8 @@ $('body')
         parseTemplate('_wish-item.htm', current_user.currentWish, false);
     })
     .on('tap', '#donate-btn', function(e){
-        event.originalEvent.preventDefault();
+        e.originalEvent.preventDefault();
+        e.originalEvent.stopPropagation();
         window.location.hash = 'contribute-' + current_user.currentWish.id;
         parseTemplate('_contribute.htm', {
             user : current_user.userData,
@@ -36,7 +37,6 @@ $('body')
     .on('tap', '.back-btn', goBack)
     .on('tap', '#quick-pick', function(){
         addPhoto(1, 1, function(url){
-                window.location.hash = 'add_wish';
 //            var img = document.createElement('img');
 //            img.src = url;
             pagesList.add_wish(url);

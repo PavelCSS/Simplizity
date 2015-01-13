@@ -10,9 +10,9 @@ function addPhoto(type, source, callback, errorCallback){
         destinationType : type,
         sourceType      : source,
         mediaType       : 0,
-        allowEdit       : true,
-        targetWidth     : 500,
-        targetHeight    : 500
+        allowEdit       : true
+//        targetWidth     : 500,
+//        targetHeight    : 500
         //        saveToPhotoAlbum : true
     });
 }
