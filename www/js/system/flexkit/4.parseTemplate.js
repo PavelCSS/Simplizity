@@ -1,11 +1,12 @@
 function parseTemplate(tmpl, json, cache, callback){
+    $('body').removeAttr('data-menu-open');
     showLoading();
     json = (typeof json !== 'undefined') ? json : false;
 
     callback = (typeof callback == 'function') ? callback : function(html){
         $('main').replaceWith(html);
     };
-    $.get(tmpl, function(response){
+    readTextFile(tmpl, function(response){
         if(json){
             var html = Mustache.to_html(response, json);
             cache ? pagesCache(json.page_name, html) : '';
@@ -15,6 +16,22 @@ function parseTemplate(tmpl, json, cache, callback){
         }
         hideLoading();
     });
+}
+
+function readTextFile(file, callback){
+    if(typeof callback !== 'function'){
+        return false
+    }
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, false);
+    rawFile.onreadystatechange = function(){
+        if(rawFile.readyState === 4){
+            if(rawFile.status === 200 || rawFile.status == 0){
+                callback(rawFile.responseText);
+            }
+        }
+    }
+    rawFile.send();
 }
 
 function pagesCache(pageName, value){

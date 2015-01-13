@@ -35,20 +35,23 @@ $('body')
     })
     .on('tap', '.back-btn', goBack)
     .on('tap', '#quick-pick', function(){
-        pagesList.add_wish();
-        addPhoto(1, 1, function(url){
-            var img = document.createElement('img');
-            img.src = url;
-            document.getElementById('wish-preview').appendChild(img);
+        addPhoto(0, 1, function(url){
+                window.location.hash = 'add_wish';
+//            var img = document.createElement('img');
+//            img.src = url;
+            pagesList.add_wish(url);
+//            document.getElementById('wish-preview').appendChild(img);
         }, function(){
             window.location.hash = 'home';
         });
     })
     .on('tap', '#wish-preview', function(){
-        addPhoto(1, 1, function(url){
+        addPhoto(0, 1, function(url){
             var img = document.createElement('img');
             img.src = url;
             document.getElementById('wish-preview').appendChild(img);
+        }, function(){
+            hideLoading();
         });
     })
     .on('submit', '#donate-form', function(){

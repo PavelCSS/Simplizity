@@ -1,8 +1,3 @@
-$('.dropdown-btn').each(function(){
-    var menu = $(this).data('menu'), position = $(this).data('menu-position'), height = $(this).data('menu-height');
-    $(menu).addClass('dropdown-menu ' + position).height(height);
-});
-
 $(document).on('tap', '.menu-btn',function(e){
     event.preventDefault();
     showMenu($(this))
@@ -12,6 +7,10 @@ $(document).on('tap', '.menu-btn',function(e){
 }).on('tap', '.sub-menu-btn', function(){
     event.preventDefault();
     $(this).toggleClass('active').nextAll('ul').toggleClass('open');
+}).on('touchmove', '.menu-btn.active, .dropdown-btn.active',function(e){
+    $('.dropdown-menu').removeClass('open');
+    $('body').removeAttr('data-menu-open');
+    $('.menu-btn, .dropdown-btn').removeClass('active');
 });
 
 function showMenu($this){

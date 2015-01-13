@@ -5,11 +5,14 @@ function addPhoto(type, source, callback, errorCallback){
     errorCallBack = (typeof errorCallback == 'function') ? errorCallback : '';
     typeAdd = type;
     navigator.camera.getPicture(onSuccessImage, onFailImage, {
-        quality          : 80,
-        encodingType     : 0,
-        destinationType  : type,
-        sourceType       : source,
-        mediaType        : 0
+        quality         : 80,
+        encodingType    : 0,
+        destinationType : type,
+        sourceType      : source,
+        allowEdit       : true,
+        mediaType       : 0,
+        targetWidth     : 500,
+        targetHeight    : 500
         //        saveToPhotoAlbum : true
     });
 }
@@ -17,7 +20,7 @@ function addPhoto(type, source, callback, errorCallback){
 function onSuccessImage(imageData){
     var url;
     if(!typeAdd){
-        url = "data:image/jpeg;base64,"+imageData;
+        url = "data:image/jpeg;base64," + imageData;
     }else{
         url = imageData;
     }
@@ -28,5 +31,5 @@ function onSuccessImage(imageData){
 function onFailImage(message){
     errorCallBack();
     hideLoading();
-    console.log('Failed because: '+message);
+    console.log('Failed because: ' + message);
 }
