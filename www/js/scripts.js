@@ -4,11 +4,15 @@ window.addEventListener('hashchange', openPage, false);
 document.addEventListener('backbutton', goBack, false);
 
 function onDeviceReady(){
-    StatusBar.hide();
+//    StatusBar.hide();
     $('html').addClass(device.platform.toLowerCase());
     //    FastClick.attach(document.body);
     navigator.splashscreen.hide();
     openPage();
+    window.plugin.notification.local.registerPermission();
+//    window.plugin.notification.local.hasPermission(function (granted) {
+//        alert('Permission has been granted: ' + granted);
+//    });
 }
 
 var current_user = {};
@@ -18,6 +22,11 @@ $('body')
         current_user['userIndex'] = userIndex;
         current_user['userData'] = users[current_user['userIndex']];
         goUserPage();
+
+        window.plugin.notification.local.add({
+            title:   'Reminder',
+            message: 'Dont forget to buy some flowers.'
+        });
     })
     .on('tap', '.wish-list .wish-item', function(){
         current_user['wishIndex'] = $(this).index();
