@@ -1,23 +1,3 @@
-var profile = {
-    id        : 1,
-    name      : 'David Culot',
-    photo     : 'http://www.seotoaster.com/media/team/small/david.jpg',
-    contact   : true,
-    phone     : '(123) 456 7890'
-};
-
-addLocalStorage('profile', profile);
-
-function addLocalStorage(objName, obj){
-    if(typeof localStorage[objName] !== 'undefined'){
-        var parseLocalStorage = JSON.parse(localStorage[objName]);
-        var json = $.extend(parseLocalStorage, obj);
-        localStorage[objName] = JSON.stringify(json);
-    }else{
-        localStorage[objName] = JSON.stringify(obj);
-    }
-}
-
 var users = [
     {
         id        : 1,
@@ -53,11 +33,12 @@ var users = [
         ]
     },
     {
-        id      : 2,
-        name    : 'David Culot',
-        photo   : 'http://www.seotoaster.com/media/team/small/david.jpg',
-        contact : false,
-        phone   : '(123) 456 7890'
+        id        : 2,
+        name      : 'David Culot',
+        photo     : 'http://www.seotoaster.com/media/team/small/david.jpg',
+        contact   : true,
+        phone     : '(123) 456 7890',
+        wish_list : typeof localStorage.wishList !== 'undefined' ? JSON.parse(localStorage.wishList) : ''
     },
     {
         id        : 3,
@@ -252,4 +233,18 @@ var users = [
         contact : false,
         phone   : '(123) 456 7890'
     }
-]
+];
+
+//if(typeof localStorage.wishList === 'undefined'){
+//    localStorage.wishList = JSON.stringify(users[1]);
+//}
+
+function addLocalStorage(objName, obj){
+    if(typeof localStorage[objName] !== 'undefined'){
+        var parseLocalStorage = JSON.parse(localStorage[objName]);
+        var json = $.extend(parseLocalStorage, obj);
+        localStorage[objName] = JSON.stringify(json);
+    }else{
+        localStorage[objName] = JSON.stringify(obj);
+    }
+}
