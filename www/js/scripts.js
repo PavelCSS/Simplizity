@@ -69,10 +69,8 @@ $('body')
     })
     .on('submit', '#new-wish', function(){
         event.preventDefault();
-        var newProfile = {
-            wish_list : []
-        };
-        newProfile.wish_list.push({
+        var newWishList = typeof localStorage.wishList !== 'undefined' ? JSON.parse(localStorage.wishList) : [];
+        newWishList.push({
             id          : Math.floor((Math.random() * 100) + 1),
             title       : $(this).find('#wishTitle').val(),
             description : $(this).find('#wishDescription').val(),
@@ -84,7 +82,8 @@ $('body')
             peoples     : 0,
             balance     : $(this).find('#wishPrice').val()
         });
-        addLocalStorage('profile', newProfile);
+        users[1].wish_list = newWishList;
+        localStorage.wishList = JSON.stringify(newWishList);
         window.location.hash = 'profile';
     });
 
