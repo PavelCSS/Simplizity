@@ -9,7 +9,8 @@ var pagesList = {
     'home'       : function(){
         parseTemplate('_home.htm', {
             page_name  : 'home',
-            page_title : app_name
+            page_title : app_name,
+            users      : users
         }, false)
     },
     'profile'    : function(profile){
