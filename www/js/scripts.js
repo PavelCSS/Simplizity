@@ -1,18 +1,19 @@
 document.addEventListener('deviceready', onDeviceReady, false);
+document.addEventListener('pause', onDevicePause, false);
 //window.addEventListener('load', onDeviceReady, false);
 window.addEventListener('hashchange', openPage, false);
 document.addEventListener('backbutton', goBack, false);
 
 function onDeviceReady(){
-//    StatusBar.hide();
+    StatusBar.hide();
     $('html').addClass(device.platform.toLowerCase());
     //    FastClick.attach(document.body);
     navigator.splashscreen.hide();
     openPage();
     window.plugin.notification.local.registerPermission();
-//    window.plugin.notification.local.hasPermission(function (granted) {
-//        alert('Permission has been granted: ' + granted);
-//    });
+}
+
+function onDevicePause(){
 }
 
 var current_user = {};
@@ -22,17 +23,12 @@ $('body')
         current_user['userIndex'] = userIndex;
         current_user['userData'] = users[current_user['userIndex']];
         goUserPage();
-
-        window.plugin.notification.local.add({
-            title:   'Reminder',
-            message: 'Dont forget to buy some flowers.'
-        });
     })
-    .on('tap', '.wish-list .wish-item', function(){
-        current_user['wishIndex'] = $(this).index();
-        current_user['currentWish'] = users[current_user['userIndex']].wish_list[current_user['wishIndex']];
-        window.location.hash = 'wish-' + current_user.currentWish.id;
-        parseTemplate('_wish-item.htm', current_user.currentWish, false);
+    .on('tap', '.wish-item', function(){
+        var userId = $(this).data('user-id');
+        var wishId = $(this).data('wish-id');
+        window.location.hash = 'wish-' + getUser(userId, wishId).wish.id;
+        parseTemplate('_wish-item.htm', getUser(userId, wishId).wish, false);
     })
     .on('tap', '#donate-btn', function(e){
         e.originalEvent.preventDefault();
@@ -48,8 +44,8 @@ $('body')
         addPhoto(1, 1, function(url){
 //            var img = document.createElement('img');
 //            img.src = url;
-            pagesList.add_wish(url);
 //            document.getElementById('wish-preview').appendChild(img);
+            pagesList.add_wish(url);
         }, function(){
             window.location.hash = 'home';
         });
@@ -75,6 +71,11 @@ $('body')
             wish   : current_user.currentWish,
             donate : donate
         }, false);
+
+        window.plugin.notification.local.add({
+            title   : 'User name',
+            message : $(this).find('#message').val()
+        });
     })
     .on('submit', '#new-wish', function(){
         event.preventDefault();
@@ -96,6 +97,26 @@ $('body')
         window.location.hash = 'profile';
     });
 
+function getUser(userId, wishId){
+    var userCurrent = {}
+    wishId = typeof wishId === 'undefined' ? false : wishId;
+    for(i = 0; i < users.length; i++){
+        if(users[i].id == userId){
+            if(wishId){
+                for(j = 0; j < users[i].wish_list.length; j++){
+                    if(users[i].wish_list[j].id == wishId){
+                        userCurrent['user'] = users[i];
+                        userCurrent['wish'] = users[i].wish_list[j];
+                        return userCurrent;
+                    }
+                }
+            }else{
+                userCurrent['user'] = users[i];
+                return userCurrent;
+            }
+        }
+    }
+}
 function goUserPage(){
     window.location.hash = 'user-' + current_user.userData.id;
     pagesList['profile']({
