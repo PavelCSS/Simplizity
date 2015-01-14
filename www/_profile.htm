@@ -21,11 +21,7 @@
         </div>
         {{#user}}
         <h2 class="inherit mt0-5em">{{userData.name}}</h2>
-        <ul class="_column_3 m0px p0px">
-            <li>
-                <span class="block larger">12</span>
-                WIW
-            </li>
+        <ul class="_column_2 m0px p0px">
             <li>
                 <span class="block larger">250</span>
                 Connections
@@ -64,8 +60,8 @@
         <ul class="wish-list list-unstyled m0px">
             {{#userData.wish_list}}
             <li class="wish-item" data-id="{{id}}">
+                <h4 class="wish-title">{{title}}</h4>
                 <div class="fl-right ml1em _grid_6 _alpha _omega">
-                    <h4 class="wish-title">{{title}}</h4>
                     <div class="donnation-info {{donation_class}} {{^donation_class}}primary-bg{{/donation_class}} wrap p5px large br0-5em">
                         <i class="icon-man fs48 fl-left lh-small" style="margin-left: -10px"></i>
                         <div class="fl-left" style="margin-left: -10px">
@@ -101,8 +97,8 @@
         <ul class="wish-list list-unstyled m0px">
             {{#userData.wish_list}}
             <li class="wish-item" data-user-id="{{userData.id}}" data-wish-id="{{id}}">
+                <h4 class="wish-title">{{title}}</h4>
                 <div class="fl-right ml1em _grid_6 _alpha _omega">
-                    <h4 class="wish-title">{{title}}</h4>
                     <div class="donnation-info {{donation_class}} {{^donation_class}}primary-bg{{/donation_class}} wrap p5px large br0-5em">
                         <i class="icon-man fs48 fl-left lh-small" style="margin-left: -10px"></i>
                         <div class="fl-left" style="margin-left: -10px">

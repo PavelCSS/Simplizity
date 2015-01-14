@@ -20,69 +20,67 @@
         </div>
 
         <ul class="list-bordered m0px p5px gray-lighter-bg">
-            <li class="p5px m5px white-bg wish" data-user-id="4" data-wish-id="28">
-                <img src="http://pixabay.com/static/uploads/photo/2013/09/18/22/03/moscow-183661_150.jpg"
+            <li class="p5px m5px white-bg wish clearfix" data-user-id="{{users.3.id}}" data-wish-id="{{users.3.wish_list.2.id}}">
+                <img src="{{users.3.wish_list.2.photo}}"
                         alt="Modern design watch" width="75"
                         class="fl-left mr1em"/>
-                <h4 class="text-bold m0px">Modern design watch</h4>
+                <h4 class="text-bold m0px">{{users.3.wish_list.2.title}}</h4>
 
                 <div class="wrap error">
                     <i class="icon-man fs32 fl-left lh-small" style="margin-left: -5px"></i>
                     <div class="fl-left mt0-25em mr0-5em lh-small" style="margin-left: -5px">
-                        5 <br>
-                        43%
+                        {{users.3.wish_list.2.peoples}} <br>
+                        {{users.3.wish_list.2.total}}
                     </div>
                     <div class="wrap primary larger mt0-25em text-bold">
-                        $137 to go
+                        {{users.3.wish_list.2.unit}}{{users.3.wish_list.2.donation}} to go
                     </div>
                 </div>
             </li>
             <li class="p5px m5px white-bg">
-                <div class="wish" data-user-id="4" data-wish-id="28">
-                    <img src="http://pixabay.com/static/uploads/photo/2013/09/18/22/03/moscow-183661_150.jpg"
+                <div class="wish clearfix" data-user-id="{{users.2.id}}" data-wish-id="{{users.2.wish_list.1.id}}">
+                    <img src="{{users.2.wish_list.1.photo}}"
                             alt="Modern design watch" width="75"
                             class="fl-left mr1em"/>
-                    <h4 class="text-bold m0px">Modern design watch</h4>
+                    <h4 class="text-bold m0px">{{users.2.wish_list.1.title}}</h4>
 
                     <div class="wrap error">
                         <i class="icon-man fs32 fl-left lh-small" style="margin-left: -5px"></i>
                         <div class="fl-left mt0-25em mr0-5em lh-small" style="margin-left: -5px">
-                            3 <br>
-                            87%
+                            {{users.2.wish_list.1.peoples}} <br>
+                            {{users.2.wish_list.1.total}}
                         </div>
                         <div class="wrap primary larger mt0-25em text-bold">
-                            $22 to go
+                            {{users.2.wish_list.1.unit}}{{users.2.wish_list.1.donation}} to go
                         </div>
                     </div>
                 </div>
-                <ul class="list-unstyled">
-                    <li class="m5px ml1em p5px message primary">
-                        <img src="http://www.seotoaster.com/media/team/small/chris.jpg" alt="Chris" width="45"
-                             class="fl-left mr0-5em profile"
-                             data-user-id="3"/>
-                        <p class="small m0px">Oh man, thank you so much for the gift I am almost there... I'll send you pictures!</p>
-                    </li>
-                </ul>
             </li>
-            <li class="p5px m5px white-bg wish" data-user-id="4" data-wish-id="28">
-                <img src="http://pixabay.com/static/uploads/photo/2013/09/18/22/03/moscow-183661_150.jpg"
+            <li class="m5px p5px message gray">
+                <img src="http://www.seotoaster.com/media/team/small/chris.jpg" alt="Chris" width="45"
+                        class="fl-left mr0-5em profile"
+                        data-user-id="3"/>
+                <p class="small m0px">Oh man, thank you so much for the gift I am almost there... I'll send you pictures!</p>
+            </li>
+            <li class="p5px m5px white-bg wish clearfix" data-user-id="{{users.3.id}}" data-wish-id="{{users.3.wish_list.1.id}}">
+                <img src="{{users.3.wish_list.1.photo}}"
                         alt="Modern design watch" width="75"
                         class="fl-left mr1em"/>
-                <h4 class="text-bold m0px">Modern design watch</h4>
+                <h4 class="text-bold m0px">{{users.3.wish_list.1.title}}</h4>
 
                 <div class="wrap error">
                     <i class="icon-man fs32 fl-left lh-small" style="margin-left: -5px"></i>
                     <div class="fl-left mt0-25em mr0-5em lh-small" style="margin-left: -5px">
-                        3 <br>
-                        87%
+                        {{users.3.wish_list.1.peoples}} <br>
+                        {{users.3.wish_list.1.total}}
                     </div>
                     <div class="wrap primary larger mt0-25em text-bold">
-                        $22 to go
+                        {{users.3.wish_list.1.unit}}{{users.3.wish_list.1.donation}} to go
                     </div>
                 </div>
             </li>
             <li class="p5px m5px white-bg clearfix">
-                <h4>Some birthdays in your contacts coming soon!</h4>
+                <h4>Some birthdays in your contacts!</h4>
                 <span class="fl-right text-center small ml0-5em">See their projects<br> and contribute</span>
                 <div class="scroll text-overflow">
                     <img class="profile"
