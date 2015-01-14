@@ -18,25 +18,25 @@ function onDevicePause(){
 
 var current_user = {};
 $('body')
-    .on('tap', '.user-list .user-item', function(){
-        var userIndex = $(this).index();
-        current_user['userIndex'] = userIndex;
-        current_user['userData'] = users[current_user['userIndex']];
-        goUserPage();
+    .on('tap', '.user-item, .profile', function(){
+        event.originalEvent.preventDefault();
+        var userId = $(this).data('user-id');
+        window.location.hash = 'user-' + userId;
+        return false;
     })
-    .on('tap', '.wish-item', function(){
+    .on('tap', '.wish-item, .wish', function(){
         var userId = $(this).data('user-id');
         var wishId = $(this).data('wish-id');
-        window.location.hash = 'wish-' + getUser(userId, wishId).wish.id;
-        parseTemplate('_wish-item.htm', getUser(userId, wishId).wish, false);
+        current_user = getUser(userId, wishId);
+        window.location.hash = 'wish-' + current_user.wish.id;
     })
     .on('tap', '#donate-btn', function(e){
         e.originalEvent.preventDefault();
         e.originalEvent.stopPropagation();
-        window.location.hash = 'contribute-' + current_user.currentWish.id;
+        window.location.hash = 'contribute-' + current_user.wish.id;
         parseTemplate('_contribute.htm', {
-            user : current_user.userData,
-            wish : current_user.currentWish
+            user : current_user.user,
+            wish : current_user.wish
         }, false);
     })
     .on('tap', '.back-btn', goBack)
@@ -62,13 +62,13 @@ $('body')
     .on('submit', '#donate-form', function(){
         event.preventDefault();
         var donate = parseInt($(this).find('.dial').val().replace('$', ''));
-        var newDonate = current_user.currentWish.donation + donate;
-        users[current_user['userIndex']].wish_list[current_user['wishIndex']].donation = newDonate;
-        users[current_user['userIndex']].wish_list[current_user['wishIndex']].total = (newDonate / current_user.currentWish.price * 100).toFixed(1) + '%';
-        users[current_user['userIndex']].wish_list[current_user['wishIndex']].balance = current_user.currentWish.price - newDonate;
+        var newDonate = current_user.wish.donation + donate;
+        users[current_user.userIndex].wish_list[current_user.wishIndex].donation = newDonate;
+        users[current_user.userIndex].wish_list[current_user.wishIndex].total = (newDonate / current_user.wish.price * 100).toFixed(1) + '%';
+        users[current_user.userIndex].wish_list[current_user.wishIndex].balance = current_user.wish.price - newDonate;
         parseTemplate('_contribute.htm', {
-            user   : current_user.userData,
-            wish   : current_user.currentWish,
+            user   : current_user.user,
+            wish   : current_user.wish,
             donate : donate
         }, false);
 
@@ -107,24 +107,18 @@ function getUser(userId, wishId){
                     if(users[i].wish_list[j].id == wishId){
                         userCurrent['user'] = users[i];
                         userCurrent['wish'] = users[i].wish_list[j];
+                        userCurrent['userIndex'] = i;
+                        userCurrent['wishIndex'] = j;
                         return userCurrent;
                     }
                 }
             }else{
                 userCurrent['user'] = users[i];
+                userCurrent['userIndex'] = i;
                 return userCurrent;
             }
         }
     }
-}
-function goUserPage(){
-    window.location.hash = 'user-' + current_user.userData.id;
-    pagesList['profile']({
-        user       : false,
-        page_name  : 'user-' + current_user.userData.id,
-        page_title : 'Profile',
-        userData   : current_user.userData
-    });
 }
 
 function goBack(){
@@ -139,10 +133,17 @@ function openPage(){
     var pageName = window.location.hash.replace('#', '');
 
     if(pageName.indexOf("user-") !== -1){
-        goUserPage();
+        pagesList['profile']({
+            user       : false,
+            page_name  : 'user-' + pageName.replace('user-', ''),
+            page_title : 'Profile',
+            userData   : getUser(pageName.replace('user-', '')*1).user
+        });
+        current_user = getUser(pageName.replace('user-', '')*1);
         return false;
-    }else if(pageName.indexOf("wish-") !== -1){
-        parseTemplate('_wish-item.htm', current_user.currentWish, false);
+    }
+    if(pageName.indexOf("wish-") !== -1){
+        parseTemplate('_wish-item.htm', current_user.wish, false);
         return false;
     }
 

@@ -100,7 +100,7 @@
         {{#userData.contact}}
         <ul class="wish-list list-unstyled m0px">
             {{#userData.wish_list}}
-            <li class="wish-item" data-id="{{id}}">
+            <li class="wish-item" data-user-id="{{userData.id}}" data-wish-id="{{id}}">
                 <div class="fl-right ml1em _grid_6 _alpha _omega">
                     <h4 class="wish-title">{{title}}</h4>
                     <div class="donnation-info {{donation_class}} {{^donation_class}}primary-bg{{/donation_class}} wrap p5px large br0-5em">

@@ -10,13 +10,17 @@
         <div class="gray-lighter-bg p5px" style="border-bottom: 2px solid rgba(0,0,0,.1);">
             <span class="text-bold text-center fl-right small gray-dark mr0-5em">Some people<br> sent you money</span>
             <div class="scroll text-overflow">
-                <img onclick="window.location.hash = 'profile'" src="http://www.seotoaster.com/media/team/small/michel.jpg" alt="Michel Leconte" width="45"/>
-                <img onclick="window.location.hash = 'profile'" src="http://www.seotoaster.com/media/team/small/chris.jpg" alt="Chris" width="45"/>
+                <img class="profile"
+                    data-user-id="1"
+                    src="http://www.seotoaster.com/media/team/small/michel.jpg" alt="Michel Leconte" width="45"/>
+                <img class="profile"
+                    data-user-id="3"
+                    onclick="window.location.hash = 'profile'" src="http://www.seotoaster.com/media/team/small/chris.jpg" alt="Chris" width="45"/>
             </div>
         </div>
 
         <ul class="list-bordered m0px p5px gray-lighter-bg">
-            <li class="p5px m5px white-bg wish-item" data-user-id="4" data-wish-id="28">
+            <li class="p5px m5px white-bg wish" data-user-id="4" data-wish-id="28">
                 <img src="http://pixabay.com/static/uploads/photo/2013/09/18/22/03/moscow-183661_150.jpg"
                         alt="Modern design watch" width="75"
                         class="fl-left mr1em"/>
@@ -34,35 +38,33 @@
                 </div>
             </li>
             <li class="p5px m5px white-bg">
-                <img src="http://pixabay.com/static/uploads/photo/2013/09/18/22/03/moscow-183661_150.jpg"
-                        alt="Modern design watch" width="75"
-                        class="fl-left mr1em"/>
-                <h4 class="text-bold m0px">Modern design watch</h4>
+                <div class="wish" data-user-id="4" data-wish-id="28">
+                    <img src="http://pixabay.com/static/uploads/photo/2013/09/18/22/03/moscow-183661_150.jpg"
+                            alt="Modern design watch" width="75"
+                            class="fl-left mr1em"/>
+                    <h4 class="text-bold m0px">Modern design watch</h4>
 
-                <div class="wrap error">
-                    <i class="icon-man fs32 fl-left lh-small" style="margin-left: -5px"></i>
-                    <div class="fl-left mt0-25em mr0-5em lh-small" style="margin-left: -5px">
-                        3 <br>
-                        87%
-                    </div>
-                    <div class="wrap primary larger mt0-25em text-bold">
-                        $22 to go
+                    <div class="wrap error">
+                        <i class="icon-man fs32 fl-left lh-small" style="margin-left: -5px"></i>
+                        <div class="fl-left mt0-25em mr0-5em lh-small" style="margin-left: -5px">
+                            3 <br>
+                            87%
+                        </div>
+                        <div class="wrap primary larger mt0-25em text-bold">
+                            $22 to go
+                        </div>
                     </div>
                 </div>
                 <ul class="list-unstyled">
                     <li class="m5px ml1em p5px message primary">
-                        <img onclick="window.location.hash = 'profile'" src="http://www.seotoaster.com/media/team/small/chris.jpg" alt="Chris" width="45"
-                                class="fl-left mr0-5em img-circle"/>
-                        <p class="small m0px">You are a part of the Rebel Alliance and a traitor! Take her away! You don't believe in the Force, do you?</p>
-                    </li>
-                    <li class="m5px ml1em p5px message gray right">
-                        <img onclick="window.location.hash = 'profile'" src="http://www.seotoaster.com/media/team/small/david.jpg" alt="David Culot" width="45"
-                                class="fl-right ml0-5em img-circle"/>
-                        <p class="small m0px">You are a part of the Rebel Alliance and a traitor! Take her away! You don't believe in the Force, do you?</p>
+                        <img src="http://www.seotoaster.com/media/team/small/chris.jpg" alt="Chris" width="45"
+                             class="fl-left mr0-5em profile"
+                             data-user-id="3"/>
+                        <p class="small m0px">Oh man, thank you so much for the gift I am almost there... I'll send you pictures!</p>
                     </li>
                 </ul>
             </li>
-            <li class="p5px m5px white-bg">
+            <li class="p5px m5px white-bg wish" data-user-id="4" data-wish-id="28">
                 <img src="http://pixabay.com/static/uploads/photo/2013/09/18/22/03/moscow-183661_150.jpg"
                         alt="Modern design watch" width="75"
                         class="fl-left mr1em"/>
@@ -83,9 +85,15 @@
                 <h4>Some birthdays in your contacts coming soon!</h4>
                 <span class="fl-right text-center small ml0-5em">See their projects<br> and contribute</span>
                 <div class="scroll text-overflow">
-                    <img onclick="window.location.hash = 'profile'" src="http://www.seotoaster.com/media/team/small/michel.jpg" alt="Michel Leconte" width="45"/>
-                    <img onclick="window.location.hash = 'profile'" src="http://www.seotoaster.com/media/team/small/chris.jpg" alt="Chris" width="45"/>
-                    <img onclick="window.location.hash = 'profile'" src="http://www.seotoaster.com/media/team/small/david.jpg" alt="David" width="45"/>
+                    <img class="profile"
+                        data-user-id="8"
+                        src="http://www.seotoaster.com/media/team/small/anastacia.jpg" alt="Anastacia" width="45"/>
+                    <img class="profile"
+                        data-user-id="6"
+                        src="http://www.seotoaster.com/media/team/small/pavel-k.jpg" alt="Pavel" width="45"/>
+                    <img class="profile"
+                        data-user-id="4"
+                        src="http://www.seotoaster.com/media/team/small/anna.jpg" alt="Anna" width="45"/>
                 </div>
             </li>
         </ul>
