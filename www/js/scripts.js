@@ -80,7 +80,7 @@ $('body')
     })
     .on('submit', '#new-wish', function(){
         event.preventDefault();
-        var newWishList = typeof localStorage.wishList !== 'undefined' ? wishDavid.push(JSON.parse(localStorage.wishList)) : wishDavid;
+        var newWishList = typeof localStorage.wishList !== 'undefined' ? JSON.parse(localStorage.wishList) : wishDavid;
         newWishList.push({
             id          : Math.floor((Math.random() * 100) + 1),
             title       : $(this).find('#wishTitle').val(),
