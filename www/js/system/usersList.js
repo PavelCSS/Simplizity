@@ -65,7 +65,7 @@ var users = [
         photo   : 'http://www.seotoaster.com/media/team/small/david.jpg',
         contact   : true,
         phone     : '(123) 456 7890',
-        wish_list : typeof localStorage.wishList !== 'undefined' ? wishDavid.push(JSON.parse(localStorage.wishList)) : wishDavid
+        wish_list : typeof localStorage.wishList !== 'undefined' ? JSON.parse(localStorage.wishList) : wishDavid
     },
     {
         id        : 3,

@@ -1,26 +1,24 @@
-<main id="wish-{{id}}" class="gray-darker-bg flexbox-column">
-    <header class="large fixed fade">
+<main id="wish-{{id}}" class="gray-darker-bg">
+    <header class="fixed large fade">
         <button class="back-btn btn pl0em icon-arrow-left6 fl-left">Back</button>
         <a class="btn icon icon-user fl-right" href="#profile">Profile</a>
     </header>
 
-    <div class="flex-size_1 scroll">
-        <div class="wish-photo white-bg left p0px">
-            <img src="{{photo}}" alt="{{title}}"/>
-            <span class="wish-price larger bottom ml0-25em shadow">{{unit}}{{price}}</span>
-        </div>
-
-        <article class="p10px">
-            <h1 class="inherit larger text-center">{{title}}</h1>
-            <p class="gray-light">{{description}}</p>
-        </article>
+    <div class="wish-photo white-bg left p0px">
+        <img src="{{photo}}" alt="{{title}}"/>
+        <span class="wish-price larger bottom ml0-25em shadow">{{unit}}{{price}}</span>
     </div>
+
+    <article class="p10px">
+        <h1 class="inherit larger text-center">{{title}}</h1>
+        <p class="gray-light">{{description}}</p>
+    </article>
 
     <footer class="donate-info large p10px inherit">
         <button id="donate-btn"
                 class="btn success fl-right"
                 data-id="{{id}}">Contribute</button>
-        <div class="wrap">
+        <div class="wrap lh-normal">
             <i class="icon-man fs48 fl-left lh-small" style="margin-left: -10px"></i>
             <div class="fl-left mr0-5em" style="margin-left: -10px">
                 {{peoples}} <br>
