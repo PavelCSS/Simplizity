@@ -116,6 +116,7 @@
                     inputSuffix     : this.$.data('inputsuffix') || '',
                     font            : this.$.data('font') || 'Arial',
                     fontWeight      : this.$.data('font-weight') || 'normal',
+                    fontSizeMax     : this.$.data('fontsize-max') || false,
                     inline          : false,
                     step            : this.$.data('step') || 1,
                     rotation        : this.$.data('rotation'),
@@ -742,6 +743,8 @@
                 2
             );
 
+            var fontSize = ((this.w / s + 2) - (this.w / s * this.o.thickness / this.scale)) >> 0;
+
             this.o.displayInput && this.i.css({
                 'width'              : '98%',
                 'height'             : '1.2em',
@@ -754,7 +757,7 @@
                 'margin'             : 'auto',
                 'border'             : 0,
                 'background'         : 'none',
-                'font'               : this.o.fontWeight + ' ' + (((this.w / s + 2) - (this.w / s * (this.o.thickness / this.scale))) >> 0) + 'px ' + this.o.font,
+                'font'               : this.o.fontWeight + ' ' + (fontSize < this.o.fontSizeMax ? fontSize : this.o.fontSizeMax ) + 'px ' + this.o.font,
                 'text-align'         : 'center',
                 'color'              : this.o.inputColor || this.o.fgColor,
                 'padding'            : '0',

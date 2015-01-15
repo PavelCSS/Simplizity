@@ -1,0 +1,37 @@
+<main id="{{page_name}}">
+    <header class="fixed large gray-darker-bg">
+        <button class="back-btn btn icon-arrow-left6 pl0em fl-left">{{page_title}}</button>
+        <a class="btn icon icon-user fl-right" href="#profile">Profile</a>
+    </header>
+
+    <div class="gray-darker-bg gray-lighter mtH text-center clearfix">
+        <ul class="_column_3 top one-line m0px p0px text-bold wrap">
+            <li class="fs32">
+                <span class="block large">2014</span>
+                <span class="success">$1225</span>
+            </li>
+            <li class="fs32">
+                <span class="block large">2015</span>
+                <span class="success">$125</span>
+            </li>
+            <li class="fs32 lh-small" style="margin-top: -.5em;">
+                <i class="icon-bars gray-dark fs4em" style="bottom: -.2em"></i>
+            </li>
+        </ul>
+    </div>
+
+    <article class="p0px">
+        <ul class="list-unstyled m0px">
+            {{#donations}}
+            <li class="user-item gray-lighter-bg clearfix p5px" data-user-id="{{id}}">
+                <img class="fl-left ml0-5em mr0-5em img-circle" src="{{photo}}" alt="{{name}}" width="50" height="50"/>
+                <span class="fl-right p5px larger success text-bold mt0-25em">{{unit}}{{donation}}</span>
+                <div class="wrap">
+                    <h3 class="m0px text-bold gray">To {{name}}</h3>
+                    {{date}}
+                </div>
+            </li>
+            {{/donations}}
+        </ul>
+    </article>
+</main>

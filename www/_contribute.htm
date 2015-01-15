@@ -28,13 +28,14 @@
         {{^donate}}
         <form id="donate-form" class="p10px text-center">
             <label class="large mb1em"><input type="checkbox"/> Yes, I want to Contribute for this item</label>
-            <input class="dial" type="text" value="25"
+            <input class="dial" type="text" value="0"
                     data-width="250"
                     data-height="200"
                     data-max="{{wish.balance}}"
                     data-inputcolor="#20be52"
                     data-fgColor="#20be52"
                     data-bgColor="#eee"
+                    data-fontSize-max="70"
                     data-angleOffset="-125"
                     data-angleArc="250"
                     data-inputprefix="{{wish.unit}}">
@@ -61,6 +62,7 @@
                         data-max="{{donate}}"
                         data-inputcolor="#fff"
                         data-fgColor="#eee"
+                        data-fontSize-max="70"
                         data-bgColor="#eee"
                         data-thickness=".2"
                         data-inputprefix="{{wish.unit}}">
