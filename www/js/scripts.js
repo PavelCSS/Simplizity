@@ -108,6 +108,10 @@ $('body')
         localStorage.wishList = JSON.stringify(newWishList);
         window.location.hash = 'profile';
     });
+//    .on('focus', 'input, select, textarea', function(e){
+//        $(elt).offset();
+//        console.log(e.target.offsetTop - e.target.scrollTop + e.target.clientTop)
+//    });
 
 function getUser(userId, wishId){
     var userCurrent = {}
@@ -146,7 +150,7 @@ function openPage(){
     //    event.preventDefault();
     var pageName = window.location.hash.replace('#', '');
     if(pageName.indexOf('?') !== -1){
-        pageName = pageName.substr(0, pageName.indexOf('?') + 1);
+        pageName = pageName.substr(0, pageName.indexOf('?') + 1).replace('?', '');
     }
 
     if(pageName === 'user'){
