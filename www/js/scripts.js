@@ -11,17 +11,22 @@ function onDeviceReady(){
     navigator.splashscreen.hide();
     openPage();
     window.plugin.notification.local.registerPermission();
+
+    window.plugin.notification.local.onclick = function (id, state, json) {
+        window.location.hash = 'wish?userId=' + JSON.parse(json).userId + '&wishId=' + JSON.parse(json).wishId;
+    };
 }
 
 function onDevicePause(){
 }
+var fieldPos;
 var current_user = {};
 $('body')
     .on('tap', '.user-item, .profile', function(e){
         e.stopImmediatePropagation();
         event.preventDefault();
         var userId = $(this).data('user-id');
-        window.location.hash = 'user' + '?userId=' + userId;
+        window.location.hash = 'user?userId=' + userId;
         return false;
     })
     .on('tap', '.wish-item, .wish', function(e){
@@ -30,7 +35,7 @@ $('body')
         var userId = $(this).data('user-id');
         var wishId = $(this).data('wish-id');
         current_user = getUser(userId, wishId);
-        window.location.hash = 'wish' + '?userId=' + userId + '&wishId=' + current_user.wish.id;
+        window.location.hash = 'wish?userId=' + userId + '&wishId=' + current_user.wish.id;
     })
     .on('tap', '.contact-list', function(e){
         e.stopImmediatePropagation();
@@ -85,7 +90,11 @@ $('body')
 
         window.plugin.notification.local.add({
             title   : 'New contribute from ' + current_user.user.name + ' ($' + donate + ')',
-            message : $(this).find('#message').val()
+            message : $(this).find('#message').val(),
+            json    : {
+                userId : current_user.user.id,
+                wishId : current_user.wish.id
+            }
         });
     })
     .on('submit', '#new-wish', function(e){
@@ -107,11 +116,14 @@ $('body')
         users[1].wish_list = newWishList;
         localStorage.wishList = JSON.stringify(newWishList);
         window.location.hash = 'profile';
+    })
+    .on('focus', 'input, select, textarea', function(e){
+        fieldPos = $(this).offset().top + $(this).height();
     });
-//    .on('focus', 'input, select, textarea', function(e){
-//        $(elt).offset();
-//        console.log(e.target.offsetTop - e.target.scrollTop + e.target.clientTop)
-//    });
+
+$(window).on('resize', function(e){
+    $('main').scrollTop(fieldPos);
+});
 
 function getUser(userId, wishId){
     var userCurrent = {}
