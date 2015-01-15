@@ -37,5 +37,12 @@ var pagesList = {
             page_title : 'Add wish',
             wish_image : url || ''
         }, false)
+    },
+    'my-donation'   : function(){
+        parseTemplate('_my-contribute.htm', {
+            page_name  : 'my-contribute',
+            page_title : 'My contribute',
+            donations : donationsDavid
+        }, false)
     }
 }

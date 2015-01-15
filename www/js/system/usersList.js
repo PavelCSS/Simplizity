@@ -24,6 +24,48 @@ var wishDavid = [
         balance     : 280 - 100
     }
 ];
+var donationsDavid = [
+    {
+        id       : 1,
+        name     : 'Michel Leconte',
+        photo    : 'http://www.seotoaster.com/media/team/small/michel.jpg',
+        donation : 35,
+        unit     : '$',
+        date     : 'Aug 12 2014'
+    },
+    {
+        id       : 3,
+        name      : 'Chris',
+        photo     : 'http://www.seotoaster.com/media/team/small/chris.jpg',
+        donation : 355,
+        unit     : '$',
+        date     : 'Sep 12 2015'
+    },
+    {
+        id        : 4,
+        name      : 'Anna',
+        photo     : 'http://www.seotoaster.com/media/team/small/anna.jpg',
+        donation : 55,
+        unit     : '$',
+        date     : 'Aug 12 2014'
+    },
+    {
+        id      : 5,
+        name    : 'Eugene',
+        photo   : 'http://www.seotoaster.com/media/team/small/eugene.jpg',
+        donation : 1505,
+        unit     : '$',
+        date     : 'Aug 12 2014'
+    },
+    {
+        id        : 6,
+        name      : 'Pavel',
+        photo     : 'http://www.seotoaster.com/media/team/small/pavel-k.jpg',
+        donation : 5,
+        unit     : '$',
+        date     : 'Aug 12 2015'
+    }
+];
 
 var users = [
     {
@@ -60,9 +102,9 @@ var users = [
         ]
     },
     {
-        id      : 2,
-        name    : 'David Culot',
-        photo   : 'http://www.seotoaster.com/media/team/small/david.jpg',
+        id        : 2,
+        name      : 'David Culot',
+        photo     : 'http://www.seotoaster.com/media/team/small/david.jpg',
         contact   : true,
         phone     : '(123) 456 7890',
         wish_list : typeof localStorage.wishList !== 'undefined' ? JSON.parse(localStorage.wishList) : wishDavid

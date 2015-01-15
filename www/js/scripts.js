@@ -7,7 +7,7 @@ document.addEventListener('backbutton', goBack, false);
 function onDeviceReady(){
     StatusBar.hide();
     $('html').addClass(device.platform.toLowerCase());
-    //    FastClick.attach(document.body);
+//    FastClick.attach(document.body);
     navigator.splashscreen.hide();
     openPage();
     window.plugin.notification.local.registerPermission();
@@ -15,29 +15,38 @@ function onDeviceReady(){
 
 function onDevicePause(){
 }
-
 var current_user = {};
 $('body')
-    .on('tap', '.user-item, .profile', function(){
-        event.originalEvent.preventDefault();
+    .on('tap', '.user-item, .profile', function(e){
+        e.stopImmediatePropagation();
+        event.preventDefault();
         var userId = $(this).data('user-id');
-        window.location.hash = 'user-' + userId;
+        window.location.hash = 'user' + '?userId=' + userId;
         return false;
     })
-    .on('tap', '.wish-item, .wish', function(){
+    .on('tap', '.wish-item, .wish', function(e){
+        e.stopImmediatePropagation();
+        event.preventDefault();
         var userId = $(this).data('user-id');
         var wishId = $(this).data('wish-id');
         current_user = getUser(userId, wishId);
-        window.location.hash = 'wish-' + current_user.wish.id;
+        window.location.hash = 'wish' + '?userId=' + userId + '&wishId=' + current_user.wish.id;
+    })
+    .on('tap', '.contact-list', function(e){
+        e.stopImmediatePropagation();
+        event.preventDefault();
+        window.location.hash = 'send-money';
+    })
+    .on('tap', '.my-dotation', function(e){
+        e.stopImmediatePropagation();
+        event.preventDefault();
+        window.location.hash = 'my-donation';
     })
     .on('tap', '#donate-btn', function(e){
-        e.originalEvent.preventDefault();
-        e.originalEvent.stopPropagation();
-        window.location.hash = 'contribute-' + current_user.wish.id;
-        parseTemplate('_contribute.htm', {
-            user : current_user.user,
-            wish : current_user.wish
-        }, false);
+        e.stopImmediatePropagation();
+        event.preventDefault();
+        window.location.hash = 'contribute';
+        parseTemplate('_contribute.htm', current_user, false);
     })
     .on('tap', '.back-btn', goBack)
     .on('tap', '#quick-pick', function(){
@@ -61,6 +70,7 @@ $('body')
         });
     })
     .on('submit', '#donate-form', function(){
+//        e.stopImmediatePropagation();
         event.preventDefault();
         var donate = parseInt($(this).find('.dial').val().replace('$', ''));
         var newDonate = current_user.wish.donation + donate;
@@ -74,11 +84,12 @@ $('body')
         }, false);
 
         window.plugin.notification.local.add({
-            title   : 'User name',
+            title   : 'New contribute from ' + current_user.user.name + ' ($' + donate + ')',
             message : $(this).find('#message').val()
         });
     })
     .on('submit', '#new-wish', function(){
+        e.stopImmediatePropagation();
         event.preventDefault();
         var newWishList = typeof localStorage.wishList !== 'undefined' ? JSON.parse(localStorage.wishList) : wishDavid;
         newWishList.push({
@@ -110,12 +121,14 @@ function getUser(userId, wishId){
                         userCurrent['wish'] = users[i].wish_list[j];
                         userCurrent['userIndex'] = i;
                         userCurrent['wishIndex'] = j;
+                        current_user = userCurrent;
                         return userCurrent;
                     }
                 }
             }else{
                 userCurrent['user'] = users[i];
                 userCurrent['userIndex'] = i;
+                current_user = userCurrent;
                 return userCurrent;
             }
         }
@@ -132,19 +145,25 @@ function goBack(){
 function openPage(){
     //    event.preventDefault();
     var pageName = window.location.hash.replace('#', '');
+    if(pageName.indexOf('?') !== -1){
+        pageName = pageName.substr(0, pageName.indexOf('?') + 1);
+    }
 
-    if(pageName.indexOf("user-") !== -1){
+    if(pageName.indexOf("user") !== -1){
+        var urlData = getJsonFromUrl();
+        var user = getUser(urlData.userId).user;
         pagesList['profile']({
             user       : false,
-            page_name  : 'user-' + pageName.replace('user-', ''),
+            page_name  : 'user-' + user.id,
             page_title : 'Profile',
-            userData   : getUser(pageName.replace('user-', '')*1).user
+            userData   : user
         });
-        current_user = getUser(pageName.replace('user-', '')*1);
         return false;
     }
-    if(pageName.indexOf("wish-") !== -1){
-        parseTemplate('_wish-item.htm', current_user.wish, false);
+    if(pageName.indexOf("wish") !== -1){
+        var urlData = getJsonFromUrl();
+        var wish = getUser(urlData.userId, urlData.wishId).wish;
+        parseTemplate('_wish-item.htm', wish, false);
         return false;
     }
 
@@ -178,8 +197,18 @@ function hideLoading(){
     $('html').removeClass('loading');
 }
 
+//function getJsonFromUrl() {
+//    var query = location.search.substr(1);
+//    var result = {};
+//    query.split("&").forEach(function(part) {
+//        var item = part.split("=");
+//        result[item[0]] = decodeURIComponent(item[1]);
+//    });
+//    return result;
+//}
 function getJsonFromUrl() {
-    var query = location.search.substr(1);
+    var hash = window.location.hash;
+    var query = hash.substr(hash.indexOf('?') + 1);
     var result = {};
     query.split("&").forEach(function(part) {
         var item = part.split("=");
