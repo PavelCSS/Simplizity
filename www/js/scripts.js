@@ -88,9 +88,9 @@ $('body')
             message : $(this).find('#message').val()
         });
     })
-    .on('submit', '#new-wish', function(){
-        e.stopImmediatePropagation();
+    .on('submit', '#new-wish', function(e){
         event.preventDefault();
+        e.stopImmediatePropagation();
         var newWishList = typeof localStorage.wishList !== 'undefined' ? JSON.parse(localStorage.wishList) : wishDavid;
         newWishList.push({
             id          : Math.floor((Math.random() * 100) + 1),
@@ -149,7 +149,7 @@ function openPage(){
         pageName = pageName.substr(0, pageName.indexOf('?') + 1);
     }
 
-    if(pageName.indexOf("user") !== -1){
+    if(pageName === 'user'){
         var urlData = getJsonFromUrl();
         var user = getUser(urlData.userId).user;
         pagesList['profile']({
@@ -160,7 +160,7 @@ function openPage(){
         });
         return false;
     }
-    if(pageName.indexOf("wish") !== -1){
+    if(pageName === 'wish'){
         var urlData = getJsonFromUrl();
         var wish = getUser(urlData.userId, urlData.wishId).wish;
         parseTemplate('_wish-item.htm', wish, false);
