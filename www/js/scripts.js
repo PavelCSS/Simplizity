@@ -18,9 +18,9 @@ function onDeviceReady(){
 }
 
 function onSuccess(contacts){
-    users = [];
+    users = [profile];
     for(i = 0; i < contacts.length; i++){
-        if(contacts[i].phoneNumbers === null){
+        if(contacts[i].phoneNumbers !== null){
             var newUser = {
                 id             : contacts[i].id,
                 name           : contacts[i].name.formatted,
