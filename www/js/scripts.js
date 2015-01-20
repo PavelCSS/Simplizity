@@ -30,8 +30,8 @@ function onSuccess(contacts){
                 phone          : contacts[i].phoneNumbers[0].value,
                 wish_list      : randomWish()
             }
+            users.push(newUser)
         }
-        users.push(newUser)
     }
 }
 
