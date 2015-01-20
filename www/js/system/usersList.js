@@ -152,17 +152,17 @@ var donationsDavid = [
         date     : 'Aug 12 2015'
     }
 ];
-
+var profile = {
+    id             : 0,
+    name           : 'Dino LAcapra',
+    photo          : 'images/users/Dino LAcapra.jpg',
+    invited        : true,
+    phone          : '(123) 456 7890',
+    wish_list_show : true,
+    wish_list      : typeof localStorage.wishList !== 'undefined' ? JSON.parse(localStorage.wishList) : wishDavid
+};
 var users = [
-    {
-        id             : 0,
-        name           : 'Dino LAcapra',
-        photo          : 'images/users/Dino LAcapra.jpg',
-        invited        : true,
-        phone          : '(123) 456 7890',
-        wish_list_show : true,
-        wish_list      : typeof localStorage.wishList !== 'undefined' ? JSON.parse(localStorage.wishList) : wishDavid
-    },
+    profile,
     {
         id             : Math.floor((Math.random() * 100) + 1),
         name           : 'Alberto Echegaray',
