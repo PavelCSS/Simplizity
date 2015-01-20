@@ -13,16 +13,12 @@
 //==================================================
 main{
     height          : 100%;
+    background      : @main-bg;
     background-size : cover;
     overflow        : auto;
-//    -webkit-overflow-scrolling : touch;
     position        : relative;
     z-index         : 1;
     .box-shadow(0 0 10px fade(#000, 50%));
-
-    & when not (@main-bg = @body-bg){
-        background : @main-bg;
-    }
 }
 
 //	HEADER Style
@@ -35,7 +31,7 @@ article{
     width   : 100%;
     padding : @padding-base-vertical @padding-base-horizontal;
 
-    & when not (@article-bg = @body-bg){
+    & when not (@article-bg = @main-bg) and not (@article-bg = transparent){
         background : @article-bg;
     }
 

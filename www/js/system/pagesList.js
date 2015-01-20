@@ -8,10 +8,12 @@ var pagesList = {
     },
     'home'       : function(){
         parseTemplate('_home.htm', {
-            page_name  : 'home',
-            page_title : app_name,
-            users      : users
-        }, false)
+            page_name     : 'home',
+            page_title    : app_name,
+            user          : users[0],
+            usersSent     : randomUser(),
+            usersBirthday : randomUser()
+        }, false);
     },
     'profile'    : function(profile){
         if(typeof profile === 'undefined'){
@@ -19,8 +21,13 @@ var pagesList = {
                 user       : true,
                 page_name  : 'profile',
                 page_title : 'Profile',
-                userData   : users[1]
-            }
+                userData   : users[0]
+            };
+            parseTemplate('_profile.htm', profile, false, function(html){
+                $('main').replaceWith(html);
+//                eventsList.wish.swipe();
+            });
+            return false;
         }
         parseTemplate('_profile.htm', profile, false)
     },

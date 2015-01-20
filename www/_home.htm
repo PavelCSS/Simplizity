@@ -7,91 +7,54 @@
     </header>
 
     <article class="p0px scroll ptH pb5em">
-        <div class="gray-lighter-bg p5px" style="border-bottom: 2px solid rgba(0,0,0,.1);">
-            <span class="text-bold text-center fl-right small gray-dark mr0-5em">Some people<br> sent you money</span>
-            <div class="scroll text-overflow">
-                <img class="profile"
-                    data-user-id="1"
-                    src="http://www.seotoaster.com/media/team/small/michel.jpg" alt="Michel Leconte" width="45"/>
-                <img class="profile"
-                    data-user-id="3"
-                    onclick="window.location.hash = 'profile'" src="http://www.seotoaster.com/media/team/small/chris.jpg" alt="Chris" width="45"/>
-            </div>
-        </div>
+        <ul class="list-bordered m0px gray-lighter-bg">
+            <li class="p5px m5px" style="border-bottom: 2px solid rgba(0,0,0,.1);">
+                <span class="text-bold text-center fl-right small gray-dark mr0-5em">Some people<br> sent you money</span>
+                <div class="scroll text-overflow">
+                    {{#usersSent}}
+                    <img class="profile"
+                            data-user-id="{{id}}"
+                            src="{{photo}}" alt="{{name}}" width="45"/>
+                    {{/usersSent}}
+                </div>
+            </li>
 
-        <ul class="list-bordered m0px p5px gray-lighter-bg">
-            <li class="p5px m5px white-bg wish clearfix" data-user-id="{{users.3.id}}" data-wish-id="{{users.3.wish_list.2.id}}">
-                <img src="{{users.3.wish_list.2.photo}}"
+            {{#user.wish_list}}
+            <li class="p5px m5px white-bg wish clearfix" data-user-id="{{user.id}}" data-wish-id="{{id}}">
+                <img src="{{photo}}"
                         alt="Modern design watch" width="75"
                         class="fl-left mr1em"/>
-                <h4 class="text-bold m0px">{{users.3.wish_list.2.title}}</h4>
+                <h4 class="text-bold m0px">{{title}}</h4>
 
                 <div class="wrap error">
                     <i class="icon-man fs32 fl-left lh-small" style="margin-left: -5px"></i>
                     <div class="fl-left mt0-25em mr0-5em lh-small" style="margin-left: -5px">
-                        {{users.3.wish_list.2.peoples}} <br>
-                        {{users.3.wish_list.2.total}}
+                        {{peoples}} <br>
+                        {{total}}
                     </div>
                     <div class="wrap primary larger mt0-25em text-bold">
-                        {{users.3.wish_list.2.unit}}{{users.3.wish_list.2.donation}} to go
+                        {{unit}}{{donation}} to go
                     </div>
                 </div>
             </li>
-            <li class="p5px m5px white-bg">
-                <div class="wish clearfix" data-user-id="{{users.2.id}}" data-wish-id="{{users.2.wish_list.1.id}}">
-                    <img src="{{users.2.wish_list.1.photo}}"
-                            alt="Modern design watch" width="75"
-                            class="fl-left mr1em"/>
-                    <h4 class="text-bold m0px">{{users.2.wish_list.1.title}}</h4>
+            {{/user.wish_list}}
 
-                    <div class="wrap error">
-                        <i class="icon-man fs32 fl-left lh-small" style="margin-left: -5px"></i>
-                        <div class="fl-left mt0-25em mr0-5em lh-small" style="margin-left: -5px">
-                            {{users.2.wish_list.1.peoples}} <br>
-                            {{users.2.wish_list.1.total}}
-                        </div>
-                        <div class="wrap primary larger mt0-25em text-bold">
-                            {{users.2.wish_list.1.unit}}{{users.2.wish_list.1.donation}} to go
-                        </div>
-                    </div>
-                </div>
-            </li>
             <li class="m5px p5px message gray">
                 <img src="http://www.seotoaster.com/media/team/small/chris.jpg" alt="Chris" width="45"
                         class="fl-left mr0-5em profile"
                         data-user-id="3"/>
                 <p class="small m0px">Oh man, thank you so much for the gift I am almost there... I'll send you pictures!</p>
             </li>
-            <li class="p5px m5px white-bg wish clearfix" data-user-id="{{users.3.id}}" data-wish-id="{{users.3.wish_list.1.id}}">
-                <img src="{{users.3.wish_list.1.photo}}"
-                        alt="Modern design watch" width="75"
-                        class="fl-left mr1em"/>
-                <h4 class="text-bold m0px">{{users.3.wish_list.1.title}}</h4>
 
-                <div class="wrap error">
-                    <i class="icon-man fs32 fl-left lh-small" style="margin-left: -5px"></i>
-                    <div class="fl-left mt0-25em mr0-5em lh-small" style="margin-left: -5px">
-                        {{users.3.wish_list.1.peoples}} <br>
-                        {{users.3.wish_list.1.total}}
-                    </div>
-                    <div class="wrap primary larger mt0-25em text-bold">
-                        {{users.3.wish_list.1.unit}}{{users.3.wish_list.1.donation}} to go
-                    </div>
-                </div>
-            </li>
             <li class="p5px m5px white-bg clearfix contact-list">
-                <h4>Some birthdays in your contacts!</h4>
+                <h4>Some birthdays coming up!</h4>
                 <span class="fl-right text-center small ml0-5em">See their projects<br> and contribute</span>
                 <div class="scroll text-overflow">
+                    {{#usersBirthday}}
                     <img class="profile"
-                        data-user-id="8"
-                        src="http://www.seotoaster.com/media/team/small/anastacia.jpg" alt="Anastacia" width="45"/>
-                    <img class="profile"
-                        data-user-id="6"
-                        src="http://www.seotoaster.com/media/team/small/pavel-k.jpg" alt="Pavel" width="45"/>
-                    <img class="profile"
-                        data-user-id="4"
-                        src="http://www.seotoaster.com/media/team/small/anna.jpg" alt="Anna" width="45"/>
+                        data-user-id="{{id}}"
+                        src="{{photo}}" alt="{{name}}" width="45"/>
+                    {{/usersBirthday}}
                 </div>
             </li>
         </ul>
@@ -100,7 +63,7 @@
     <footer class="_column_3 one-line margin-none fixed">
         <a class="btn btn-caption small" href="#send-money">
             <i class="icon-dollar fs48 block"></i>
-            Send money
+            Contribute
         </a>
         <a id="quick-pick" class="btn btn-caption small" href="javascript:;">
             <i class="icon-camera fs48 block"></i>
@@ -108,7 +71,7 @@
         </a>
         <a class="btn btn-caption small" href="#add_wish">
             <i class="icon-newspaper fs48 block"></i>
-            Add wish
+            Add item
         </a>
     </footer>
 

@@ -10,15 +10,43 @@ function onDeviceReady(){
 //    FastClick.attach(document.body);
     navigator.splashscreen.hide();
     openPage();
+
+    var fields       = ["*"];
+    navigator.contacts.find(fields, onSuccess, onError);
+
     window.plugin.notification.local.registerPermission();
 
-    window.plugin.notification.local.onclick = function (id, state, json) {
-        window.location.hash = 'wish?userId=' + JSON.parse(json).userId + '&wishId=' + JSON.parse(json).wishId;
-    };
+
+    // find all contacts with 'Bob' in any name field
+//    var options      = new ContactFindOptions();
+//    options.filter   = "Bob";
+//    options.multiple = true;
+//    options.desiredFields = [navigator.contacts.fieldType.id];
+}
+
+function onSuccess(contacts){
+    users = [];
+    for(i = 0; i < contacts.length; i++){
+        var newUser = {
+            id             : contacts[i].id,
+            name           : contacts[i].name.formatted,
+            photo          : contacts[i].photos ? contacts[i].photos[0].value : 'images/no_photo.jpg',
+            invited        : Math.floor((Math.random() * 2)),
+            wish_list_show : Math.floor((Math.random() * 2)),
+            phone          : contacts[i].phoneNumbers ? contacts[i].phoneNumbers[0].value : '',
+            wish_list      : randomWish()
+        }
+        users.push(newUser)
+    }
+}
+
+function onError(contactError) {
+    console.log('onError!' + contactError);
 }
 
 function onDevicePause(){
 }
+
 var fieldPos;
 var current_user = {};
 $('body')
@@ -36,6 +64,16 @@ $('body')
         var wishId = $(this).data('wish-id');
         current_user = getUser(userId, wishId);
         window.location.hash = 'wish?userId=' + userId + '&wishId=' + current_user.wish.id;
+    })
+    .on('tap', '#wish-remove', function(e){
+        e.stopImmediatePropagation();
+        event.preventDefault();
+        var urlData = getJsonFromHashUrl();
+        var newWishList = typeof localStorage.wishList !== 'undefined' ? JSON.parse(localStorage.wishList) : wishDavid;
+        newWishList.splice(getUser(urlData.userId, urlData.wishId).wishIndex, 1);
+        users[1].wish_list = newWishList;
+        localStorage.wishList = JSON.stringify(newWishList);
+        window.location.hash = 'profile';
     })
     .on('tap', '.contact-list', function(e){
         e.stopImmediatePropagation();
@@ -55,11 +93,12 @@ $('body')
     })
     .on('tap', '.back-btn', goBack)
     .on('tap', '#quick-pick', function(){
-        addPhoto(1, 1, function(url){
+        addPhoto(0, 1, function(url){
 //            var img = document.createElement('img');
 //            img.src = url;
 //            document.getElementById('wish-preview').appendChild(img);
             pagesList.add_wish(url);
+            window.location.hash = 'add_wish?openPage=false';
         }, function(){
             window.location.hash = 'home';
         });
@@ -89,13 +128,16 @@ $('body')
         }, false);
 
         window.plugin.notification.local.add({
-            title   : 'New contribute from ' + current_user.user.name + ' ($' + donate + ')',
-            message : $(this).find('#message').val(),
+            title   : current_user.user.name + ' sent you money!',
+            message : 'You received ($' + donate + ')',
             json    : {
                 userId : current_user.user.id,
                 wishId : current_user.wish.id
             }
         });
+        window.plugin.notification.local.onclick = function (id, state, json) {
+            window.location.hash = 'wish?userId=' + JSON.parse(json).userId + '&wishId=' + JSON.parse(json).wishId;
+        };
     })
     .on('submit', '#new-wish', function(e){
         event.preventDefault();
@@ -119,6 +161,13 @@ $('body')
     })
     .on('focus', 'input, select, textarea', function(e){
         fieldPos = $(this).offset().top + $(this).height();
+    })
+    .on('tap', '#invite', function(e){
+        users[current_user.userIndex].invited = true;
+        window.location.hash = 'profile?userId=' + current_user.user.id;
+        goBack();
+    })
+    .on('tap', '#ask-wish', function(e){
     });
 
 $(window).on('resize', function(e){
@@ -165,21 +214,35 @@ function openPage(){
         pageName = pageName.substr(0, pageName.indexOf('?') + 1).replace('?', '');
     }
 
+    if(getJsonFromHashUrl().openPage === 'false'){
+        return false;
+    }
+
     if(pageName === 'user'){
-        var urlData = getJsonFromUrl();
+        var urlData = getJsonFromHashUrl();
         var user = getUser(urlData.userId).user;
         pagesList['profile']({
             user       : false,
             page_name  : 'user-' + user.id,
             page_title : 'Profile',
-            userData   : user
+            userData   : user,
+            show_block : function(){
+                if(this.userData.invited && this.userData.wish_list_show){
+                    return true;
+                }else{
+                    return false
+                }
+            }
         });
         return false;
     }
     if(pageName === 'wish'){
-        var urlData = getJsonFromUrl();
+        var urlData = getJsonFromHashUrl();
         var wish = getUser(urlData.userId, urlData.wishId).wish;
-        parseTemplate('_wish-item.htm', wish, false);
+        parseTemplate('_wish-item.htm', {
+            wish : wish,
+            user : (urlData.userId === profile.id) ? true : false
+        }, false);
         return false;
     }
 
@@ -222,7 +285,7 @@ function hideLoading(){
 //    });
 //    return result;
 //}
-function getJsonFromUrl() {
+function getJsonFromHashUrl() {
     var hash = window.location.hash;
     var query = hash.substr(hash.indexOf('?') + 1);
     var result = {};
