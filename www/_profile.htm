@@ -64,7 +64,7 @@
         {{#user}}
         <ul class="wish-list list-unstyled m0px">
             {{#userData.wish_list}}
-            <li class="wish-item" data-user-id="{{userData.id}}" data-wish-id="{{id}}">
+            <li id="item-{{id}}" class="wish-item" data-user-id="{{userData.id}}" data-wish-id="{{id}}">
                 <h4 class="wish-title">{{title}}</h4>
                 <div class="fl-right ml1em _grid_6 _alpha _omega">
                     <div class="donnation-info {{donation_class}} {{^donation_class}}primary-bg{{/donation_class}} wrap p5px large br0-5em">
@@ -109,7 +109,7 @@
                         <i class="icon-man fs48 fl-left lh-small" style="margin-left: -10px"></i>
                         <div class="fl-left" style="margin-left: -10px">
                             {{peoples}} <br>
-                            {{total}}
+                            {{unit}}{{donation}}
                         </div>
                         <div class="wrap fl-right">
                             <input class="dial" type="text" value="{{donation}}"
@@ -121,7 +121,9 @@
                                     data-bgColor="rgba(0,0,0,.1)"
                                     data-thickness=".1"
                                     data-inputprefix="{{unit}}"
+                                    data-displayInput="false"
                                     data-linecap="linecap">
+                            <span class="wish-total fs16" style="margin-top: -55px; line-height: 55px; width:55px; float: right; text-align: center; position: relative;">{{total}}</span>
                         </div>
                     </div>
                 </div>
@@ -136,14 +138,14 @@
         </ul>
         {{/userData.wish_list_show}}
         {{^userData.wish_list_show}}
-        <div class="text-center p10px clearfix large">
+        <div id="ask-block" class="text-center p10px clearfix large">
             <p class="_grid_10 _suffix_1 _prefix_1 mt0-5em">Ask {{userData.name}} to share a simlist</p>
             <button id="ask-wish" class="btn info large">Ask for the list</button>
         </div>
         {{/userData.wish_list_show}}
         {{/userData.invited}}
         {{^userData.invited}}
-        <div class="text-center p10px clearfix large">
+        <div id="invite-block" class="text-center p10px clearfix large">
             <p class="_grid_10 _suffix_1 _prefix_1 mt0-5em">Invite {{userData.name}} to join Simpliziti and share a simlist</p>
             <button id="invite" class="btn info large">Invite Now</button>
         </div>
@@ -160,6 +162,10 @@
     {{/user}}
 
     <script>
-        $(".dial").knob();
+        $(".dial").knob({
+            'change' : function (v) {
+                $('#balance').text(balanceUnit + (balanceVal - Math.round(v)));
+            }
+        });
     </script>
 </main>

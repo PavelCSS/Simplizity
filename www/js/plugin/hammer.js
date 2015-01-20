@@ -2310,8 +2310,6 @@ Manager.prototype = {
             handlers[event] = handlers[event] || [];
             handlers[event].push(handler);
         });
-        alert(handlers)
-        alert(this)
         return this;
     },
 

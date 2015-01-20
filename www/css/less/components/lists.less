@@ -318,9 +318,21 @@ ul{
 .wish-list{
 }
 .wish-item{
-    margin  : 0;
-    padding : 1em .5em;
+    margin   : 0;
+    padding  : 1em .5em;
+    position : relative;
     .clearfix();
+
+    &:after{
+        content  : '';
+        position : absolute;
+        left     : 0;
+        top      : 0;
+        bottom   : 0;
+        right    : 0;
+        z-index  : 100;
+        display  : block;
+    }
 
     .wish-list &:nth-child(even){
         background : @gray-lighter;
