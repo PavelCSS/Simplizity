@@ -15,26 +15,21 @@ function onDeviceReady(){
     navigator.contacts.find(fields, onSuccess, onError);
 
     window.plugin.notification.local.registerPermission();
-
-
-    // find all contacts with 'Bob' in any name field
-//    var options      = new ContactFindOptions();
-//    options.filter   = "Bob";
-//    options.multiple = true;
-//    options.desiredFields = [navigator.contacts.fieldType.id];
 }
 
 function onSuccess(contacts){
     users = [];
     for(i = 0; i < contacts.length; i++){
-        var newUser = {
-            id             : contacts[i].id,
-            name           : contacts[i].name.formatted,
-            photo          : contacts[i].photos ? contacts[i].photos[0].value : 'images/no_photo.jpg',
-            invited        : Math.floor((Math.random() * 2)),
-            wish_list_show : Math.floor((Math.random() * 2)),
-            phone          : contacts[i].phoneNumbers ? contacts[i].phoneNumbers[0].value : '',
-            wish_list      : randomWish()
+        if(contacts[i].phoneNumbers.length){
+            var newUser = {
+                id             : contacts[i].id,
+                name           : contacts[i].name.formatted,
+                photo          : contacts[i].photos ? contacts[i].photos[0].value : 'images/no_photo.jpg',
+                invited        : Math.floor((Math.random() * 2)),
+                wish_list_show : Math.floor((Math.random() * 2)),
+                phone          : contacts[i].phoneNumbers[0].value,
+                wish_list      : randomWish()
+            }
         }
         users.push(newUser)
     }
@@ -241,7 +236,7 @@ function openPage(){
         var wish = getUser(urlData.userId, urlData.wishId).wish;
         parseTemplate('_wish-item.htm', {
             wish : wish,
-            user : (urlData.userId === profile.id) ? true : false
+            user : (urlData.userId === users[0].id) ? true : false
         }, false);
         return false;
     }
