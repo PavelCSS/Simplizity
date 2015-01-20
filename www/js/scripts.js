@@ -7,12 +7,12 @@ document.addEventListener('backbutton', goBack, false);
 function onDeviceReady(){
     StatusBar.hide();
     $('html').addClass(device.platform.toLowerCase());
-//    FastClick.attach(document.body);
+    FastClick.attach(document.body);
     navigator.splashscreen.hide();
     openPage();
 
-    var fields       = ["*"];
-    navigator.contacts.find(fields, onSuccess, onError);
+//    var fields       = ["*"];
+//    navigator.contacts.find(fields, onSuccess, onError);
 
     window.plugin.notification.local.registerPermission();
 }
@@ -42,9 +42,16 @@ function onError(contactError) {
 function onDevicePause(){
 }
 
-var fieldPos;
-var current_user = {};
+var fieldPos,
+    current_user = {};
+
 $('body')
+    .on('tap', function(e){
+        var rt = e;
+    })
+    .on('tap', '.wish-item, .wish', function(e){
+        var rt = e;
+    })
     .on('tap', '.user-item, .profile', function(e){
         e.stopImmediatePropagation();
         event.preventDefault();
@@ -114,7 +121,7 @@ $('body')
         var donate = parseInt($(this).find('.dial').val().replace('$', ''));
         var newDonate = current_user.wish.donation + donate;
         users[current_user.userIndex].wish_list[current_user.wishIndex].donation = newDonate;
-        users[current_user.userIndex].wish_list[current_user.wishIndex].total = (newDonate / current_user.wish.price * 100).toFixed(1) + '%';
+        users[current_user.userIndex].wish_list[current_user.wishIndex].total = (newDonate / current_user.wish.price * 100).toFixed(0) + '%';
         users[current_user.userIndex].wish_list[current_user.wishIndex].balance = current_user.wish.price - newDonate;
         parseTemplate('_contribute.htm', {
             user   : current_user.user,
@@ -159,10 +166,13 @@ $('body')
     })
     .on('tap', '#invite', function(e){
         users[current_user.userIndex].invited = true;
-        window.location.hash = 'profile?userId=' + current_user.user.id;
+        window.location.hash = 'user?userId=' + current_user.user.id + 'invite=true';
         goBack();
     })
     .on('tap', '#ask-wish', function(e){
+        users[current_user.userIndex].wish_list_show = true;
+        window.location.hash = 'user?userId=' + current_user.user.id + '&showList=true';
+        goBack();
     });
 
 $(window).on('resize', function(e){
@@ -222,7 +232,7 @@ function openPage(){
             page_title : 'Profile',
             userData   : user,
             show_block : function(){
-                if(this.userData.invited && this.userData.wish_list_show){
+                if(this.userData.invited && (typeof this.userData.wish_list_show === 'function' ? this.userData.wish_list_show.call() : this.userData.wish_list_show)){
                     return true;
                 }else{
                     return false
@@ -236,7 +246,7 @@ function openPage(){
         var wish = getUser(urlData.userId, urlData.wishId).wish;
         parseTemplate('_wish-item.htm', {
             wish : wish,
-            user : (urlData.userId === users[0].id) ? true : false
+            user : (parseInt(urlData.userId) === users[0].id) ? true : false
         }, false);
         return false;
     }

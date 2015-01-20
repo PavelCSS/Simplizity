@@ -11,8 +11,8 @@ var pagesList = {
             page_name     : 'home',
             page_title    : app_name,
             user          : users[0],
-            usersSent     : randomUser(),
-            usersBirthday : randomUser()
+            usersSent     : usersSent,
+            usersBirthday : usersBirthday
         }, false);
     },
     'profile'    : function(profile){

@@ -7,7 +7,7 @@ var wishList = [
         price       : 450,
         donation    : 150,
         photo       : 'images/wish/Sony PlayStation 4 - 500 GB - Glacier white.jpeg',
-        total       : (150 / 450 * 100).toFixed(1) + '%',
+        total       : (150 / 450 * 100).toFixed(0) + '%',
         peoples     : 23,
         balance     : 450 - 150
     },
@@ -19,7 +19,7 @@ var wishList = [
         price       : 799,
         donation    : 130,
         photo       : 'images/wish/Fujifilm X100S 16.3 MP Digital Camera.jpeg',
-        total       : (130 / 799 * 100).toFixed(1) + '%',
+        total       : (130 / 799 * 100).toFixed(0) + '%',
         peoples     : 9,
         balance     : 799 - 130
     },
@@ -31,7 +31,7 @@ var wishList = [
         price       : 228,
         donation    : 100,
         photo       : 'images/wish/Beats by Dr. Dre Studio Wireless Headphones.jpeg',
-        total       : (100 / 228 * 100).toFixed(1) + '%',
+        total       : (100 / 228 * 100).toFixed(0) + '%',
         peoples     : 23,
         balance     : 228 - 100
     },
@@ -43,7 +43,7 @@ var wishList = [
         price       : 80,
         donation    : 67,
         photo       : "images/wish/Teal Suede Shoe.jpg",
-        total       : (67 / 80 * 100).toFixed(1) + '%',
+        total       : (67 / 80 * 100).toFixed(0) + '%',
         peoples     : 9,
         balance     : 80 - 67
     },
@@ -55,7 +55,7 @@ var wishList = [
         price       : 100,
         donation    : 50,
         photo       : 'images/wish/Brooks Adrenaline GTS 14.jpg',
-        total       : (50 / 100 * 100).toFixed(1) + '%',
+        total       : (50 / 100 * 100).toFixed(0) + '%',
         peoples     : 23,
         balance     : 100 - 50
     },
@@ -67,7 +67,7 @@ var wishList = [
         price       : 280,
         donation    : 100,
         photo       : 'images/wish/Ted Baker Comptan.jpg',
-        total       : (100 / 280 * 100).toFixed(1) + '%',
+        total       : (100 / 280 * 100).toFixed(0) + '%',
         peoples     : 9,
         balance     : 280 - 100
     },
@@ -79,7 +79,7 @@ var wishList = [
         price       : 30,
         donation    : 10,
         photo       : 'images/wish/Teal Suede Shoe.jpg',
-        total       : (10 / 30 * 100).toFixed(1) + '%',
+        total       : (10 / 30 * 100).toFixed(0) + '%',
         peoples     : 23,
         balance     : 30 - 10
     },
@@ -91,7 +91,7 @@ var wishList = [
         price       : 700,
         donation    : 100,
         photo       : "images/wish/MICHAEL KORS LADIES' PARKER CHRONOGRAPH WATCH.jpg",
-        total       : (100 / 700 * 100).toFixed(1) + '%',
+        total       : (100 / 700 * 100).toFixed(0) + '%',
         peoples     : 9,
         balance     : 700 - 100
     },
@@ -104,7 +104,7 @@ var wishList = [
         donation       : 134,
         donation_class : 'error-bg',
         photo          : "images/wish/Tissot Quickster Men's Quartz Chronograph Black Dial Watch.jpg",
-        total          : (134 / 495 * 100).toFixed(1) + '%',
+        total          : (134 / 495 * 100).toFixed(0) + '%',
         peoples        : 234,
         balance        : 495 - 134
     }
@@ -168,7 +168,12 @@ var users = [
         name           : 'Alberto Echegaray',
         photo          : 'images/users/Alberto Echegaray.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -177,7 +182,12 @@ var users = [
         name           : 'Alejandro Bermudez',
         photo          : 'images/users/Alejandro Bermudez.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -186,7 +196,12 @@ var users = [
         name           : 'Alejandro Tani',
         photo          : 'images/users/Alejandro Tani.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -195,7 +210,12 @@ var users = [
         name           : 'Alex Dutriz',
         photo          : 'images/users/Alex Dutriz.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -204,7 +224,12 @@ var users = [
         name           : 'Alexandra Gallardo',
         photo          : 'images/users/Alexandra Gallardo.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -213,7 +238,12 @@ var users = [
         name           : 'Alfredo Arteaga',
         photo          : 'images/users/Alfredo Arteaga.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -222,7 +252,12 @@ var users = [
         name           : 'Alia Haj-Hasan',
         photo          : 'images/users/Alia Haj-Hasan.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -231,7 +266,12 @@ var users = [
         name           : 'Alicia Maza',
         photo          : 'images/users/Alicia Maza.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -240,7 +280,12 @@ var users = [
         name           : 'Ameerh Naran',
         photo          : 'images/users/Ameerh Naran.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -249,7 +294,12 @@ var users = [
         name           : 'Amit Luthra',
         photo          : 'images/users/Amit Luthra.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -258,7 +308,12 @@ var users = [
         name           : 'Amy Wiborg',
         photo          : 'images/users/Amy Wiborg.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -267,7 +322,12 @@ var users = [
         name           : 'Ana Novoa',
         photo          : 'images/users/Ana Novoa.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -276,7 +336,12 @@ var users = [
         name           : 'Anastasia Slivker',
         photo          : 'images/users/Anastasia Slivker.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -285,7 +350,12 @@ var users = [
         name           : 'Andy Benavides',
         photo          : 'images/users/Andy Benavides.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -294,7 +364,12 @@ var users = [
         name           : 'Arturo Siso',
         photo          : 'images/users/Arturo Siso.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -303,7 +378,12 @@ var users = [
         name           : 'Ashlee Cronan Dirocco',
         photo          : 'images/users/Ashlee Cronan Dirocco.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -312,7 +392,12 @@ var users = [
         name           : 'Bailasan Badwan',
         photo          : 'images/users/Bailasan Badwan.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -321,7 +406,12 @@ var users = [
         name           : 'Ben Nemtin',
         photo          : 'images/users/Ben Nemtin.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -330,7 +420,12 @@ var users = [
         name           : 'Brooke Johnson',
         photo          : 'images/users/Brooke Johnson.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -339,7 +434,12 @@ var users = [
         name           : 'Carlos Bonilla',
         photo          : 'images/users/Carlos Bonilla.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -348,7 +448,12 @@ var users = [
         name           : 'Carlos Robledo',
         photo          : 'images/users/Carlos Robledo.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -357,7 +462,12 @@ var users = [
         name           : 'Catul Kiti',
         photo          : 'images/users/Catul Kiti.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -366,7 +476,12 @@ var users = [
         name           : 'Chris Cronan',
         photo          : 'images/users/Chris Cronan.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -375,7 +490,12 @@ var users = [
         name           : 'Christina Floyd Di Donna',
         photo          : 'images/users/Christina Floyd Di Donna.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -384,7 +504,12 @@ var users = [
         name           : 'Cindy Huang',
         photo          : 'images/users/Cindy Huang.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -393,7 +518,12 @@ var users = [
         name           : "Colin O'Higgins",
         photo          : "images/users/Colin O'Higgins.jpg",
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -402,7 +532,12 @@ var users = [
         name           : 'Coryn Blina',
         photo          : 'images/users/Coryn Blina.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -411,7 +546,12 @@ var users = [
         name           : 'Cristian LaCapra',
         photo          : 'images/users/Cristian LaCapra.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -420,7 +560,12 @@ var users = [
         name           : 'Cristina Marie Hosmer',
         photo          : 'images/users/Cristina Marie Hosmer.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -429,7 +574,12 @@ var users = [
         name           : 'Cristy Marero',
         photo          : 'images/users/Cristy Marero.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -438,7 +588,12 @@ var users = [
         name           : 'Dan Haime',
         photo          : 'images/users/Dan Haime.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -447,7 +602,12 @@ var users = [
         name           : 'Eliana Prada',
         photo          : 'images/users/Eliana Prada.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -456,7 +616,12 @@ var users = [
         name           : 'Elizabeth Brady',
         photo          : 'images/users/Elizabeth Brady.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -465,7 +630,12 @@ var users = [
         name           : 'Elizabeth Gonzalez',
         photo          : 'images/users/Elizabeth Gonzalez.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -474,7 +644,12 @@ var users = [
         name           : 'Floriana Acosta',
         photo          : 'images/users/Floriana Acosta.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -483,7 +658,12 @@ var users = [
         name           : 'Francisco De Borno',
         photo          : 'images/users/Francisco De Borno.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -492,7 +672,12 @@ var users = [
         name           : 'Garry Toussaint',
         photo          : 'images/users/Garry Toussaint.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -501,7 +686,12 @@ var users = [
         name           : 'Giani LaCarpa',
         photo          : 'images/users/Giani LaCarpa.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -510,7 +700,12 @@ var users = [
         name           : 'Gina Cannoniga',
         photo          : 'images/users/Gina Cannoniga.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -519,7 +714,12 @@ var users = [
         name           : 'Greta Tufvesson',
         photo          : 'images/users/Greta Tufvesson.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -528,7 +728,12 @@ var users = [
         name           : 'Hope Kercher',
         photo          : 'images/users/Hope Kercher.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -537,7 +742,12 @@ var users = [
         name           : 'Jan Spencer',
         photo          : 'images/users/Jan Spencer.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -546,7 +756,12 @@ var users = [
         name           : 'Jean Michel Beltrand',
         photo          : 'images/users/Jean Michel Beltrand.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -555,7 +770,12 @@ var users = [
         name           : 'Jean-Jacques Kassis',
         photo          : 'images/users/Jean-Jacques Kassis.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -564,7 +784,12 @@ var users = [
         name           : 'Joe Estrella',
         photo          : 'images/users/Joe Estrella.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -573,7 +798,12 @@ var users = [
         name           : 'Jorge Arevalo',
         photo          : 'images/users/Jorge Arevalo.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -582,7 +812,12 @@ var users = [
         name           : 'Joseph Peter',
         photo          : 'images/users/Joseph Peter.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -591,7 +826,12 @@ var users = [
         name           : 'Juan Carlos De Jongh',
         photo          : 'images/users/Juan Carlos De Jongh.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -600,7 +840,12 @@ var users = [
         name           : 'Juan Carlos Ventura',
         photo          : 'images/users/Juan Carlos Ventura.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -609,7 +854,12 @@ var users = [
         name           : 'Juan Diego Calle',
         photo          : 'images/users/Juan Diego Calle.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -618,7 +868,12 @@ var users = [
         name           : 'Karim Salameh',
         photo          : 'images/users/Karim Salameh.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -627,7 +882,12 @@ var users = [
         name           : 'Kevin Lazan',
         photo          : 'images/users/Kevin Lazan.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -636,7 +896,12 @@ var users = [
         name           : 'Lara Husseiny',
         photo          : 'images/users/Lara Husseiny.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -645,7 +910,12 @@ var users = [
         name           : 'Luis Fernando Botero',
         photo          : 'images/users/Luis Fernando Botero.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -654,7 +924,12 @@ var users = [
         name           : 'Marco Ciocca',
         photo          : 'images/users/Marco Ciocca.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -663,7 +938,12 @@ var users = [
         name           : 'Marco Rodriguez-Diaz',
         photo          : 'images/users/Marco Rodriguez-Diaz.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -672,7 +952,12 @@ var users = [
         name           : 'Margie Pemberton',
         photo          : 'images/users/Margie Pemberton.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -681,7 +966,12 @@ var users = [
         name           : 'Maria Teresa Lopez',
         photo          : 'images/users/Maria Teresa Lopez.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -690,7 +980,12 @@ var users = [
         name           : 'Marina Sanchez McEvoy',
         photo          : 'images/users/Marina Sanchez McEvoy.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -699,7 +994,12 @@ var users = [
         name           : 'Martin Corredera Silvan',
         photo          : 'images/users/Martin Corredera Silvan.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -708,7 +1008,12 @@ var users = [
         name           : 'Metin Mutlu',
         photo          : 'images/users/Metin Mutlu.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -717,7 +1022,12 @@ var users = [
         name           : 'Michael Karim',
         photo          : 'images/users/Michael Karim.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -726,7 +1036,12 @@ var users = [
         name           : 'Miguel Angel Gonzalez',
         photo          : 'images/users/Miguel Angel Gonzalez.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -735,7 +1050,12 @@ var users = [
         name           : 'Miguel Reyes',
         photo          : 'images/users/Miguel Reyes.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -744,7 +1064,12 @@ var users = [
         name           : 'Mohamed Nasser Edine',
         photo          : 'images/users/Mohamed Nasser Edine.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -753,7 +1078,12 @@ var users = [
         name           : 'Moira Reyes',
         photo          : 'images/users/Moira Reyes.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -762,7 +1092,12 @@ var users = [
         name           : 'Monica Dowling',
         photo          : 'images/users/Monica Dowling.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -771,7 +1106,12 @@ var users = [
         name           : 'Palash Ahmed',
         photo          : 'images/users/Palash Ahmed.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -780,7 +1120,12 @@ var users = [
         name           : 'Paola Rubio',
         photo          : 'images/users/Paola Rubio.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -789,7 +1134,12 @@ var users = [
         name           : 'Paolo Vismara',
         photo          : 'images/users/Paolo Vismara.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -798,7 +1148,12 @@ var users = [
         name           : 'Pauldine France',
         photo          : 'images/users/Pauldine France.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -807,7 +1162,12 @@ var users = [
         name           : 'Pedro Rodriguez',
         photo          : 'images/users/Pedro Rodriguez.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -816,7 +1176,12 @@ var users = [
         name           : 'Peter Hoffman',
         photo          : 'images/users/Peter Hoffman.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -825,7 +1190,12 @@ var users = [
         name           : 'Raul Abuchaibe',
         photo          : 'images/users/Raul Abuchaibe.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -834,7 +1204,12 @@ var users = [
         name           : 'Rob Oristaglio',
         photo          : 'images/users/Rob Oristaglio.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -843,7 +1218,12 @@ var users = [
         name           : 'Robb LaKritz',
         photo          : 'images/users/Robb LaKritz.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -852,7 +1232,12 @@ var users = [
         name           : 'Roberto Pascual',
         photo          : 'images/users/Roberto Pascual.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -861,7 +1246,12 @@ var users = [
         name           : 'Ruben Gonzalez',
         photo          : 'images/users/Ruben Gonzalez.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -870,7 +1260,12 @@ var users = [
         name           : 'Ryan Bateman',
         photo          : 'images/users/Ryan Bateman.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -879,7 +1274,12 @@ var users = [
         name           : 'Salim Elkhou',
         photo          : 'images/users/Salim Elkhou.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -888,7 +1288,12 @@ var users = [
         name           : 'Shara Levy',
         photo          : 'images/users/Shara Levy.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -897,7 +1302,12 @@ var users = [
         name           : 'Sumaya Abughazaleh',
         photo          : 'images/users/Sumaya Abughazaleh.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -906,7 +1316,12 @@ var users = [
         name           : 'Thelma Rocha',
         photo          : 'images/users/Thelma Rocha.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -915,7 +1330,12 @@ var users = [
         name           : 'Tini Courtney',
         photo          : 'images/users/Tini Courtney.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -924,7 +1344,12 @@ var users = [
         name           : 'Tom Sansone',
         photo          : 'images/users/Tom Sansone.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -933,7 +1358,12 @@ var users = [
         name           : 'Tom Staz',
         photo          : 'images/users/Tom Staz.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -942,7 +1372,12 @@ var users = [
         name           : 'Veronica Arroyo',
         photo          : 'images/users/Veronica Arroyo.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -951,7 +1386,12 @@ var users = [
         name           : 'William McCullough',
         photo          : 'images/users/William McCullough.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     },
@@ -960,17 +1400,25 @@ var users = [
         name           : 'Zhana Londoner',
         photo          : 'images/users/Zhana Londoner.jpg',
         invited        : Math.floor((Math.random() * 2)),
-        wish_list_show : Math.floor((Math.random() * 2)),
+        wish_list_show : function(){
+            if(this.invited){
+                return Math.floor((Math.random() * 2))
+            }
+            return false;
+        },
         phone          : '(123) 456 7890',
         wish_list      : randomWish()
     }
 ];
 
+var usersSent = randomUser(),
+    usersBirthday = randomUser();
+
 function randomWish(){
     var i = 0, wishIndex = [], newWishList = [];
     while (i < Math.floor((Math.random() * wishList.length))) {
         i++;
-        var index = Math.floor((Math.random() * wishList.length));
+        var index = Math.floor((Math.random() * (wishList.length - 1)));
         if(wishIndex.indexOf(index) === -1){
             newWishList.push(wishList[index]);
             wishIndex.push(index);
@@ -983,7 +1431,7 @@ function randomUser(){
     var i = 0, userIndex = [], newUserList = [];
     while (i < Math.floor((Math.random() * users.length))) {
         i++;
-        var index = Math.floor((Math.random() * users.length));
+        var index = Math.floor((Math.random() * (users.length - 1)));
         if(userIndex.indexOf(index) === -1){
             newUserList.push(users[index]);
             userIndex.push(index);
