@@ -16,12 +16,12 @@
                 </span>
                 <h3 class="user-name">
                     {{name}}
-                    {{#contact}}
+                    {{#invited}}
                     <span class="subtitle block">SIM registered users</span>
-                    {{/contact}}
-                    {{^contact}}
+                    {{/invited}}
+                    {{^invited}}
                     <span class="subtitle block">NON registered users</span>
-                    {{/contact}}
+                    {{/invited}}
                 </h3>
             </li>
             {{/users}}

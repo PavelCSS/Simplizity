@@ -1,32 +1,44 @@
-<main id="wish-{{id}}" class="gray-darker-bg">
+<main id="wish-{{wish.id}}" class="gray-darker-bg">
     <header class="fixed large fade">
         <button class="back-btn btn pl0em icon-arrow-left6 fl-left">Back</button>
+        {{#user}}
+        <button class="dropdown-btn btn icon icon-list5 fl-right" data-menu="#menu">Menu</button>
+        {{/user}}
+        {{^user}}
         <a class="btn icon icon-user fl-right" href="#profile">Profile</a>
+        {{/user}}
     </header>
 
     <div class="wish-photo white-bg left p0px">
-        <img src="{{photo}}" alt="{{title}}"/>
-        <span class="wish-price larger bottom ml0-25em shadow">{{unit}}{{price}}</span>
+        <img src="{{wish.photo}}" alt="{{wish.title}}"/>
+        <span class="wish-price larger bottom ml0-25em shadow">{{wish.unit}}{{wish.price}}</span>
     </div>
 
     <article class="p10px">
-        <h1 class="inherit larger text-center">{{title}}</h1>
-        <p class="gray-light">{{description}}</p>
+        <h1 class="inherit larger text-center">{{wish.title}}</h1>
+        <p class="gray-light">{{wish.description}}</p>
     </article>
 
     <footer class="donate-info large p10px inherit">
         <button id="donate-btn"
                 class="btn success fl-right"
-                data-id="{{id}}">Contribute</button>
+                data-id="{{wish.id}}">Contribute</button>
         <div class="wrap lh-normal">
             <i class="icon-man fs48 fl-left lh-small" style="margin-left: -10px"></i>
             <div class="fl-left mr0-5em" style="margin-left: -10px">
-                {{peoples}} <br>
-                {{total}}
+                {{wish.peoples}} <br>
+                {{wish.total}}
             </div>
             <div class="wrap mt0-75em">
-                {{unit}}{{donation}}
+                {{wish.unit}}{{wish.donation}}
             </div>
         </div>
     </footer>
+
+    {{#user}}
+    <nav id="menu" class="dropdown-menu top right large">
+        <a id="wish-edit" class="icon-pencil3 block info pt0-5em pb0-5em" href="javascript:;"> Edit</a>
+        <a id="wish-remove" class="icon-remove block error pt0-5em pb0-5em" href="javascript:;"> Remove</a>
+    </nav>
+    {{/user}}
 </main>

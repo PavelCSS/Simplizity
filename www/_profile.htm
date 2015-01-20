@@ -33,7 +33,7 @@
         </ul>
         {{/user}}
         {{^user}}
-        {{#userData.contact}}
+        {{#show_block}}
         <ul class="_column_2 bottom white friend-info m0px p0px">
             <li class="icon-bg bg-icon9em icon-birthday-cake">
                 <div class="content large">
@@ -47,11 +47,16 @@
                 </div>
             </li>
         </ul>
-        {{/userData.contact}}
-        {{^userData.contact}}
+        {{/show_block}}
+        {{^show_block}}
+            {{#userData.invited}}
+            <h4 class="large inherit">{{userData.name}} is a SIM user</h4>
+            {{/userData.invited}}
+            {{^userData.invited}}
             <h4 class="large inherit">{{userData.name}} is not a SIM user yet</h4>
+            {{/userData.invited}}
             <p class="fs32"><i class="icon-phone2"></i> {{userData.phone}}</p>
-        {{/userData.contact}}
+        {{/show_block}}
         {{/user}}
     </div>
 
@@ -93,7 +98,8 @@
         </ul>
         {{/user}}
         {{^user}}
-        {{#userData.contact}}
+        {{#userData.invited}}
+        {{#userData.wish_list_show}}
         <ul class="wish-list list-unstyled m0px">
             {{#userData.wish_list}}
             <li class="wish-item" data-user-id="{{userData.id}}" data-wish-id="{{id}}">
@@ -128,13 +134,20 @@
             </li>
             {{/userData.wish_list}}
         </ul>
-        {{/userData.contact}}
-        {{^userData.contact}}
+        {{/userData.wish_list_show}}
+        {{^userData.wish_list_show}}
+        <div class="text-center p10px clearfix large">
+            <p class="_grid_10 _suffix_1 _prefix_1 mt0-5em">Ask {{userData.name}} to share a simlist</p>
+            <button id="ask-wish" class="btn info large">Ask for the list</button>
+        </div>
+        {{/userData.wish_list_show}}
+        {{/userData.invited}}
+        {{^userData.invited}}
         <div class="text-center p10px clearfix large">
             <p class="_grid_10 _suffix_1 _prefix_1 mt0-5em">Invite {{userData.name}} to join Simpliziti and share a simlist</p>
             <button id="invite" class="btn info large">Invite Now</button>
         </div>
-        {{/userData.contact}}
+        {{/userData.invited}}
         {{/user}}
     </article>
 
