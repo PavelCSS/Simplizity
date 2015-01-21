@@ -1,11 +1,11 @@
 <main id="{{page-name}}" class="gray-darker-bg">
     <header class="fixed fade">
-        <button class="back-btn btn pl0em icon-arrow-left6 fl-left">{{page_title}}</button>
+        <button class="back-btn btn pl0em icon-arrow-left6 fl-left">{{pageTitle}}</button>
         <a class="btn icon icon-user fl-right" href="#profile">Profile</a>
     </header>
 
     <article id="wish-preview" class="wish-preview responsive-image _16x9 icon-camera">
-        {{#wish_image}}<img class="mb0-25em" src="{{wish_image}}">{{/wish_image}}
+        {{#wishImage}}<img class="mb0-25em" src="{{wishImage}}">{{/wishImage}}
     </article>
 
     <form id="new-wish" class="p10px">
@@ -22,7 +22,7 @@
             <textarea id="wishDescription" class="white" name="description" cols="30" rows="6"></textarea>
         </p>
 
-        <input id="wishPhoto" type="hidden" value="{{wish_image}}"/>
+        <input id="wishPhoto" type="hidden" value="{{wishImage}}"/>
 
         <button class="_grid_6 btn success large">Public</button>
         <button class="_grid_6 btn error large">Private</button>

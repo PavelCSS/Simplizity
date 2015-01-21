@@ -446,6 +446,8 @@ function inputHandler(manager, eventType, input) {
     input.isFirst = !!isFirst;
     input.isFinal = !!isFinal;
 
+    input.currentElement = manager.element;
+
     if (isFirst) {
         manager.session = {};
     }

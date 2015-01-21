@@ -7,7 +7,7 @@ document.addEventListener('backbutton', goBack, false);
 function onDeviceReady(){
     StatusBar.hide();
     $('html').addClass(device.platform.toLowerCase());
-    FastClick.attach(document.body);
+//    FastClick.attach(document.body);
     navigator.splashscreen.hide();
     openPage();
 
@@ -26,9 +26,9 @@ function onSuccess(contacts){
                 name           : contacts[i].name.formatted,
                 photo          : contacts[i].photos ? contacts[i].photos[0].value : 'images/no_photo.jpg',
                 invited        : Math.floor((Math.random() * 2)),
-                wish_list_show : Math.floor((Math.random() * 2)),
+                wishListShow : Math.floor((Math.random() * 2)),
                 phone          : contacts[i].phoneNumbers[0].value,
-                wish_list      : randomWish()
+                wishList      : randomWish()
             }
             users.push(newUser)
         }
@@ -46,22 +46,26 @@ var fieldPos,
     current_user = {};
 
 $('body')
-    .on('tap', function(e){
-        var rt = e;
-    })
-    .on('tap', '.wish-item, .wish', function(e){
-        var rt = e;
-    })
     .on('tap', '.user-item, .profile', function(e){
         e.stopImmediatePropagation();
-        event.preventDefault();
         var userId = $(this).data('user-id');
         window.location.hash = 'user?userId=' + userId;
         return false;
     })
-    .on('tap', '.wish-item, .wish', function(e){
+    .on('tap', '.wish-private', function(e){
         e.stopImmediatePropagation();
-        event.preventDefault();
+        var $parentLi = $(this).closest('.wish-item').length ? $(this).closest('.wish-item') : $(this).parent();
+        $parentLi.find('.wish-private').toggle();
+        var urlData = getJsonFromHashUrl();
+        var newWishList = typeof localStorage.wishList !== 'undefined' ? JSON.parse(localStorage.wishList) : wishDavid;
+        var newWishIndex = urlData.wishId ? getUser(urlData.userId, urlData.wishId).wishIndex : getUser($parentLi.data('user-id'), $parentLi.data('wish-id')).wishIndex;
+        newWishList[newWishIndex].private = !newWishList[newWishIndex].private;
+        users[0].wishList = newWishList;
+        localStorage.wishList = JSON.stringify(newWishList);
+        return false;
+    })
+    .on('tap', '.wish', function(e){
+        e.stopImmediatePropagation();
         var userId = $(this).data('user-id');
         var wishId = $(this).data('wish-id');
         current_user = getUser(userId, wishId);
@@ -69,36 +73,41 @@ $('body')
     })
     .on('tap', '#wish-remove', function(e){
         e.stopImmediatePropagation();
-        event.preventDefault();
         var urlData = getJsonFromHashUrl();
         var newWishList = typeof localStorage.wishList !== 'undefined' ? JSON.parse(localStorage.wishList) : wishDavid;
         newWishList.splice(getUser(urlData.userId, urlData.wishId).wishIndex, 1);
-        users[1].wish_list = newWishList;
+        users[0].wishList = newWishList;
         localStorage.wishList = JSON.stringify(newWishList);
-        window.location.hash = 'profile';
+        goBack();
+    })
+    .on('tap', '.wish-remove', function(e){
+        var $parentLi = $(this).closest('.wish-item');
+        $parentLi.remove();
+        var newWishList = typeof localStorage.wishList !== 'undefined' ? JSON.parse(localStorage.wishList) : wishDavid;
+        newWishList.splice(getUser($parentLi.data('user-id'), $parentLi.data('wish-id')).wishIndex, 1);
+        users[0].wishList = newWishList;
+        localStorage.wishList = JSON.stringify(newWishList);
+    })
+    .on('tap', '#wish-edit', function(e){
+    })
+    .on('tap', '.wish-edit', function(e){
     })
     .on('tap', '.contact-list', function(e){
         e.stopImmediatePropagation();
-        event.preventDefault();
         window.location.hash = 'send-money';
     })
     .on('tap', '.my-dotation', function(e){
         e.stopImmediatePropagation();
-        event.preventDefault();
         window.location.hash = 'my-donation';
     })
     .on('tap', '#donate-btn', function(e){
         e.stopImmediatePropagation();
-        event.preventDefault();
         window.location.hash = 'contribute';
         parseTemplate('_contribute.htm', current_user, false);
     })
     .on('tap', '.back-btn', goBack)
     .on('tap', '#quick-pick', function(){
-        addPhoto(0, 1, function(url){
-//            var img = document.createElement('img');
-//            img.src = url;
-//            document.getElementById('wish-preview').appendChild(img);
+        addPhoto(1, 1, function(url){
             pagesList.add_wish(url);
             window.location.hash = 'add_wish?openPage=false';
         }, function(){
@@ -116,13 +125,12 @@ $('body')
         });
     })
     .on('submit', '#donate-form', function(){
-//        e.stopImmediatePropagation();
-        event.preventDefault();
+        e.stopImmediatePropagation();
         var donate = parseInt($(this).find('.dial').val().replace('$', ''));
         var newDonate = current_user.wish.donation + donate;
-        users[current_user.userIndex].wish_list[current_user.wishIndex].donation = newDonate;
-        users[current_user.userIndex].wish_list[current_user.wishIndex].total = (newDonate / current_user.wish.price * 100).toFixed(0) + '%';
-        users[current_user.userIndex].wish_list[current_user.wishIndex].balance = current_user.wish.price - newDonate;
+        users[current_user.userIndex].wishList[current_user.wishIndex].donation = newDonate;
+        users[current_user.userIndex].wishList[current_user.wishIndex].total = (newDonate / current_user.wish.price * 100).toFixed(0) + '%';
+        users[current_user.userIndex].wishList[current_user.wishIndex].balance = current_user.wish.price - newDonate;
         parseTemplate('_contribute.htm', {
             user   : current_user.user,
             wish   : current_user.wish,
@@ -142,7 +150,6 @@ $('body')
         };
     })
     .on('submit', '#new-wish', function(e){
-        event.preventDefault();
         e.stopImmediatePropagation();
         var newWishList = typeof localStorage.wishList !== 'undefined' ? JSON.parse(localStorage.wishList) : wishDavid;
         newWishList.push({
@@ -157,7 +164,7 @@ $('body')
             peoples     : 0,
             balance     : $(this).find('#wishPrice').val()
         });
-        users[1].wish_list = newWishList;
+        users[1].wishList = newWishList;
         localStorage.wishList = JSON.stringify(newWishList);
         window.location.hash = 'profile';
     })
@@ -170,7 +177,7 @@ $('body')
         goBack();
     })
     .on('tap', '#ask-wish', function(e){
-        users[current_user.userIndex].wish_list_show = true;
+        users[current_user.userIndex].wishListShow = true;
         window.location.hash = 'user?userId=' + current_user.user.id + '&showList=true';
         goBack();
     });
@@ -185,10 +192,10 @@ function getUser(userId, wishId){
     for(i = 0; i < users.length; i++){
         if(users[i].id == userId){
             if(wishId){
-                for(j = 0; j < users[i].wish_list.length; j++){
-                    if(users[i].wish_list[j].id == wishId){
+                for(j = 0; j < users[i].wishList.length; j++){
+                    if(users[i].wishList[j].id == wishId){
                         userCurrent['user'] = users[i];
-                        userCurrent['wish'] = users[i].wish_list[j];
+                        userCurrent['wish'] = users[i].wishList[j];
                         userCurrent['userIndex'] = i;
                         userCurrent['wishIndex'] = j;
                         current_user = userCurrent;
@@ -227,12 +234,12 @@ function openPage(){
         var urlData = getJsonFromHashUrl();
         var user = getUser(urlData.userId).user;
         pagesList['profile']({
-            user       : false,
-            page_name  : 'user-' + user.id,
-            page_title : 'Profile',
-            userData   : user,
-            show_block : function(){
-                if(this.userData.invited && (typeof this.userData.wish_list_show === 'function' ? this.userData.wish_list_show.call() : this.userData.wish_list_show)){
+            user      : false,
+            pageName  : 'user-' + user.id,
+            pageTitle : 'Profile',
+            userData  : user,
+            showBlock : function(){
+                if(this.userData.invited && (typeof this.userData.wishListShow === 'function' ? this.userData.wishListShow.call() : this.userData.wishListShow)){
                     return true;
                 }else{
                     return false
