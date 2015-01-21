@@ -160,7 +160,8 @@
 
     &.outline-bg when (@button-type-outline = true) and (@button-types = true){
         & when (@button-border-width = 0) and (@button-border-width < 2){
-            border : @button-border-outline solid;
+            line-height: unit(@button-line-height * 2, em) - unit(@button-border-outline / @font-size-base, em);
+            border : unit(@button-border-outline / @font-size-base, em) solid;
         }
         .box-shadow(none; @button-box-shadow);
         .button-color(@brand-primary; transparent; @brand-primary; @button-primary-color; @button-primary-bg; @button-primary-bg);

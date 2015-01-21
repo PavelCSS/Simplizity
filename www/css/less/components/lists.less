@@ -318,24 +318,48 @@ ul{
 .wish-list{
 }
 .wish-item{
-    margin   : 0;
-    padding  : 1em .5em;
-    position : relative;
+    margin     : 0;
+    padding    : 1em .5em;
+    position   : relative;
+    background : #fff;
+    overflow   : hidden;
+//    .box-shadow(0 0 10px @gray-light inset);
     .clearfix();
 
-    &:after{
-        content  : '';
-        position : absolute;
-        left     : 0;
-        top      : 0;
-        bottom   : 0;
-        right    : 0;
-        z-index  : 100;
-        display  : block;
-    }
+    //    &:after{
+    //        content  : '';
+    //        position : absolute;
+    //        left     : 0;
+    //        top      : 0;
+    //        bottom   : 0;
+    //        right    : 0;
+    //        z-index  : 100;
+    //        display  : block;
+    //    }
 
     .wish-list &:nth-child(even){
         background : @gray-lighter;
+    }
+
+    .drag-block{
+        background : inherit;
+        position   : relative;
+        margin     : -1em -.5em;
+        padding    : 1em .5em;
+        z-index    : 10;
+        .transition(right; 0.2s);
+        .box-shadow(0 0 10px @gray-light);
+    }
+
+    .event-block{
+        width    : auto;
+        position : absolute;
+        right    : 0;
+        top      : 0;
+        bottom   : 0;
+        left     : 25%;
+        margin   : auto;
+        z-index  : 5;
     }
 }
 .wish-photo{

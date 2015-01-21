@@ -9,7 +9,7 @@ function parseTemplate(tmpl, json, cache, callback){
     readTextFile(tmpl, function(response){
         if(json){
             var html = Mustache.to_html(response, json);
-            cache ? pagesCache(json.page_name, html) : '';
+            cache ? pagesCache(json.pageName, html) : '';
             callback(html);
         }else{
             callback(response);

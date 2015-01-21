@@ -2,7 +2,10 @@
     <header class="fixed large fade">
         <button class="back-btn btn pl0em icon-arrow-left6 fl-left">Back</button>
         {{#user}}
-        <button class="dropdown-btn btn icon icon-list5 fl-right" data-menu="#menu">Menu</button>
+        <a id="wish-remove" class="btn icon icon-remove error fl-right" href="javascript:;"> Remove</a>
+        <a id="wish-edit" class="btn icon icon-pencil3 info fl-right" href="javascript:;"> Edit</a>
+        <a class="wish-private btn icon icon-locked2 warning fl-right" {{^wish.private}}style="display:none"{{/wish.private}}>Private</a>
+        <a class="wish-private btn icon icon-unlocked2 success fl-right" {{#wish.private}}style="display:none"{{/wish.private}}>Public</a>
         {{/user}}
         {{^user}}
         <a class="btn icon icon-user fl-right" href="#profile">Profile</a>
@@ -35,12 +38,5 @@
             </div>
         </div>
     </footer>
-    {{/user}}
-
-    {{#user}}
-    <nav id="menu" class="dropdown-menu top right large">
-        <a id="wish-edit" class="icon-pencil3 block info pt0-5em pb0-5em" href="javascript:;"> Edit</a>
-        <a id="wish-remove" class="icon-remove block error pt0-5em pb0-5em" href="javascript:;"> Remove</a>
-    </nav>
     {{/user}}
 </main>
