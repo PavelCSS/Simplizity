@@ -26,9 +26,9 @@ function onSuccess(contacts){
                 name           : contacts[i].name.formatted,
                 photo          : contacts[i].photos ? contacts[i].photos[0].value : 'images/no_photo.jpg',
                 invited        : Math.floor((Math.random() * 2)),
-                wishListShow : Math.floor((Math.random() * 2)),
+                wishListShowm  : Math.floor((Math.random() * 2)),
                 phone          : contacts[i].phoneNumbers[0].value,
-                wishList      : randomWish()
+                wishList       : randomWish()
             }
             users.push(newUser)
         }
@@ -57,11 +57,12 @@ $('body')
         var $parentLi = $(this).closest('.wish-item').length ? $(this).closest('.wish-item') : $(this).parent();
         $parentLi.find('.wish-private').toggle();
         var urlData = getJsonFromHashUrl();
-        var newWishList = typeof localStorage.wishList !== 'undefined' ? JSON.parse(localStorage.wishList) : wishDavid;
+        var newWishList = wishDavid;
+//        var newWishList = typeof localStorage.wishList !== 'undefined' ? JSON.parse(localStorage.wishList) : wishDavid;
         var newWishIndex = urlData.wishId ? getUser(urlData.userId, urlData.wishId).wishIndex : getUser($parentLi.data('user-id'), $parentLi.data('wish-id')).wishIndex;
         newWishList[newWishIndex].private = !newWishList[newWishIndex].private;
-        users[0].wishList = newWishList;
-        localStorage.wishList = JSON.stringify(newWishList);
+        dinoProfile.wishList = newWishList;
+//        localStorage.wishList = JSON.stringify(newWishList);
         return false;
     })
     .on('tap', '.wish', function(e){
@@ -74,19 +75,21 @@ $('body')
     .on('tap', '#wish-remove', function(e){
         e.stopImmediatePropagation();
         var urlData = getJsonFromHashUrl();
-        var newWishList = typeof localStorage.wishList !== 'undefined' ? JSON.parse(localStorage.wishList) : wishDavid;
+        var newWishList = wishDavid;
+//        var newWishList = typeof localStorage.wishList !== 'undefined' ? JSON.parse(localStorage.wishList) : wishDavid;
         newWishList.splice(getUser(urlData.userId, urlData.wishId).wishIndex, 1);
-        users[0].wishList = newWishList;
-        localStorage.wishList = JSON.stringify(newWishList);
+        dinoProfile.wishList = newWishList;
+//        localStorage.wishList = JSON.stringify(newWishList);
         goBack();
     })
     .on('tap', '.wish-remove', function(e){
         var $parentLi = $(this).closest('.wish-item');
         $parentLi.remove();
-        var newWishList = typeof localStorage.wishList !== 'undefined' ? JSON.parse(localStorage.wishList) : wishDavid;
+        var newWishList = wishDavid;
+//        var newWishList = typeof localStorage.wishList !== 'undefined' ? JSON.parse(localStorage.wishList) : wishDavid;
         newWishList.splice(getUser($parentLi.data('user-id'), $parentLi.data('wish-id')).wishIndex, 1);
-        users[0].wishList = newWishList;
-        localStorage.wishList = JSON.stringify(newWishList);
+        dinoProfile.wishList = newWishList;
+//        localStorage.wishList = JSON.stringify(newWishList);
     })
     .on('tap', '.contact-list', function(e){
         e.stopImmediatePropagation();
@@ -95,6 +98,10 @@ $('body')
     .on('tap', '.my-dotation', function(e){
         e.stopImmediatePropagation();
         window.location.hash = 'myDonation';
+    })
+    .on('tap', '.newRequests', function(e){
+        e.stopImmediatePropagation();
+        window.location.hash = 'newRequests';
     })
     .on('tap', '#donate-btn', function(e){
         e.stopImmediatePropagation();
@@ -148,7 +155,8 @@ $('body')
     .on('submit', '#new-wish', function(e){
         e.preventDefault();
         e.stopImmediatePropagation();
-        var newWishList = typeof localStorage.wishList !== 'undefined' ? JSON.parse(localStorage.wishList) : wishDavid;
+        var newWishList = wishDavid;
+//        var newWishList = typeof localStorage.wishList !== 'undefined' ? JSON.parse(localStorage.wishList) : wishDavid;
         newWishList.push({
             id          : Math.floor((Math.random() * 100) + 1),
             title       : $(this).find('#wishTitle').val(),
@@ -161,14 +169,15 @@ $('body')
             peoples     : 0,
             balance     : $(this).find('#wishPrice').val()
         });
-        users[0].wishList = newWishList;
-        localStorage.wishList = JSON.stringify(newWishList);
+        dinoProfile.wishList = newWishList;
+//        localStorage.wishList = JSON.stringify(newWishList);
         window.location.hash = 'profile';
     })
     .on('submit', '#edit-wish', function(e){
         e.preventDefault();
         e.stopImmediatePropagation();
-        var newWishList = typeof localStorage.wishList !== 'undefined' ? JSON.parse(localStorage.wishList) : wishDavid;
+        var newWishList = wishDavid;
+//        var newWishList = typeof localStorage.wishList !== 'undefined' ? JSON.parse(localStorage.wishList) : wishDavid;
         var urlData = getJsonFromHashUrl();
         var newWishIndex = getUser(urlData.userId, urlData.wishId).wishIndex;
         newWishList[newWishIndex].title = $(this).find('#wishTitle').val();
@@ -177,8 +186,8 @@ $('body')
         newWishList[newWishIndex].photo = $(this).find('#wishPhoto').val();
         newWishList[newWishIndex].total = (newWishList[newWishIndex].donation / newWishList[newWishIndex].price * 100).toFixed(1) + '%';
         newWishList[newWishIndex].balance = newWishList[newWishIndex].price - newWishList[newWishIndex].total;
-        users[0].wishList = newWishList;
-        localStorage.wishList = JSON.stringify(newWishList);
+        dinoProfile.wishList = newWishList;
+//        localStorage.wishList = JSON.stringify(newWishList);
         goBack();
     })
     .on('focus', 'input, select, textarea', function(e){
@@ -200,27 +209,51 @@ $(window).on('resize', function(e){
 });
 
 function getUser(userId, wishId){
+    if(typeof userId === 'undefined'){
+        return false;
+    }
     var userCurrent = {}
-    wishId = typeof wishId === 'undefined' ? false : wishId;
-    for(i = 0; i < users.length; i++){
-        if(users[i].id == userId){
-            if(wishId){
-                for(j = 0; j < users[i].wishList.length; j++){
-                    if(users[i].wishList[j].id == wishId){
-                        userCurrent['user'] = users[i];
-                        userCurrent['wish'] = users[i].wishList[j];
-                        userCurrent['userIndex'] = i;
-                        userCurrent['wishIndex'] = j;
-                        current_user = userCurrent;
-                        return userCurrent;
+    userId = parseInt(userId);
+    wishId = typeof wishId === 'undefined' ? false : parseInt(wishId);
+    if(userId !== dinoProfile.id){
+        for(i = 0; i < users.length; i++){
+            if(users[i].id == userId){
+                if(wishId){
+                    for(j = 0; j < users[i].wishList.length; j++){
+                        if(users[i].wishList[j].id == wishId){
+                            userCurrent['user'] = users[i];
+                            userCurrent['wish'] = users[i].wishList[j];
+                            userCurrent['userIndex'] = i;
+                            userCurrent['wishIndex'] = j;
+                            current_user = userCurrent;
+                            return userCurrent;
+                        }
                     }
+                }else{
+                    userCurrent['user'] = users[i];
+                    userCurrent['userIndex'] = i;
+                    current_user = userCurrent;
+                    return userCurrent;
                 }
-            }else{
-                userCurrent['user'] = users[i];
-                userCurrent['userIndex'] = i;
-                current_user = userCurrent;
-                return userCurrent;
             }
+        }
+    }else{
+        if(wishId){
+            for(j = 0; j < dinoProfile.wishList.length; j++){
+                if(dinoProfile.wishList[j].id == wishId){
+                    userCurrent['user'] = dinoProfile;
+                    userCurrent['wish'] = dinoProfile.wishList[j];
+                    userCurrent['userIndex'] = false;
+                    userCurrent['wishIndex'] = j;
+                    current_user = userCurrent;
+                    return userCurrent;
+                }
+            }
+        }else{
+            userCurrent['user'] = dinoProfile;
+            userCurrent['userIndex'] = false;
+            current_user = userCurrent;
+            return userCurrent;
         }
     }
 }
@@ -266,7 +299,7 @@ function openPage(){
         var wish = getUser(urlData.userId, urlData.wishId).wish;
         parseTemplate('_wish-item.htm', {
             wish : wish,
-            user : (parseInt(urlData.userId) === users[0].id) ? true : false
+            user : (parseInt(urlData.userId) === dinoProfile.id) ? true : false
         });
         return false;
     }

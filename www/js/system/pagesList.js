@@ -1,33 +1,34 @@
 var app_name = 'Simpliziti';
 var pagesList = {
-    'login'      : function(){
+    'login'       : function(){
         parseTemplate('_login.htm', {
             pageName  : 'login',
             pageTitle : app_name
         }, false)
     },
-    'home'       : function(){
+    'home'        : function(){
         parseTemplate('_home.htm', {
             pageName      : 'home',
             pageTitle     : app_name,
-            user          : users[0],
+            user          : dinoProfile,
             usersSent     : usersSent,
+            usersRequest  : usersRequest,
             usersBirthday : usersBirthday
         }, false);
     },
-    'profile'    : function(profile){
+    'profile'     : function(profile){
         if(typeof profile === 'undefined'){
             profile = {
                 user      : true,
                 pageName  : 'profile',
                 pageTitle : 'Profile',
-                userData  : users[0]
+                userData  : dinoProfile
             };
             parseTemplate('_profile.htm', profile, {
                 wishListing : readTextFileReturn('_wish-list_.htm')
             }, false, function(html){
                 $('main').replaceWith(html);
-                eventsList.wish.swipe();
+                //                eventsList.wish.swipe();
             });
             return false;
         }
@@ -35,14 +36,21 @@ var pagesList = {
             wishListing : readTextFileReturn('_wish-list_.htm')
         })
     },
-    'sendMoney'  : function(){
+    'sendMoney'   : function(){
         parseTemplate('_send-money.htm', {
             pageName  : 'send-money',
             pageTitle : 'Send money',
             users     : users
         })
     },
-    'addWish'    : function(url){
+    'newRequests' : function(){
+        parseTemplate('_new-requests.htm', {
+            pageName     : 'new-requests',
+            pageTitle    : 'New requests',
+            usersRequest : usersRequest
+        })
+    },
+    'addWish'     : function(url){
         var urlData = getJsonFromHashUrl();
         var wishItem = getUser(urlData.userId, urlData.wishId);
         if(typeof wishItem !== 'undefined'){
@@ -52,7 +60,7 @@ var pagesList = {
                 pageTitle   : 'Edit wish',
                 id          : wishItem.wish.id,
                 photo       : wishItem.wish.photo,
-                title        : wishItem.wish.title,
+                title       : wishItem.wish.title,
                 price       : wishItem.wish.price,
                 description : wishItem.wish.description,
                 private     : wishItem.wish.private
@@ -65,7 +73,7 @@ var pagesList = {
             })
         }
     },
-    'myDonation' : function(){
+    'myDonation'  : function(){
         parseTemplate('_my-contribute.htm', {
             pageName  : 'my-contribute',
             pageTitle : 'My contribute',
