@@ -88,28 +88,24 @@ $('body')
         users[0].wishList = newWishList;
         localStorage.wishList = JSON.stringify(newWishList);
     })
-    .on('tap', '#wish-edit', function(e){
-    })
-    .on('tap', '.wish-edit', function(e){
-    })
     .on('tap', '.contact-list', function(e){
         e.stopImmediatePropagation();
-        window.location.hash = 'send-money';
+        window.location.hash = 'sendMoney';
     })
     .on('tap', '.my-dotation', function(e){
         e.stopImmediatePropagation();
-        window.location.hash = 'my-donation';
+        window.location.hash = 'myDonation';
     })
     .on('tap', '#donate-btn', function(e){
         e.stopImmediatePropagation();
         window.location.hash = 'contribute';
-        parseTemplate('_contribute.htm', current_user, false);
+        parseTemplate('_contribute.htm', current_user);
     })
     .on('tap', '.back-btn', goBack)
     .on('tap', '#quick-pick', function(){
         addPhoto(1, 1, function(url){
-            pagesList.add_wish(url);
-            window.location.hash = 'add_wish?openPage=false';
+            pagesList.addWish(url);
+            window.location.hash = 'addWish?openPage=false';
         }, function(){
             window.location.hash = 'home';
         });
@@ -135,7 +131,7 @@ $('body')
             user   : current_user.user,
             wish   : current_user.wish,
             donate : donate
-        }, false);
+        });
 
         window.plugin.notification.local.add({
             title   : current_user.user.name + ' sent you money!',
@@ -150,6 +146,7 @@ $('body')
         };
     })
     .on('submit', '#new-wish', function(e){
+        e.preventDefault();
         e.stopImmediatePropagation();
         var newWishList = typeof localStorage.wishList !== 'undefined' ? JSON.parse(localStorage.wishList) : wishDavid;
         newWishList.push({
@@ -164,9 +161,25 @@ $('body')
             peoples     : 0,
             balance     : $(this).find('#wishPrice').val()
         });
-        users[1].wishList = newWishList;
+        users[0].wishList = newWishList;
         localStorage.wishList = JSON.stringify(newWishList);
         window.location.hash = 'profile';
+    })
+    .on('submit', '#edit-wish', function(e){
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        var newWishList = typeof localStorage.wishList !== 'undefined' ? JSON.parse(localStorage.wishList) : wishDavid;
+        var urlData = getJsonFromHashUrl();
+        var newWishIndex = getUser(urlData.userId, urlData.wishId).wishIndex;
+        newWishList[newWishIndex].title = $(this).find('#wishTitle').val();
+        newWishList[newWishIndex].description = $(this).find('#wishDescription').val();
+        newWishList[newWishIndex].price = $(this).find('#wishPrice').val();
+        newWishList[newWishIndex].photo = $(this).find('#wishPhoto').val();
+        newWishList[newWishIndex].total = (newWishList[newWishIndex].donation / newWishList[newWishIndex].price * 100).toFixed(1) + '%';
+        newWishList[newWishIndex].balance = newWishList[newWishIndex].price - newWishList[newWishIndex].total;
+        users[0].wishList = newWishList;
+        localStorage.wishList = JSON.stringify(newWishList);
+        goBack();
     })
     .on('focus', 'input, select, textarea', function(e){
         fieldPos = $(this).offset().top + $(this).height();
@@ -239,7 +252,7 @@ function openPage(){
             pageTitle : 'Profile',
             userData  : user,
             showBlock : function(){
-                if(this.userData.invited && (typeof this.userData.wishListShow === 'function' ? this.userData.wishListShow.call() : this.userData.wishListShow)){
+                if(this.userData.invited && this.userData.wishListShow){
                     return true;
                 }else{
                     return false
@@ -254,7 +267,7 @@ function openPage(){
         parseTemplate('_wish-item.htm', {
             wish : wish,
             user : (parseInt(urlData.userId) === users[0].id) ? true : false
-        }, false);
+        });
         return false;
     }
 

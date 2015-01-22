@@ -1,30 +1,40 @@
-<main id="{{page-name}}" class="gray-darker-bg">
+<main id="{{pageName}}" class="gray-darker-bg">
     <header class="fixed fade">
         <button class="back-btn btn pl0em icon-arrow-left6 fl-left">{{pageTitle}}</button>
         <a class="btn icon icon-user fl-right" href="#profile">Profile</a>
     </header>
 
     <article id="wish-preview" class="wish-preview responsive-image _16x9 icon-camera">
-        {{#wishImage}}<img class="mb0-25em" src="{{wishImage}}">{{/wishImage}}
+        {{#photo}}<img class="mb0-25em" src="{{photo}}">{{/photo}}
     </article>
 
-    <form id="new-wish" class="p10px">
+    <form id="{{#edit}}edit-wish{{/edit}}{{^edit}}new-wish{{/edit}}" class="p10px">
         <p class="_grid_7">
             <label class="text-bold larger required">What is it?</label>
-            <input id="wishTitle" class="white" name="wish title" type="text" value="" required>
+            <input id="wishTitle" class="white" name="wish title" type="text" value="{{title}}" required>
         </p>
         <p class="_grid_5">
             <label class="text-bold larger required">Price</label>
-            <input id="wishPrice" class="white" name="price" type="number" required>
+            <input id="wishPrice" class="white" name="price" type="number" value="{{price}}" required>
         </p>
         <p class="_grid_12">
             <label class="text-bold larger">Description</label>
-            <textarea id="wishDescription" class="white" name="description" cols="30" rows="6"></textarea>
+            <textarea id="wishDescription" class="white" name="description" cols="30" rows="6">{{description}}</textarea>
         </p>
 
-        <input id="wishPhoto" type="hidden" value="{{wishImage}}"/>
+        <input id="wishPhoto" type="hidden" value="{{photo}}"/>
 
-        <button class="_grid_6 btn success large">Public</button>
-        <button class="_grid_6 btn error large">Private</button>
+        {{#edit}}
+            {{#private}}
+            <button class="_grid_12 btn error large">Private</button>
+            {{/private}}
+            {{^private}}
+            <button class="_grid_12 btn success large">Public</button>
+            {{/private}}
+        {{/edit}}
+        {{^edit}}
+            <button class="_grid_6 btn success large">Public</button>
+            <button class="_grid_6 btn error large">Private</button>
+        {{/edit}}
     </form>
 </main>
