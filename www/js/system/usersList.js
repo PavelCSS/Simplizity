@@ -903,7 +903,11 @@ var users = [
 ];
 
 var usersSent = randomUser(3),
-    usersRequest = randomUser(3),
+    usersRequest = [
+        users[1],
+        users[5],
+        users[7]
+    ],
     usersBirthday = randomUser(3);
 
 function randomWish(count){
