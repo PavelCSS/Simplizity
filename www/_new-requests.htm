@@ -1,0 +1,63 @@
+<main id="{{pageName}}">
+
+    <header class="fixed large">
+        <button class="back-btn btn icon-arrow-left6 fl-left">{{pageTitle}}</button>
+        <a class="btn icon icon-user fl-right" href="#profile">Profile</a>
+    </header>
+
+    <article class="mtH pb0em">
+        <ul class="list-bordered m0px">
+            <!--{ { #usersRequest}}-->
+            <li class="clearfix">
+                <div class="fl-right">
+                    <a class="btn circle outline-bg icon icon-users success" disabled>Public</a>
+                    <a class="btn circle outline-bg icon icon-locked2 success" disabled>Private</a>
+                </div>
+                <div class="profile clearfix wrap" data-user-id="{{usersRequest.0.id}}">
+                    <span class="w50px fl-left mr-grid">
+                        <span class="user-photo responsive-image _1x1">
+                            <img src="{{usersRequest.0.photo}}" alt=""/>
+                        </span>
+                    </span>
+                    <h3 class="m0px">
+                        {{usersRequest.0.name}}
+                    </h3>
+                </div>
+            </li>
+            <li class="clearfix">
+                <div class="fl-right">
+                    <a class="btn circle outline-bg icon icon-users success" >Public</a>
+                    <a class="btn circle outline-bg icon icon-locked2 success" disabled>Private</a>
+                </div>
+                <div class="profile clearfix wrap" data-user-id="{{usersRequest.1.id}}">
+                    <span class="w50px fl-left mr-grid">
+                        <span class="user-photo responsive-image _1x1">
+                            <img src="{{usersRequest.1.photo}}" alt=""/>
+                        </span>
+                    </span>
+                    <h3 class="m0px">
+                        {{usersRequest.1.name}}
+                    </h3>
+                </div>
+            </li>
+            <li class="clearfix">
+                <div class="fl-right">
+                    <a class="btn circle outline-bg icon icon-users success" disabled>Public</a>
+                    <a class="btn circle outline-bg icon icon-locked2 success" >Private</a>
+                </div>
+                <div class="profile clearfix wrap" data-user-id="{{usersRequest.2.id}}">
+                    <span class="w50px fl-left mr-grid">
+                        <span class="user-photo responsive-image _1x1">
+                            <img src="{{usersRequest.2.photo}}" alt=""/>
+                        </span>
+                    </span>
+                    <h3 class="m0px">
+                        {{usersRequest.2.name}}
+                    </h3>
+                </div>
+            </li>
+            <!--{ { /usersRequest}}-->
+        </ul>
+    </article>
+
+</main>

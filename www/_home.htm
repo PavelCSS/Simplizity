@@ -8,14 +8,30 @@
 
     <article class="p0px scroll ptH pb5em">
         <ul class="list-bordered m0px clearfix">
-            <li class="p5px m5px" style="border-bottom: 2px solid rgba(0,0,0,.1);">
-                <span class="text-bold text-center fl-right small gray-dark ml0-5em">Some people<br> sent you money</span>
+            <li class="p5px m5px clearfix" style="border-bottom: 2px solid rgba(0,0,0,.1);">
+                <span class="text-bold text-center fl-right small gray-dark ml0-5em pr0-5em">
+                    <span class="inline-block mr0-5em">Some people<br> sent you money</span>
+                    <i class="icon-dollar3 icon24 success"></i>
+                </span>
                 <div class="scroll text-overflow">
                     {{#usersSent}}
                     <img class="profile"
                             data-user-id="{{id}}"
                             src="{{photo}}" alt="{{name}}" width="45"/>
                     {{/usersSent}}
+                </div>
+            </li>
+            <li class="newRequests p5px m5px white-bg clearfix" style="border-bottom: 2px solid rgba(0,0,0,.1);">
+                <span class="text-bold text-center fl-left gray-dark mr0-5em pl0-5em">
+                    <i class="icon-announcement icon24 success"></i>
+                    <span class="inline-block ml0-5em">New lists<br> requests</span>
+                </span>
+                <div class="scroll text-overflow text-right">
+                    {{#usersRequest}}
+                    <img class="profile"
+                            data-user-id="{{id}}"
+                            src="{{photo}}" alt="{{name}}" width="45"/>
+                    {{/usersRequest}}
                 </div>
             </li>
 
@@ -40,9 +56,9 @@
             {{/user.wishList}}
 
             <li class="m5px p5px message gray">
-                <img src="{{user.photo}}" alt="{{user.name}}" width="45"
+                <img src="images/users/Alberto Echegaray.jpg" alt="Alberto Echegaray" width="45"
                         class="fl-left mr0-5em profile"
-                        data-user-id="{{user.id}}"/>
+                        data-user-id="1"/>
                 <p class="small m0px">Oh man, thank you so much for the gift I am almost there... I'll send you pictures!</p>
             </li>
 
