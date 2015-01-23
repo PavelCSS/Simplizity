@@ -53,7 +53,7 @@ var pagesList = {
     'addWish'     : function(url){
         var urlData = getJsonFromHashUrl();
         var wishItem = getUser(urlData.userId, urlData.wishId);
-        if(typeof wishItem !== 'undefined'){
+        if(typeof wishItem !== 'undefined' && wishItem){
             parseTemplate('_add-wish.tmpl', {
                 edit        : true,
                 pageName    : 'edit-wish',
