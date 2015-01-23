@@ -116,7 +116,7 @@ $('body')
         window.location.hash = 'newRequests';
     })
     .on('tap', '#donate-btn', function(e){
-        e.stopImmediatePropagation();
+//        e.stopImmediatePropagation();
         window.location.hash = 'contribute';
         parseTemplate('_contribute.tmpl', current_user);
     })
