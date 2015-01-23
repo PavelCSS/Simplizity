@@ -45,6 +45,13 @@ var fieldPos,
     current_user = {};
 
 $('body')
+    .on('tap', '.wish', function(e){
+        e.stopImmediatePropagation();
+        var userId = $(this).data('user-id');
+        var wishId = $(this).data('wish-id');
+        current_user = getUser(userId, wishId);
+        window.location.hash = 'wish?userId=' + userId + '&wishId=' + current_user.wish.id;
+    })
     .on('tap', '.showList', function(e){
         e.stopImmediatePropagation();
         $(this).toggleClass('disabled')
@@ -67,13 +74,6 @@ $('body')
         dinoProfile.wishList = newWishList;
 //        localStorage.wishList = JSON.stringify(newWishList);
         return false;
-    })
-    .on('tap', '.wish', function(e){
-//        e.stopImmediatePropagation();
-        var userId = $(this).data('user-id');
-        var wishId = $(this).data('wish-id');
-        current_user = getUser(userId, wishId);
-        window.location.hash = 'wish?userId=' + userId + '&wishId=' + current_user.wish.id;
     })
     .on('tap', '#wish-remove', function(e){
         e.stopImmediatePropagation();
@@ -165,22 +165,23 @@ $('body')
             window.location.hash = 'wish?userId=' + JSON.parse(json).userId + '&wishId=' + JSON.parse(json).wishId;
         };
     })
-    .on('submit', '#new-wish', function(e){
+    .on('tap', '#new-wish button', function(e){
         e.preventDefault();
         e.stopImmediatePropagation();
         var newWishList = wishDavid;
 //        var newWishList = typeof localStorage.wishList !== 'undefined' ? JSON.parse(localStorage.wishList) : wishDavid;
         newWishList.push({
             id          : Math.floor((Math.random() * 100) + 1),
-            title       : $(this).find('#wishTitle').val(),
-            description : $(this).find('#wishDescription').val(),
+            title       : $(this).parent('form').find('#wishTitle').val(),
+            description : $(this).parent('form').find('#wishDescription').val(),
             unit        : '$',
-            price       : $(this).find('#wishPrice').val(),
+            price       : $(this).parent('form').find('#wishPrice').val(),
             donation    : 0,
-            photo       : $(this).find('#wishPhoto').val(),
+            photo       : $(this).parent('form').find('#wishPhoto').val(),
             total       : '0%',
             peoples     : 0,
-            balance     : $(this).find('#wishPrice').val()
+            balance     : $(this).parent('form').find('#wishPrice').val(),
+            private     : $(e.target).attr('id') === 'private' ? 1 : 0
         });
         dinoProfile.wishList = newWishList;
 //        localStorage.wishList = JSON.stringify(newWishList);

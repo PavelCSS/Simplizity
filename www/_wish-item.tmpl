@@ -22,11 +22,13 @@
         <p class="gray-light">{{wish.description}}</p>
     </article>
 
-    {{^user}}
+
     <footer class="donate-info large p10px inherit">
+        {{^user}}
         <button id="donate-btn"
                 class="btn success fl-right"
                 data-id="{{wish.id}}">Contribute</button>
+        {{/user}}
         <div class="wrap lh-normal">
             <i class="icon-man fs48 fl-left lh-small" style="margin-left: -10px"></i>
             <div class="fl-left mr0-5em" style="margin-left: -10px">
@@ -38,5 +40,4 @@
             </div>
         </div>
     </footer>
-    {{/user}}
 </main>
