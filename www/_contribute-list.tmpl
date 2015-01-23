@@ -1,0 +1,19 @@
+<main id="contribute-me">
+    <header class="fixed large">
+        <button class="back-btn btn icon-arrow-left6 pl0em fl-left">New contribute list</button>
+    </header>
+
+    <article class="mtH">
+        <ul class="list-bordered m0px">
+        {{#users}}
+            {{#donateMe}}
+                <li class="profile clearfix" data-user-id="{{id}}">
+                    <img class="fl-left mr0-5em" src="{{photo}}" alt="{{name}}" width="50">
+                    <span class="fl-right ml0-5em success larger text-bold">+ ${{donateMe}}</span>
+                    <h3 class="wrap m0px">{{name}}</h3>
+                </li>
+            {{/donateMe}}
+        {{/users}}
+        </ul>
+    </article>
+</main>

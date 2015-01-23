@@ -9,15 +9,23 @@
         <ul class="user-list list-bordered m0px">
             {{#users}}
             <li class="user-item" data-user-id="{{id}}" data-user-name="{{name}}">
+                {{#invited}}
+                <div class="fl-right">
+                    <a class="showList btn circle outline-bg icon icon-users success {{^publickShow}}disabled{{/publickShow}}">Public</a>
+                    <a class="showList btn circle outline-bg icon icon-locked2 success {{^privateShow}}disabled{{/privateShow}}">Private</a>
+                </div>
+                {{/invited}}
                 <span class="w50px fl-left mr-grid">
                     <span class="user-photo responsive-image _1x1">
                         <img src="{{photo}}" alt=""/>
                     </span>
                 </span>
-                <h3 class="user-name">
+                <h3 class="user-name wrap">
                     {{name}}
                     {{#invited}}
-                    <span class="subtitle block">SIM registered users</span>
+                        {{^wishListShow}}
+                            <span class="subtitle block">No list</span>
+                        {{/wishListShow}}
                     {{/invited}}
                     {{^invited}}
                     <span class="subtitle block">NON registered users</span>
