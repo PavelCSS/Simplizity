@@ -168,7 +168,8 @@ var users = [
         wishList     : randomWish(),
         privateShow  : 1,
         publickShow  : 0,
-        donateMe     : 30
+        donateMe     : 30,
+        donateWish   : wishDavid[0]
     },
     {
         id           : 2,
@@ -213,7 +214,8 @@ var users = [
         wishList     : randomWish(),
         privateShow  : 1,
         publickShow  : 1,
-        donateMe     : 50
+        donateMe     : 50,
+        donateWish   : wishDavid[1]
     },
     {
         id           : 6,
@@ -236,7 +238,8 @@ var users = [
         wishList     : randomWish(),
         privateShow  : 1,
         publickShow  : 0,
-        donateMe     : 100
+        donateMe     : 100,
+        donateWish   : wishDavid[2]
     },
     {
         id           : 8,

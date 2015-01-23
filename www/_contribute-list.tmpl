@@ -8,9 +8,12 @@
         {{#users}}
             {{#donateMe}}
                 <li class="profile clearfix" data-user-id="{{id}}">
-                    <img class="fl-left mr0-5em" src="{{photo}}" alt="{{name}}" width="50">
-                    <span class="fl-right ml0-5em success larger text-bold">+ ${{donateMe}}</span>
-                    <h3 class="wrap m0px">{{name}}</h3>
+                    <img class="fl-right ml0-5em wish" data-user-id="0" data-wish-id="{{donateWish.id}}" src="{{donateWish.photo}}" alt="{{donateWish.title}}" width="75">
+                    <img class="fl-left mr0-5em img-circle img-thumbnail" src="{{photo}}" alt="{{name}}" width="60">
+                    <h3 class="wrap m0px">
+                        {{name}}
+                        <span class="block text-bold success text-right">+ ${{donateMe}}</span>
+                    </h3>
                 </li>
             {{/donateMe}}
         {{/users}}
