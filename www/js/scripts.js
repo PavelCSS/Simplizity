@@ -50,7 +50,7 @@ $('body')
         $(this).toggleClass('disabled')
     })
     .on('tap', '.user-item, .profile', function(e){
-        e.stopImmediatePropagation();
+//        e.stopImmediatePropagation();
         var userId = $(this).data('user-id');
         window.location.hash = 'user?userId=' + userId;
         return false;
@@ -69,7 +69,7 @@ $('body')
         return false;
     })
     .on('tap', '.wish', function(e){
-        e.stopImmediatePropagation();
+//        e.stopImmediatePropagation();
         var userId = $(this).data('user-id');
         var wishId = $(this).data('wish-id');
         current_user = getUser(userId, wishId);
@@ -154,8 +154,8 @@ $('body')
         });
 
         window.plugin.notification.local.add({
-            title   : current_user.user.name + ' sent you money!',
-            message : 'You received ($' + donate + ')',
+            title   : 'You sent you money!',
+            message : 'You sent $' + donate + ' to ' + current_user.user.name,
             json    : {
                 userId : current_user.user.id,
                 wishId : current_user.wish.id
