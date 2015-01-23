@@ -39,7 +39,7 @@ var pagesList = {
     'sendMoney'   : function(){
         parseTemplate('_send-money.tmpl', {
             pageName  : 'send-money',
-            pageTitle : 'Send money',
+            pageTitle : 'Contribute',
             users     : users
         })
     },
