@@ -1,0 +1,38 @@
+<main id="contribute-me" class="flexbox-column gray-darker-bg ">
+    <header class="fixed large gray-darker-bg">
+        <button class="back-btn btn icon-arrow-left6 pl0em fl-left">Contribute</button>
+    </header>
+
+    <article class="p0px flex-size_1 flexbox flex-item-align-center text-center mtH">
+        <div class=" gray-darker-bg gray-lighter centered text-center profile" data-user-id="{{id}}">
+            <div class="w100px inline-block">
+                <span class="responsive-image _1x1 img-circle">
+                    <img src="{{photo}}" alt="{{name}}" width="75">
+                </span>
+            </div>
+            <h2 class="inherit inline-block m0px">{{name}}</h2>
+            {{#donateMe}}
+            <div class="mt2em">
+                <input class="dial" type="text" value="{{donateMe}}"
+                        data-readOnly="true"
+                        data-width="220"
+                        data-max="{{donateMe}}"
+                        data-inputcolor="#fff"
+                        data-fgColor="#eee"
+                        data-fontSize-max="70"
+                        data-bgColor="#eee"
+                        data-thickness=".2"
+                        data-inputprefix="$">
+            </div>
+            {{/donateMe}}
+        </div>
+    </article>
+
+    <script>
+        $(".dial").knob({
+            'change' : function (v) {
+                $('#balance').text(balanceUnit + (balanceVal - Math.round(v)));
+            }
+        });
+    </script>
+</main>

@@ -3,7 +3,7 @@
         <button class="back-btn btn pl0em icon-arrow-left6 fl-left">Back</button>
         {{#user}}
         <a id="wish-remove" class="btn icon icon-remove error fl-right" href="javascript:;"> Remove</a>
-        <a id="wish-edit" class="btn icon icon-pencil3 info fl-right" href="javascript:;"> Edit</a>
+        <a id="wish-edit" class="btn icon icon-pencil3 info fl-right" href="#addWish?userId=0&wishId={{wish.id}}"> Edit</a>
         <a class="wish-private btn icon icon-locked2 warning fl-right" {{^wish.private}}style="display:none"{{/wish.private}}>Private</a>
         <a class="wish-private btn icon icon-unlocked2 success fl-right" {{#wish.private}}style="display:none"{{/wish.private}}>Public</a>
         {{/user}}

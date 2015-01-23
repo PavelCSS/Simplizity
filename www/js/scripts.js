@@ -7,7 +7,6 @@ document.addEventListener('backbutton', goBack, false);
 function onDeviceReady(){
     StatusBar.hide();
     $('html').addClass(device.platform.toLowerCase());
-//    FastClick.attach(document.body);
     navigator.splashscreen.hide();
     openPage();
 
@@ -46,6 +45,10 @@ var fieldPos,
     current_user = {};
 
 $('body')
+    .on('tap', '.showList', function(e){
+        e.stopImmediatePropagation();
+        $(this).toggleClass('disabled')
+    })
     .on('tap', '.user-item, .profile', function(e){
         e.stopImmediatePropagation();
         var userId = $(this).data('user-id');
@@ -99,6 +102,15 @@ $('body')
         e.stopImmediatePropagation();
         window.location.hash = 'myDonation';
     })
+    .on('tap', '.dotation-me', function(e){
+        e.stopImmediatePropagation();
+        var userId = $(this).data('user-id');
+        window.location.hash = 'donationMe?userId=' + userId;
+    })
+    .on('tap', '#dotation-list', function(e){
+        e.stopImmediatePropagation();
+        window.location.hash = 'donationList';
+    })
     .on('tap', '.newRequests', function(e){
         e.stopImmediatePropagation();
         window.location.hash = 'newRequests';
@@ -106,10 +118,10 @@ $('body')
     .on('tap', '#donate-btn', function(e){
         e.stopImmediatePropagation();
         window.location.hash = 'contribute';
-        parseTemplate('_contribute.htm', current_user);
+        parseTemplate('_contribute.tmpl', current_user);
     })
     .on('tap', '.back-btn', goBack)
-    .on('tap', '#quick-pick', function(){
+    .on('tap', '#quick-pick', function(e){
         addPhoto(1, 1, function(url){
             pagesList.addWish(url);
             window.location.hash = 'addWish?openPage=false';
@@ -117,7 +129,7 @@ $('body')
             window.location.hash = 'home';
         });
     })
-    .on('tap', '#wish-preview', function(){
+    .on('tap', '#wish-preview', function(e){
         addPhoto(1, 1, function(url){
             var img = document.createElement('img');
             img.src = url;
@@ -127,14 +139,15 @@ $('body')
             hideLoading();
         });
     })
-    .on('submit', '#donate-form', function(){
+    .on('submit', '#donate-form', function(e){
+        e.preventDefault();
         e.stopImmediatePropagation();
         var donate = parseInt($(this).find('.dial').val().replace('$', ''));
         var newDonate = current_user.wish.donation + donate;
         users[current_user.userIndex].wishList[current_user.wishIndex].donation = newDonate;
         users[current_user.userIndex].wishList[current_user.wishIndex].total = (newDonate / current_user.wish.price * 100).toFixed(0) + '%';
         users[current_user.userIndex].wishList[current_user.wishIndex].balance = current_user.wish.price - newDonate;
-        parseTemplate('_contribute.htm', {
+        parseTemplate('_contribute.tmpl', {
             user   : current_user.user,
             wish   : current_user.wish,
             donate : donate
@@ -297,7 +310,7 @@ function openPage(){
     if(pageName === 'wish'){
         var urlData = getJsonFromHashUrl();
         var wish = getUser(urlData.userId, urlData.wishId).wish;
-        parseTemplate('_wish-item.htm', {
+        parseTemplate('_wish-item.tmpl', {
             wish : wish,
             user : (parseInt(urlData.userId) === dinoProfile.id) ? true : false
         });

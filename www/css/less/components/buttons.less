@@ -5,7 +5,7 @@
     .user-select();
     .box-shadow(none; @input-shadow-focus);
 
-    &[disabled]{
+    &[disabled], &.disabled{
         border-color     : @gray-light !important;
         color            : @gray-light !important;
         background-color : @gray-lighter !important;
@@ -193,6 +193,11 @@
         // Info appears as blue
         &.info when (@button-color-info = true) and (@button-colors = true){
             .button-color(@brand-info; transparent; @brand-info; @button-info-color; @button-info-bg; @button-info-bg);
+        }
+
+        // Gray appears as blue
+        &.gray{
+            .button-color(@gray-lighter; transparent; @gray-lighter; @gray; @gray-lighter; @gray-lighter);
         }
 
         //Inverse color

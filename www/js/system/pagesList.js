@@ -1,13 +1,13 @@
 var app_name = 'Simpliziti';
 var pagesList = {
     'login'       : function(){
-        parseTemplate('_login.htm', {
+        parseTemplate('_login.tmpl', {
             pageName  : 'login',
             pageTitle : app_name
         }, false)
     },
     'home'        : function(){
-        parseTemplate('_home.htm', {
+        parseTemplate('_home.tmpl', {
             pageName      : 'home',
             pageTitle     : app_name,
             user          : dinoProfile,
@@ -24,27 +24,27 @@ var pagesList = {
                 pageTitle : 'Profile',
                 userData  : dinoProfile
             };
-            parseTemplate('_profile.htm', profile, {
-                wishListing : readTextFileReturn('_wish-list_.htm')
+            parseTemplate('_profile.tmpl', profile, {
+                wishListing : readTextFileReturn('_wish-list_.tmpl')
             }, false, function(html){
                 $('main').replaceWith(html);
                 //                eventsList.wish.swipe();
             });
             return false;
         }
-        parseTemplate('_profile.htm', profile, {
-            wishListing : readTextFileReturn('_wish-list_.htm')
+        parseTemplate('_profile.tmpl', profile, {
+            wishListing : readTextFileReturn('_wish-list_.tmpl')
         })
     },
     'sendMoney'   : function(){
-        parseTemplate('_send-money.htm', {
+        parseTemplate('_send-money.tmpl', {
             pageName  : 'send-money',
             pageTitle : 'Send money',
             users     : users
         })
     },
     'newRequests' : function(){
-        parseTemplate('_new-requests.htm', {
+        parseTemplate('_new-requests.tmpl', {
             pageName     : 'new-requests',
             pageTitle    : 'New requests',
             usersRequest : usersRequest
@@ -54,7 +54,7 @@ var pagesList = {
         var urlData = getJsonFromHashUrl();
         var wishItem = getUser(urlData.userId, urlData.wishId);
         if(typeof wishItem !== 'undefined'){
-            parseTemplate('_add-wish.htm', {
+            parseTemplate('_add-wish.tmpl', {
                 edit        : true,
                 pageName    : 'edit-wish',
                 pageTitle   : 'Edit wish',
@@ -66,7 +66,7 @@ var pagesList = {
                 private     : wishItem.wish.private
             })
         }else{
-            parseTemplate('_add-wish.htm', {
+            parseTemplate('_add-wish.tmpl', {
                 pageName  : 'add-wish',
                 pageTitle : 'Add wish',
                 photo     : url || ''
@@ -74,10 +74,20 @@ var pagesList = {
         }
     },
     'myDonation'  : function(){
-        parseTemplate('_my-contribute.htm', {
+        parseTemplate('_my-contribute.tmpl', {
             pageName  : 'my-contribute',
             pageTitle : 'My contribute',
             donations : donationsDavid
+        })
+    },
+    'donationMe'  : function(){
+        var urlData = getJsonFromHashUrl();
+        var user = getUser(urlData.userId).user;
+        parseTemplate('_contribute-me.tmpl', user)
+    },
+    'donationList'  : function(){
+        parseTemplate('_contribute-list.tmpl', {
+            users : usersSent
         })
     }
 }

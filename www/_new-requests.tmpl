@@ -8,10 +8,10 @@
     <article class="mtH pb0em">
         <ul class="list-bordered m0px">
             <!--{ { #usersRequest}}-->
-            <li class="clearfix">
+            <li class="clearfix" data-user-id="{{usersRequest.0.id}}">
                 <div class="fl-right">
-                    <a class="btn circle outline-bg icon icon-users success" disabled>Public</a>
-                    <a class="btn circle outline-bg icon icon-locked2 success" disabled>Private</a>
+                    <a class="showList btn circle outline-bg icon icon-users success" disabled>Public</a>
+                    <a class="showList btn circle outline-bg icon icon-locked2 success" disabled>Private</a>
                 </div>
                 <div class="profile clearfix wrap" data-user-id="{{usersRequest.0.id}}">
                     <span class="w50px fl-left mr-grid">

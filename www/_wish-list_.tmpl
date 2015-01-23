@@ -15,18 +15,18 @@
         </div>
         {{/user}}
         <div class="drag-block wish" data-user-id="{{userData.id}}" data-wish-id="{{id}}">
-            {{#user}}
-            <a class="wish-private btn icon icon-locked2 circle warning outline-bg fl-right"
-                    style="margin-top: -10px;{{^private}}display:none;{{/private}}">Private
-            </a>
-            <a class="wish-private btn icon icon-unlocked2 circle success outline-bg fl-right"
-                    style="margin-top: -10px;{{#private}}display:none;{{/private}}">Public
-            </a>
-            {{/user}}
+            <!--{ { #user}}-->
+            <!--<a class="wish-private btn icon icon-locked2 circle warning outline-bg fl-right"-->
+                    <!--style="margin-top: -10px;{{^private}}display:none;{{/private}}">Private-->
+            <!--</a>-->
+            <!--<a class="wish-private btn icon icon-unlocked2 circle success outline-bg fl-right"-->
+                    <!--style="margin-top: -10px;{{#private}}display:none;{{/private}}">Public-->
+            <!--</a>-->
+            <!--{ { /user}}-->
             <h4 class="wish-title">{{title}}</h4>
             <div class="clearfix mb0-5em"></div>
             <div class="fl-right ml1em _grid_7 _alpha _omega">
-                <div class="donnation-info {{donationClass}} {{^donationClass}}primary-bg{{/donationClass}} wrap p5px large br0-5em">
+                <div class="donnation-info {{donationClass}} {{#user}}{{#private}}error-bg{{/private}}{{^private}}primary-bg{{/private}}{{/user}}{{^user}}primary-bg{{/user}} wrap p5px large br0-5em">
                     <i class="icon-man fs48 fl-left lh-small" style="margin-left: -10px"></i>
                     <div class="fl-left" style="margin-left: -10px">
                         {{peoples}} <br>

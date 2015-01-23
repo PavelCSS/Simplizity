@@ -10,7 +10,7 @@ function parseTemplate(tmpl, json, partial, cache, callback){
     };
     readTextFile(tmpl, function(response){
         if(json){
-            var html = Mustache.to_html(response, json, partial);
+            var html = Mustache.render(response, json, partial);
             cache ? pagesCache(json.pageName, html) : '';
             callback(html);
         }else{
