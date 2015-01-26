@@ -57,7 +57,7 @@ $('body')
         $(this).toggleClass('disabled')
     })
     .on('tap', '.user-item, .profile', function(e){
-//        e.stopImmediatePropagation();
+        e.stopImmediatePropagation();
         var userId = $(this).data('user-id');
         window.location.hash = 'user?userId=' + userId;
         return false;

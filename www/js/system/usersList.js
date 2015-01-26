@@ -119,7 +119,7 @@ var wishList = [
     }
 ];
 var wishDavid = [
-    wishList[1], wishList[3], wishList[5]
+    wishList[4], wishList[5], wishList[1]
 ];
 var donationsDavid = [
     {
