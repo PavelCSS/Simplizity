@@ -167,6 +167,7 @@ $('body')
             }
         });
         window.plugin.notification.local.onclick = function (id, state, json) {
+            window.plugin.notification.local.cancel(id);
             window.location.hash = 'wish?userId=' + JSON.parse(json).userId + '&wishId=' + JSON.parse(json).wishId;
         };
     })
@@ -232,6 +233,7 @@ $('body')
             }
         });
         window.plugin.notification.local.onclick = function (id, state, json) {
+            window.plugin.notification.local.cancel(id);
             window.location.hash = 'user?userId=' + JSON.parse(json).userId;
         };
         goBack();
