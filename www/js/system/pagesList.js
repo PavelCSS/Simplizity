@@ -57,7 +57,7 @@ var pagesList = {
             parseTemplate('_add-wish.tmpl', {
                 edit        : true,
                 pageName    : 'edit-wish',
-                pageTitle   : 'Edit wish',
+                pageTitle   : 'Edit item',
                 id          : wishItem.wish.id,
                 photo       : wishItem.wish.photo,
                 title       : wishItem.wish.title,
@@ -68,7 +68,7 @@ var pagesList = {
         }else{
             parseTemplate('_add-wish.tmpl', {
                 pageName  : 'add-wish',
-                pageTitle : 'Add wish',
+                pageTitle : 'Add item',
                 photo     : url || ''
             })
         }
@@ -77,7 +77,7 @@ var pagesList = {
         parseTemplate('_my-contribute.tmpl', {
             pageName  : 'my-contribute',
             pageTitle : 'My contribute',
-            donations : donationsDavid
+            donations : donationsDino
         })
     },
     'donationMe'  : function(){

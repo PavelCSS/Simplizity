@@ -12,12 +12,12 @@ function onDeviceReady(){
     openPage();
 
 //    var fields       = ["*"];
-//    navigator.contacts.find(fields, onSuccess, onError);
+//    navigator.contacts.find(fields, onSuccessContact, onErrorContact);
 
     window.plugin.notification.local.registerPermission();
 }
 
-function onSuccess(contacts){
+function onSuccessContact(contacts){
     users = [profile];
     for(i = 0; i < contacts.length; i++){
         if(contacts[i].phoneNumbers !== null){
@@ -35,7 +35,7 @@ function onSuccess(contacts){
     }
 }
 
-function onError(contactError) {
+function onErrorContact(contactError) {
     console.log('onError!' + contactError);
 }
 
@@ -68,8 +68,8 @@ $('body')
         var $parentLi = $(this).closest('.wish-item').length ? $(this).closest('.wish-item') : $(this).parent();
         $parentLi.find('.wish-private').toggle();
         var urlData = getJsonFromHashUrl();
-        var newWishList = wishDavid;
-//        var newWishList = typeof localStorage.wishList !== 'undefined' ? JSON.parse(localStorage.wishList) : wishDavid;
+        var newWishList = wishDino;
+//        var newWishList = typeof localStorage.wishList !== 'undefined' ? JSON.parse(localStorage.wishList) : wishDino;
         var newWishIndex = urlData.wishId ? getUser(urlData.userId, urlData.wishId).wishIndex : getUser($parentLi.data('user-id'), $parentLi.data('wish-id')).wishIndex;
         newWishList[newWishIndex].private = !newWishList[newWishIndex].private;
         dinoProfile.wishList = newWishList;
@@ -79,8 +79,8 @@ $('body')
     .on('tap', '#wish-remove', function(e){
         e.stopImmediatePropagation();
         var urlData = getJsonFromHashUrl();
-        var newWishList = wishDavid;
-//        var newWishList = typeof localStorage.wishList !== 'undefined' ? JSON.parse(localStorage.wishList) : wishDavid;
+        var newWishList = wishDino;
+//        var newWishList = typeof localStorage.wishList !== 'undefined' ? JSON.parse(localStorage.wishList) : wishDino;
         newWishList.splice(getUser(urlData.userId, urlData.wishId).wishIndex, 1);
         dinoProfile.wishList = newWishList;
 //        localStorage.wishList = JSON.stringify(newWishList);
@@ -89,8 +89,8 @@ $('body')
     .on('tap', '.wish-remove', function(e){
         var $parentLi = $(this).closest('.wish-item');
         $parentLi.remove();
-        var newWishList = wishDavid;
-//        var newWishList = typeof localStorage.wishList !== 'undefined' ? JSON.parse(localStorage.wishList) : wishDavid;
+        var newWishList = wishDino;
+//        var newWishList = typeof localStorage.wishList !== 'undefined' ? JSON.parse(localStorage.wishList) : wishDino;
         newWishList.splice(getUser($parentLi.data('user-id'), $parentLi.data('wish-id')).wishIndex, 1);
         dinoProfile.wishList = newWishList;
 //        localStorage.wishList = JSON.stringify(newWishList);
@@ -155,6 +155,7 @@ $('body')
         });
 
         window.plugin.notification.local.add({
+            id : 'test',
             title   : 'You sent you money!',
             message : 'You sent $' + donate + ' to ' + current_user.user.name,
             json    : {
@@ -163,14 +164,15 @@ $('body')
             }
         });
         window.plugin.notification.local.onclick = function (id, state, json) {
+            console.log(id)
             window.location.hash = 'wish?userId=' + JSON.parse(json).userId + '&wishId=' + JSON.parse(json).wishId;
         };
     })
     .on('tap', '#new-wish button', function(e){
         e.preventDefault();
         e.stopImmediatePropagation();
-        var newWishList = wishDavid;
-//        var newWishList = typeof localStorage.wishList !== 'undefined' ? JSON.parse(localStorage.wishList) : wishDavid;
+        var newWishList = wishDino;
+//        var newWishList = typeof localStorage.wishList !== 'undefined' ? JSON.parse(localStorage.wishList) : wishDino;
         newWishList.push({
             id          : Math.floor((Math.random() * 100) + 1),
             title       : $(this).parent('form').find('#wishTitle').val(),
@@ -191,8 +193,8 @@ $('body')
     .on('submit', '#edit-wish', function(e){
         e.preventDefault();
         e.stopImmediatePropagation();
-        var newWishList = wishDavid;
-//        var newWishList = typeof localStorage.wishList !== 'undefined' ? JSON.parse(localStorage.wishList) : wishDavid;
+        var newWishList = wishDino;
+//        var newWishList = typeof localStorage.wishList !== 'undefined' ? JSON.parse(localStorage.wishList) : wishDino;
         var urlData = getJsonFromHashUrl();
         var newWishIndex = getUser(urlData.userId, urlData.wishId).wishIndex;
         newWishList[newWishIndex].title = $(this).find('#wishTitle').val();
@@ -211,11 +213,19 @@ $('body')
     .on('tap', '#invite', function(e){
         users[current_user.userIndex].invited = true;
         window.location.hash = 'user?userId=' + current_user.user.id + 'invite=true';
+        window.plugin.notification.local.add({
+            title   : 'Invitation!',
+            message : current_user.user.name + ' invited to join Simpliziti'
+        });
         goBack();
     })
     .on('tap', '#ask-wish', function(e){
         users[current_user.userIndex].wishListShow = true;
         window.location.hash = 'user?userId=' + current_user.user.id + '&showList=true';
+        window.plugin.notification.local.add({
+            title   : 'Share simlist request!',
+            message : current_user.user.name + 'asks to share your simlist'
+        });
         goBack();
     });
 
