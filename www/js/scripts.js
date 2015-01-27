@@ -7,6 +7,7 @@ document.addEventListener('backbutton', goBack, false);
 function onDeviceReady(){
     StatusBar.hide();
     $('html').addClass(device.platform.toLowerCase());
+//    FastClick.attach(document.body);
     navigator.splashscreen.hide();
     openPage();
 
@@ -367,3 +368,14 @@ function getJsonFromHashUrl() {
     });
     return result;
 }
+
+//window.addEventListener('scroll', function() {
+//    clearTimeout(timer);
+//    if(!document.body.classList.contains('disable-hover')) {
+//        document.body.classList.add('disable-hover')
+//    }
+//
+//    var timer = setTimeout(function(){
+//        document.body.classList.remove('disable-hover')
+//    },500);
+//}, false);
