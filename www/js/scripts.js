@@ -159,12 +159,14 @@ $('body')
         });
 
         window.plugin.notification.local.add({
-            title   : 'You sent you money!',
-            message : 'You sent $' + donate + ' to ' + current_user.user.name,
-            json    : {
+            autoCancel : true,
+            id         : current_user.user.id,
+            title      : 'You sent you money!',
+            message    : 'You sent $' + donate + ' to ' + current_user.user.name,
+            json       : JSON.stringify({
                 userId : current_user.user.id,
                 wishId : current_user.wish.id
-            }
+            })
         });
         window.plugin.notification.local.onclick = function (id, state, json) {
             window.plugin.notification.local.cancel(id);
@@ -217,8 +219,10 @@ $('body')
         users[current_user.userIndex].invited = true;
         window.location.hash = 'user?userId=' + current_user.user.id + 'invite=true';
         window.plugin.notification.local.add({
-            title   : 'Invitation!',
-            message : current_user.user.name + ' invited to join Simpliziti'
+            autoCancel : true,
+            id         : current_user.user.id,
+            title      : 'You invited somebody!',
+            message    : 'You invited ' + current_user.user.name + ' to join Simpliziti'
         });
         goBack();
     })
@@ -226,17 +230,23 @@ $('body')
         users[current_user.userIndex].wishListShow = true;
         window.location.hash = 'user?userId=' + current_user.user.id + '&showList=true';
         window.plugin.notification.local.add({
-            title   : 'Share simlist request!',
-            message : current_user.user.name + 'asks to share your simlist',
-            json    : {
+            autoCancel : true,
+            id         : current_user.user.id,
+            title      : 'You sent a request!',
+            message    : 'You just sent a request to see ' + current_user.user.name + '\'s list asks to share your simlist',
+            json       : JSON.stringify({
                 userId : current_user.user.id
-            }
+            })
         });
         window.plugin.notification.local.onclick = function (id, state, json) {
             window.plugin.notification.local.cancel(id);
             window.location.hash = 'user?userId=' + JSON.parse(json).userId;
         };
         goBack();
+    })
+    .on('tap', '#donated', function(e){
+        window.location.replace("#home");
+//        window.location.hash = 'home';
     });
 
 $(window).on('resize', function(e){
