@@ -13,19 +13,6 @@ var wishList = [
         private     : 1
     },
     {
-        id          : 21,
-        title       : 'Fujifilm X100S 16.3 MP Digital Camera',
-        description : 'Since the age of film photography, the history of Fujifilm has paralleled the path of the professional photographer. The story is the endless pursuit of unparalleled photographic expression, and the X series was born. What is the meaning of a camera or photos in your life? Now you can hold the answer to explore the depths these questions. Fujifilm X. It is the promise of unprecedented photographic pleasure. ',
-        unit        : '$',
-        price       : 799,
-        donation    : 130,
-        photo       : 'images/wish/Fujifilm X100S 16.3 MP Digital Camera.jpeg',
-        total       : (130 / 799 * 100).toFixed(1) + '%',
-        peoples     : 9,
-        balance     : 799 - 130,
-        private     : 0
-    },
-    {
         id          : 22,
         title       : 'Beats by Dr. Dre Studio Wireless Headphones',
         description : "Dre Studio Wireless Headphones feature Bluetooth wireless technology and are capable of a range of operation of up to 30 feet. The headphones are powered by Beats Acoustic Engine DSP to reproduce your audio. Beats' Adaptive Noise Cancelling technology can be used to help eliminate noise from your commute whether you're listening to your music or not. On-ear cup controls allow you to answer calls skip tracks and adjust volume without reaching for your portable device. Not limited to wireless function the Studio Wireless headphones include a standard 3.5mm audio cable and a RemoteTalk cable with mic and remote allowing you to use the headphones with wired sources as well. The built-in rechargeable battery can provide up to 12 hours of wireless or 20 hours of wired operation. To preserve battery life the Auto On/Off feature will automatically turn the headphones off when you unplug them from a wired connection. The battery's remaining life is displayed via the Battery Fuel Gauge and it can be recharged with the included USB cable and adapter. A cleaning cloth and hard shell carrying case are included. 900-00107-01 SWHPB.",
@@ -50,32 +37,6 @@ var wishList = [
         peoples     : 9,
         balance     : 80 - 67,
         private     : 1
-    },
-    {
-        id          : 24,
-        title       : 'Brooks Adrenaline GTS 14',
-        description : 'I bought these shoes in suede, and love the fit. I wish they were offered in a nude or skin toned. I love the nude leather sandals that are offered in the department stores. The color is sophisticated and because of the nude color it blends in with any frock. I love these shoes but would love them more in nude, get busy Flexus! I am waiting!',
-        unit        : '$',
-        price       : 100,
-        donation    : 50,
-        photo       : 'images/wish/Brooks Adrenaline GTS 14.jpg',
-        total       : (50 / 100 * 100).toFixed(1) + '%',
-        peoples     : 23,
-        balance     : 100 - 50,
-        private     : 1
-    },
-    {
-        id          : 25,
-        title       : 'Ted Baker Comptan',
-        description : 'These teal suede shoes are perfect for casual outings. The feature classic lace up fastening with coordinating laces, decorative stitch detailing and a contrast brown rubber sole.',
-        unit        : '$',
-        price       : 280,
-        donation    : 100,
-        photo       : 'images/wish/Ted Baker Comptan.jpg',
-        total       : (100 / 280 * 100).toFixed(1) + '%',
-        peoples     : 9,
-        balance     : 280 - 100,
-        private     : 0
     },
     {
         id          : 26,
@@ -118,10 +79,48 @@ var wishList = [
         private       : 1
     }
 ];
-var wishDavid = [
-    wishList[4], wishList[5], wishList[1]
+var wishDino = [
+    {
+        id          : 24,
+        title       : 'Brooks Adrenaline GTS 14',
+        description : 'I bought these shoes in suede, and love the fit. I wish they were offered in a nude or skin toned. I love the nude leather sandals that are offered in the department stores. The color is sophisticated and because of the nude color it blends in with any frock. I love these shoes but would love them more in nude, get busy Flexus! I am waiting!',
+        unit        : '$',
+        price       : 100,
+        donation    : 50,
+        photo       : 'images/wish/Brooks Adrenaline GTS 14.jpg',
+        total       : (50 / 100 * 100).toFixed(1) + '%',
+        peoples     : 23,
+        balance     : 100 - 50,
+        private     : 1
+    },
+    {
+        id          : 25,
+        title       : 'Ted Baker Comptan',
+        description : 'These teal suede shoes are perfect for casual outings. The feature classic lace up fastening with coordinating laces, decorative stitch detailing and a contrast brown rubber sole.',
+        unit        : '$',
+        price       : 280,
+        donation    : 100,
+        photo       : 'images/wish/Ted Baker Comptan.jpg',
+        total       : (100 / 280 * 100).toFixed(1) + '%',
+        peoples     : 9,
+        balance     : 280 - 100,
+        private     : 0
+    },
+    {
+        id          : 21,
+        title       : 'Fujifilm X100S 16.3 MP Digital Camera',
+        description : 'Since the age of film photography, the history of Fujifilm has paralleled the path of the professional photographer. The story is the endless pursuit of unparalleled photographic expression, and the X series was born. What is the meaning of a camera or photos in your life? Now you can hold the answer to explore the depths these questions. Fujifilm X. It is the promise of unprecedented photographic pleasure. ',
+        unit        : '$',
+        price       : 799,
+        donation    : 130,
+        photo       : 'images/wish/Fujifilm X100S 16.3 MP Digital Camera.jpeg',
+        total       : (130 / 799 * 100).toFixed(1) + '%',
+        peoples     : 9,
+        balance     : 799 - 130,
+        private     : 0
+    }
 ];
-var donationsDavid = [
+var donationsDino = [
     {
         id       : 1,
         name     : 'Alexandra Gallardo',
@@ -154,8 +153,8 @@ var dinoProfile = {
     invited      : true,
     phone        : '(123) 456 7890',
     wishListShow : true,
-    wishList     : wishDavid
-    //    wishList     : typeof localStorage.wishList !== 'undefined' ? JSON.parse(localStorage.wishList) : wishDavid
+    wishList     : wishDino
+    //    wishList     : typeof localStorage.wishList !== 'undefined' ? JSON.parse(localStorage.wishList) : wishDino
 };
 var users = [
     {
@@ -169,7 +168,7 @@ var users = [
         privateShow  : 1,
         publickShow  : 0,
         donateMe     : 30,
-        donateWish   : wishDavid[0]
+        donateWish   : wishDino[0]
     },
     {
         id           : 2,
@@ -215,7 +214,7 @@ var users = [
         privateShow  : 1,
         publickShow  : 1,
         donateMe     : 50,
-        donateWish   : wishDavid[1]
+        donateWish   : wishDino[1]
     },
     {
         id           : 6,
@@ -239,7 +238,7 @@ var users = [
         privateShow  : 1,
         publickShow  : 0,
         donateMe     : 100,
-        donateWish   : wishDavid[2]
+        donateWish   : wishDino[2]
     },
     {
         id           : 8,

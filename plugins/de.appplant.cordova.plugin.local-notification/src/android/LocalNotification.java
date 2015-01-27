@@ -27,7 +27,6 @@ import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaInterface;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CordovaWebView;
-import org.apache.cordova.LOG;
 import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -231,18 +230,17 @@ public class LocalNotification extends CordovaPlugin {
      * @param args
      */
     private void add(JSONArray args){
-    	JSONArray notifications = args.optJSONArray(0);
+    	JSONArray notifications = args;
     	JSONObject arguments;
     	for(int i=0;i<notifications.length();i++){
     		arguments = notifications.optJSONObject(i);
-        	LOG.d("LocalNotification", arguments.toString());
     		arguments = asset.parseURIs(arguments);
     		Options options      = new Options(context).parse(arguments);
     		options.setInitDate();
         	nWrapper.schedule(options);
-        	JSONArray data = new JSONArray().put(options.getJSONObject());
-       		fireEvent("add", options.getId(), options.getJSON(), data);
-    	} 
+        	JSONArray fireData= new JSONArray().put(options.getJSONObject());
+        	fireEvent("add", options.getId(),options.getJSON(), fireData);
+    	}     	
     }
     
     /**
@@ -250,7 +248,7 @@ public class LocalNotification extends CordovaPlugin {
      * @param args
      */
     private void update(JSONArray args){
-    	JSONArray updates = args.optJSONArray(0);
+    	JSONArray updates = args;
     	JSONObject updateContent;
     	for(int i=0;i<updates.length();i++){
     		updateContent = args.optJSONObject(i);
@@ -264,13 +262,13 @@ public class LocalNotification extends CordovaPlugin {
      * @param args
      */
     private void cancel(JSONArray args){
-    	JSONArray ids = args.optJSONArray(0);
+    	JSONArray ids = args;
     	String id;
     	for(int i=0;i<ids.length();i++){
     		id = args.optString(i);
     		nWrapper.cancel(id);
         	JSONArray managerId = new JSONArray().put(id);
-        	JSONArray data = new JSONArray().put(manager.getAll(managerId));
+        	JSONArray data = manager.getAll(managerId);
             fireEvent("cancel", id, "",data);
     	}
     }
@@ -297,13 +295,13 @@ public class LocalNotification extends CordovaPlugin {
      * @param args
      */
     public void clear(JSONArray args){
-    	JSONArray ids = args.optJSONArray(0);
+    	JSONArray ids = args;
     	String id;
     	for(int i=0;i<ids.length();i++){
     		id = args.optString(i);
     		nWrapper.clear(id);
         	JSONArray managerId = new JSONArray().put(id);
-        	JSONArray data = new JSONArray().put(manager.getAll(managerId));
+        	JSONArray data = manager.getAll(managerId);
             fireEvent("clear", id, "",data);
     	}
     }
@@ -401,17 +399,15 @@ public class LocalNotification extends CordovaPlugin {
 
     // 
     /**
-     * Fires the given event.
+     * Fires the given event (Only one Callback also for multiple notifications in one action).
      *
      * @param {String} event The Name of the event
-     * @param {String} id    The ID of the notification
-     * @param {String} json  A custom (JSON) string
+     * @param ids    The IDs of the notifications as JSONArray
+     * @param json  The notifications JSONObjects in a JSONArray
      */
-    public static void fireEvent (String event, String id, String json, JSONArray data) {
+    public static void fireEvent (String event, JSONArray ids, JSONArray json) {
         String state  = getApplicationState();
-        //TODO dataArray handling
-        String params = "\"" + id + "\",\"" + state + "\",\\'" + JSONObject.quote(json) + "\\'.replace(/(^\"|\"$)/g, \\'\\')";
-     //   params = params + "," + dataArray;
+        String params = ids + ",\"" + state + "\"," + json;
         String js     = "setTimeout('plugin.notification.local.on" + event + "(" + params + ")',0)";
 
         // webview may available, but callbacks needs to be executed
@@ -423,6 +419,31 @@ public class LocalNotification extends CordovaPlugin {
         }
     }
 
+    //
+    /**
+     * Fires the given event. (Standard-method)
+     *
+     * @param {String} event The Name of the event
+     * @param {String} id The ID of the notification
+     * @param {String} json A custom (JSON) string
+     * @param data	The notifications as JSONObject
+     */
+    public static void fireEvent (String event, String id, String json, JSONArray data) {
+    	String state = getApplicationState();
+    	String params = "\"" + id + "\",\"" + state + "\"," + JSONObject.quote(json)+","+ data;
+    	String js = "setTimeout('plugin.notification.local.on" + event + "(" + params + ")',0)";
+    
+    	// webview may available, but callbacks needs to be executed
+    	// after deviceready
+    	if (deviceready == false) {
+    		eventQueue.add(js);
+    	} else {
+    		sendJavascript(js);
+    	}
+    }
+    
+    
+    
     /**
      * Retrieves the application state
      *
