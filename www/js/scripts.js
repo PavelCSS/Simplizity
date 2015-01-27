@@ -14,7 +14,7 @@ function onDeviceReady(){
 //    var fields       = ["*"];
 //    navigator.contacts.find(fields, onSuccessContact, onErrorContact);
 
-    window.plugin.notification.local.registerPermission();
+//    window.plugin.notification.local.registerPermission();
 }
 
 function onSuccessContact(contacts){
@@ -359,15 +359,6 @@ function hideLoading(){
     $('html').removeClass('loading');
 }
 
-//function getJsonFromUrl() {
-//    var query = location.search.substr(1);
-//    var result = {};
-//    query.split("&").forEach(function(part) {
-//        var item = part.split("=");
-//        result[item[0]] = decodeURIComponent(item[1]);
-//    });
-//    return result;
-//}
 function getJsonFromHashUrl() {
     var hash = window.location.hash;
     var query = hash.substr(hash.indexOf('?') + 1);
