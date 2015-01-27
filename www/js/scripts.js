@@ -14,7 +14,11 @@ function onDeviceReady(){
 //    var fields       = ["*"];
 //    navigator.contacts.find(fields, onSuccessContact, onErrorContact);
 
-//    window.plugin.notification.local.registerPermission();
+    window.plugin.notification.local.hasPermission(function (granted) {
+        if(!granted){
+            window.plugin.notification.local.registerPermission();
+        }
+    });
 }
 
 function onSuccessContact(contacts){
@@ -155,7 +159,6 @@ $('body')
         });
 
         window.plugin.notification.local.add({
-            id : 'test',
             title   : 'You sent you money!',
             message : 'You sent $' + donate + ' to ' + current_user.user.name,
             json    : {
@@ -164,7 +167,6 @@ $('body')
             }
         });
         window.plugin.notification.local.onclick = function (id, state, json) {
-            console.log(id)
             window.location.hash = 'wish?userId=' + JSON.parse(json).userId + '&wishId=' + JSON.parse(json).wishId;
         };
     })
@@ -224,8 +226,14 @@ $('body')
         window.location.hash = 'user?userId=' + current_user.user.id + '&showList=true';
         window.plugin.notification.local.add({
             title   : 'Share simlist request!',
-            message : current_user.user.name + 'asks to share your simlist'
+            message : current_user.user.name + 'asks to share your simlist',
+            json    : {
+                userId : current_user.user.id
+            }
         });
+        window.plugin.notification.local.onclick = function (id, state, json) {
+            window.location.hash = 'user?userId=' + JSON.parse(json).userId;
+        };
         goBack();
     });
 
