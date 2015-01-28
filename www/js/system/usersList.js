@@ -148,6 +148,8 @@ var donationsDino = [
 ];
 var dinoProfile = {
     id           : 0,
+    login        : 'dino777',
+    password     : 'dino777',
     name         : 'Dino LAcapra',
     photo        : 'images/users/Dino LAcapra.jpg',
     invited      : true,
