@@ -1,5 +1,5 @@
 <main id="wish-{{wish.id}}" class="gray-darker-bg">
-    <header class="fixed large fade">
+    <header class="large inherit">
         <button class="back-btn btn pl0em icon-arrow-left6 fl-left">Back</button>
         {{#user}}
         <a id="wish-remove" class="btn icon icon-remove error fl-right" href="javascript:;"> Remove</a>
@@ -14,7 +14,8 @@
 
     <div class="wish-photo white-bg left p0px">
         <img src="{{wish.photo}}" alt="{{wish.title}}"/>
-        <span class="wish-price larger bottom ml0-25em shadow">{{wish.unit}}{{wish.price}}</span>
+        <span class="primary-bg larger p5px pl0-5em pr0-5em" style="position: absolute; bottom: 10px; left: 0;">{{wish.unit}}{{wish.price}}</span>
+        {{#user}}
         <div class="wrap lh-normal fade50 pl0-5em pr0-5em large" style="position: absolute; bottom: 0; right: 0; z-index: 100">
             <i class="icon-man fs48 fl-left lh-small" style="margin-left: -10px"></i>
             <div class="fl-left mr0-5em" style="margin-left: -10px">
@@ -25,6 +26,7 @@
                 {{wish.total}}
             </div>
         </div>
+        {{/user}}
     </div>
 
     <article class="p10px">
@@ -42,10 +44,10 @@
             <i class="icon-man fs48 fl-left lh-small" style="margin-left: -10px"></i>
             <div class="fl-left mr0-5em" style="margin-left: -10px">
                 {{wish.peoples}} <br>
-                {{wish.total}}
+                {{wish.unit}}{{wish.donation}}
             </div>
             <div class="wrap mt0-75em">
-                {{wish.unit}}{{wish.donation}}
+                {{wish.total}}
             </div>
         </div>
     </footer>
