@@ -89,5 +89,12 @@ var pagesList = {
         parseTemplate('_contribute-list.tmpl', {
             users : usersSent
         })
+    },
+    'settings'  : function(){
+        parseTemplate('_settings.tmpl', profile = {
+            pageName  : 'settings',
+            pageTitle : 'My account',
+            userData  : dinoProfile
+        })
     }
 }
