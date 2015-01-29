@@ -252,10 +252,10 @@ $('body')
         window.location.hash = 'comment';
     })
     .on('tap', '#send-message', function(e){
-        var message = $(this).before('textarea').value();
+        var message = $(this).parent().find('textarea').val();
         window.plugin.notification.local.add({
             autoCancel : true,
-            id         : current_user.user.id,
+            id         : 'message',
             title      : 'You sent a messsage!',
             message    : message
         });
