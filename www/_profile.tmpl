@@ -21,10 +21,14 @@
         </div>
         {{#user}}
             <h2 class="inherit mt0-5em">{{userData.name}}</h2>
-            <ul class="_column_2 m0px p0px">
+            <ul class="_column_3 m0px p0px">
                 <li class="contact-list">
-                    <span class="block larger">89</span>
-                    Connections
+                    <span class="block larger">25</span>
+                    Following
+                </li>
+                <li class="contact-list">
+                    <span class="block larger">64</span>
+                    Followers
                 </li>
                 <li class="my-dotation">
                     <span class="block larger">54</span>
@@ -53,7 +57,7 @@
             <h4 class="large inherit">{{userData.name}} is a SIM user</h4>
             {{/userData.invited}}
             {{^userData.invited}}
-            <h4 class="large inherit">{{userData.name}} is not a SIM user yet</h4>
+            <h4 class="large inherit">{{userData.name}} is not a Simpliziti user yet</h4>
             {{/userData.invited}}
             <p class="fs32"><i class="icon-phone2"></i> {{userData.phone}}</p>
         {{/showBlock}}
@@ -63,6 +67,9 @@
     <article class="p0px">
         {{#user}}
             {{>wishListing}}
+            <div class="gray-darker-bg p10px">
+                <a class="btn success block outline-bg" href="#addWish">Add Wish</a>
+            </div>
         {{/user}}
         {{^user}}
             {{#userData.invited}}
@@ -71,14 +78,14 @@
                 {{/userData.wishListShow}}
                 {{^userData.wishListShow}}
                     <div id="ask-block" class="text-center p10px clearfix large">
-                        <p class="_grid_10 _suffix_1 _prefix_1 mt0-5em">Ask {{userData.name}} to share a simlist</p>
-                        <button id="ask-wish" class="btn info large">Ask for the list</button>
+                        <p class="_grid_10 _suffix_1 _prefix_1 mt0-5em">Ask {{userData.name}} to share their Wish List</p>
+                        <button id="ask-wish" class="btn info large">Request Wish List</button>
                     </div>
                 {{/userData.wishListShow}}
             {{/userData.invited}}
             {{^userData.invited}}
                 <div id="invite-block" class="text-center p10px clearfix large">
-                    <p class="_grid_10 _suffix_1 _prefix_1 mt0-5em">Invite {{userData.name}} to join Simpliziti and share a simlist</p>
+                    <p class="_grid_10 _suffix_1 _prefix_1 mt0-5em">Invite {{userData.name}} to join Simpliziti and share a Wish List”</p>
                     <button id="invite" class="btn info large">Invite Now</button>
                 </div>
             {{/userData.invited}}

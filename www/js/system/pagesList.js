@@ -46,7 +46,7 @@ var pagesList = {
     'newRequests' : function(){
         parseTemplate('_new-requests.tmpl', {
             pageName     : 'new-requests',
-            pageTitle    : 'New requests',
+            pageTitle    : 'New Requests',
             usersRequest : usersRequest
         })
     },
@@ -57,7 +57,7 @@ var pagesList = {
             parseTemplate('_add-wish.tmpl', {
                 edit        : true,
                 pageName    : 'edit-wish',
-                pageTitle   : 'Edit item',
+                pageTitle   : 'Edit Wish',
                 id          : wishItem.wish.id,
                 photo       : wishItem.wish.photo,
                 title       : wishItem.wish.title,
@@ -68,7 +68,7 @@ var pagesList = {
         }else{
             parseTemplate('_add-wish.tmpl', {
                 pageName  : 'add-wish',
-                pageTitle : 'Add item',
+                pageTitle : 'Add Wish',
                 photo     : url || ''
             })
         }
@@ -95,6 +95,12 @@ var pagesList = {
             pageName  : 'settings',
             pageTitle : 'My account',
             userData  : dinoProfile
+        })
+    },
+    'comment'  : function(){
+        parseTemplate('_comment.tmpl', profile = {
+            pageName  : 'comment',
+            pageTitle : 'Comment'
         })
     }
 }

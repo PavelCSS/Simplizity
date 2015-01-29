@@ -83,7 +83,7 @@ var wishDino = [
     {
         id          : 24,
         title       : 'Brooks Adrenaline GTS 14',
-        description : 'I bought these shoes in suede, and love the fit. I wish they were offered in a nude or skin toned. I love the nude leather sandals that are offered in the department stores. The color is sophisticated and because of the nude color it blends in with any frock. I love these shoes but would love them more in nude, get busy Flexus! I am waiting!',
+        description : 'New shoes for training.',
         unit        : '$',
         price       : 100,
         donation    : 50,
@@ -96,7 +96,7 @@ var wishDino = [
     {
         id          : 25,
         title       : 'Ted Baker Comptan',
-        description : 'These teal suede shoes are perfect for casual outings. The feature classic lace up fastening with coordinating laces, decorative stitch detailing and a contrast brown rubber sole.',
+        description : 'I like these, good for winter.',
         unit        : '$',
         price       : 280,
         donation    : 100,
@@ -109,7 +109,7 @@ var wishDino = [
     {
         id          : 21,
         title       : 'Fujifilm X100S 16.3 MP Digital Camera',
-        description : 'Since the age of film photography, the history of Fujifilm has paralleled the path of the professional photographer. The story is the endless pursuit of unparalleled photographic expression, and the X series was born. What is the meaning of a camera or photos in your life? Now you can hold the answer to explore the depths these questions. Fujifilm X. It is the promise of unprecedented photographic pleasure. ',
+        description : 'My dream camera!  Make effort to save for this for upcoming trip.',
         unit        : '$',
         price       : 799,
         donation    : 130,
@@ -150,7 +150,7 @@ var dinoProfile = {
     id           : 0,
     login        : 'dino777',
     password     : 'dino777',
-    name         : 'Dino LAcapra',
+    name         : 'Dino LaCapra',
     photo        : 'images/users/Dino LAcapra.jpg',
     invited      : true,
     phone        : '(123) 456 7890',
@@ -1147,11 +1147,11 @@ var users = [
 ];
 
 var usersSent = [
-    users[0], users[4], users[6]
+    users[0], users[82], users[27]
 ], usersRequest = [
-    users[1], users[5], users[7]
+    users[1], users[5], users[48]
 ], usersBirthday = [
-    users[2], users[3], users[9]
+    users[61], users[4], users[49]
 ];
 
 function randomWish(count){

@@ -247,6 +247,22 @@ $('body')
     .on('tap', '#donated', function(e){
         window.location.replace("#home");
 //        window.location.hash = 'home';
+    })
+    .on('tap', '.message', function(e){
+        window.location.hash = 'comment';
+    })
+    .on('tap', '#send-message', function(e){
+        var message = $(this).before('textarea').value();
+        window.plugin.notification.local.add({
+            autoCancel : true,
+            id         : current_user.user.id,
+            title      : 'You sent a messsage!',
+            message    : message
+        });
+        window.plugin.notification.local.onclick = function (id, state, json) {
+            window.plugin.notification.local.cancel(id);
+            window.location.hash = 'comment';
+        };
     });
 
 $(window).on('resize', function(e){
