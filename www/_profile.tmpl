@@ -57,7 +57,7 @@
             <h4 class="large inherit">{{userData.name}} is a SIM user</h4>
             {{/userData.invited}}
             {{^userData.invited}}
-            <h4 class="large inherit">{{userData.name}} is not a Simpliziti user yet</h4>
+            <h4 class="large inherit">{{userData.name}}<br> is not a Simpliziti user yet</h4>
             {{/userData.invited}}
             <p class="fs32"><i class="icon-phone2"></i> {{userData.phone}}</p>
         {{/showBlock}}
@@ -85,7 +85,7 @@
             {{/userData.invited}}
             {{^userData.invited}}
                 <div id="invite-block" class="text-center p10px clearfix large">
-                    <p class="_grid_10 _suffix_1 _prefix_1 mt0-5em">Invite {{userData.name}} to join Simpliziti and share a Wish List”</p>
+                    <p class="_grid_10 _suffix_1 _prefix_1 mt0-5em">Invite {{userData.name}} to join Simpliziti<br> and share a Wish List</p>
                     <button id="invite" class="btn info large">Invite Now</button>
                 </div>
             {{/userData.invited}}
