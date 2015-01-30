@@ -12,7 +12,7 @@ form{
     .clearfix();
 
     fieldset{
-        border-color: @gray-light;
+        border-color : @gray-light;
 
         &.unstyled{
             padding : 0;
@@ -155,6 +155,11 @@ select, textarea, input{
         background   : @input-bg-disabled !important;
         color        : darken(@input-bg-disabled, 30%) !important;
         .box-shadow(none) !important;
+    }
+
+    .onDarkBg &{
+        color      : fade(#FFF, 50%);
+        background : fade(#FFF, 15%);
     }
 }
 

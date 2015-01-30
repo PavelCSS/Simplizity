@@ -212,6 +212,19 @@ $('body')
 //        localStorage.wishList = JSON.stringify(newWishList);
         goBack();
     })
+    .on('submit', '#login-forms', function(e){
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        var login = $(this).find('#login').val();
+        var password = $(this).find('#password').val();
+        if(!(login === "Dinoaccount1") && !(password === "dinoaccount1")){
+            $(this).find('input').addClass('error');
+            navigator.notification.alert("Invalid Login or Password");
+            return false;
+        }
+        localStorage.setItem('login', true);
+        window.location.replace("#home");
+    })
     .on('focus', 'input, select, textarea', function(e){
         fieldPos = $(this).offset().top + $(this).height();
     })
@@ -378,7 +391,7 @@ function openPage(){
     if(pageName && (typeof pages[pageName] !== 'undefined')){
         goPage(pageName);
         return true;
-    }else if(localStorage.getItem("login") !== 'true'){
+    }else if(localStorage.getItem("login") !== 'true' && pageName !== 'register'){
         pageName = 'login';
     }else if(typeof pagesList[pageName] === 'undefined'){
         return false;

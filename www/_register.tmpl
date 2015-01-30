@@ -1,0 +1,25 @@
+<main id="{{pageName}}" class="flexbox flex-item-align-center">
+    <header class="fixed large">
+        <button class="back-btn btn icon-arrow-left6 pl0em fl-left">{{pageTitle}}</button>
+    </header>
+
+    <article class="pt0em pb0em">
+        <h1 class="text-center text-light primary fs64">SIMPLIZITI</h1>
+        <form id="register-forms" class="" action="#home" onsubmit="localStorage.setItem('login', true);">
+            <p class="input-label">
+                <input id="user-name" type="text" name="user-name" required/>
+                <label class="required" for="user-name">Account name</label>
+            </p>
+            <p class="input-label">
+                <input id="login" type="text" name="login" required/>
+                <label class="required" for="login">Login</label>
+            </p>
+            <p class="input-label">
+                <input id="password" type="password" name="password" required/>
+                <label class="required" for="password">Password</label>
+            </p>
+            <button class="btn block" type="submit">SIMPLIZITI REGISTER</button>
+        </form>
+    </article>
+
+</main>

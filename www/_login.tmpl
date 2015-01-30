@@ -2,14 +2,14 @@
 
     <article class="pt0em pb0em">
         <h1 class="text-center text-light primary fs64">{{pageTitle}}</h1>
-        <form id="login-forms" class="" action="#home" onsubmit="localStorage.setItem('login', true);">
+        <form id="login-forms" class="">
             <p class="input-label">
-                <input id="user-name" type="text" name="user-name" required/>
-                <label for="user-name">User name</label>
+                <input id="login" type="text" name="login" required/>
+                <label class="required" for="login">Login</label>
             </p>
             <p class="input-label">
                 <input id="password" type="password" name="password" required/>
-                <label for="password">Password</label>
+                <label class="required" for="password">Password</label>
             </p>
             <button class="btn block" type="submit">SIMPLIZITI LOGIN</button>
         </form>
@@ -22,8 +22,8 @@
             <a class="btn icon larger twitter icon-twitter" href="#home" onclick="localStorage.setItem('login', true);">twitter</a>
         </div>
         <div class="text-center large mt2em">
-            Not Registered?<br><br>
-            <a class="btn outline-bg" href="#">Register Here</a>
+            Not Registered?<br>
+            <a class="btn outline-bg mt0-5em" href="#register">Register Here</a>
         </div>
     </article>
 

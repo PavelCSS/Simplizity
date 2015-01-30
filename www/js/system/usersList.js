@@ -195,17 +195,6 @@ var users = [
         publickShow  : 0
     },
     {
-        id           : 4,
-        name         : 'Cindy Huang',
-        photo        : 'images/users/Cindy Huang.jpg',
-        invited      : 1,
-        wishListShow : 0,
-        phone        : '(123) 456 7890',
-        wishList     : randomWish(),
-        privateShow  : 0,
-        publickShow  : 1
-    },
-    {
         id           : 5,
         name         : 'Alexandra Gallardo',
         photo        : 'images/users/Alexandra Gallardo.jpg',
@@ -1153,6 +1142,17 @@ var usersSent = [
 ], usersBirthday = [
     users[61], users[4], users[49]
 ];
+
+users = users.sort(function (a, b) {
+    if (a.name > b.name) {
+        return 1;
+    }
+    if (a.name < b.name) {
+        return -1;
+    }
+    // a должно быть равным b
+    return 0;
+});
 
 function randomWish(count){
     count = count ? count : 3;
