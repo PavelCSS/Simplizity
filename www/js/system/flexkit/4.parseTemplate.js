@@ -16,6 +16,7 @@ function parseTemplate(tmpl, json, partial, cache, callback){
         }else{
             callback(response);
         }
+        window.scrollTo(0, 0);
         hideLoading();
     });
 }

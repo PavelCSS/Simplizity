@@ -10,20 +10,7 @@
         {{/donate}}
     </header>
 
-    {{^donate}}
-    <div class="white-bg gray clearfix p5px pt0-75em  pb0-75em mtH hidden">
-        <div class="wish-photo _grid_5 _alpha">
-            <img src="{{wish.photo}}" alt="{{wish.title}}" width="150" height="100"/>
-            <span class="wish-price large">{{wish.unit}}{{wish.price}}</span>
-        </div>
-        <div class="_grid_7 _omega">
-            <h4 class="wish-title">{{wish.title}}</h4>
-            <p class="mini m0px">{{wish.description}}</p>
-        </div>
-    </div>
-    {{/donate}}
-
-    <article class="p0px {{^donate}}mb2-75em mtH{{/donate}} {{#donate}}flex-size_1 flexbox-column{{/donate}}">
+    <article class="p0px {{^donate}}mtH{{/donate}} {{#donate}}flex-size_1 flexbox-column{{/donate}}">
 
         {{^donate}}
         <form id="donate-form" class="p10px text-center">
@@ -43,7 +30,7 @@
                   style="margin-top: -50px;"
                   data-value="{{wish.balance}}"
                   data-unit="{{wish.unit}}">{{wish.unit}}{{wish.balance}}</span>
-            <p class="_grid_10 _prefix_1 _suffix_1 text-left mt1em mb1em">
+            <p class="_grid_10 _prefix_1 _suffix_1 text-left mt1em mb1em onDarkBg">
                 <label>My message</label>
                 <textarea id="message" name="message" cols="30" rows="5"></textarea>
             </p>
