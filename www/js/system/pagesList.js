@@ -91,16 +91,22 @@ var pagesList = {
         })
     },
     'settings'  : function(){
-        parseTemplate('_settings.tmpl', profile = {
+        parseTemplate('_settings.tmpl', {
             pageName  : 'settings',
             pageTitle : 'My account',
             userData  : dinoProfile
         })
     },
     'comment'  : function(){
-        parseTemplate('_comment.tmpl', profile = {
+        parseTemplate('_comment.tmpl', {
             pageName  : 'comment',
             pageTitle : 'Comment'
+        })
+    },
+    'register'  : function(){
+        parseTemplate('_register.tmpl', {
+            pageName  : 'register',
+            pageTitle : 'Register'
         })
     }
 }
