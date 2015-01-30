@@ -203,9 +203,7 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 1,
-        publickShow  : 1,
-        donateMe     : 50,
-        donateWish   : wishDino[1]
+        publickShow  : 1
     },
     {
         id           : 6,
@@ -227,9 +225,7 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 1,
-        publickShow  : 0,
-        donateMe     : 100,
-        donateWish   : wishDino[2]
+        publickShow  : 0
     },
     {
         id           : 8,
@@ -460,7 +456,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 100,
+        donateWish   : wishDino[2]
     },
     {
         id           : 29,
@@ -1065,7 +1063,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 50,
+        donateWish   : wishDino[1]
     },
     {
         id           : 84,
@@ -1136,23 +1136,12 @@ var users = [
 ];
 
 var usersSent = [
-    users[0], users[82], users[27]
+    users[0], users[81], users[26]
 ], usersRequest = [
-    users[1], users[5], users[48]
+    users[1], users[4], users[47]
 ], usersBirthday = [
-    users[61], users[4], users[49]
+    users[60], users[4], users[48]
 ];
-
-users = users.sort(function (a, b) {
-    if (a.name > b.name) {
-        return 1;
-    }
-    if (a.name < b.name) {
-        return -1;
-    }
-    // a должно быть равным b
-    return 0;
-});
 
 function randomWish(count){
     count = count ? count : 3;

@@ -28,7 +28,7 @@ var pagesList = {
                 wishListing : readTextFileReturn('_wish-list_.tmpl')
             }, false, function(html){
                 $('main').replaceWith(html);
-                //                eventsList.wish.swipe();
+                                eventsList.wish.swipe();
             });
             return false;
         }
@@ -37,10 +37,19 @@ var pagesList = {
         })
     },
     'sendMoney'   : function(){
+        var newUserList = users.sort(function (a, b) {
+            if (a.name > b.name) {
+                return 1;
+            }
+            if (a.name < b.name) {
+                return -1;
+            }
+            return 0;
+        });
         parseTemplate('_send-money.tmpl', {
             pageName  : 'send-money',
             pageTitle : 'Contribute',
-            users     : users
+            users     : newUserList
         })
     },
     'newRequests' : function(){
