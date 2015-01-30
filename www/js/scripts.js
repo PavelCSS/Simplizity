@@ -419,7 +419,9 @@ function getJsonFromHashUrl() {
     return result;
 }
 
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
     clearTimeout(timer);
     if(!document.body.classList.contains('disable-hover')) {
         document.body.classList.add('disable-hover')
