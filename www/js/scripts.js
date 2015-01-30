@@ -246,7 +246,7 @@ $('body')
             autoCancel : true,
             id         : current_user.user.id,
             title      : 'You sent a request!',
-            message    : 'You just sent a request to see ' + current_user.user.name + '\'s list asks to share your simlist',
+            message    : 'You just sent a request to see ' + current_user.user.name + '\'s  wish list',
             json       : JSON.stringify({
                 userId : current_user.user.id
             })
@@ -419,13 +419,13 @@ function getJsonFromHashUrl() {
     return result;
 }
 
-//window.addEventListener('scroll', function() {
-//    clearTimeout(timer);
-//    if(!document.body.classList.contains('disable-hover')) {
-//        document.body.classList.add('disable-hover')
-//    }
-//
-//    var timer = setTimeout(function(){
-//        document.body.classList.remove('disable-hover')
-//    },500);
-//}, false);
+window.addEventListener('scroll', function() {
+    clearTimeout(timer);
+    if(!document.body.classList.contains('disable-hover')) {
+        document.body.classList.add('disable-hover')
+    }
+
+    var timer = setTimeout(function(){
+        document.body.classList.remove('disable-hover')
+    },500);
+}, false);
