@@ -34,7 +34,7 @@ function onSuccessContact(contacts){
                 phone          : contacts[i].phoneNumbers[0].value,
                 wishList       : randomWish()
             }
-            users.push(newUser)
+            users.push(newUser);
         }
     }
 }
@@ -59,7 +59,7 @@ $('body')
     })
     .on('tap', '.showList', function(e){
         e.stopImmediatePropagation();
-        $(this).toggleClass('disabled')
+        $(this).toggleClass('disabled');
     })
     .on('tap', '.user-item, .profile', function(e){
         e.stopImmediatePropagation();
@@ -217,7 +217,7 @@ $('body')
         e.stopImmediatePropagation();
         var login = $(this).find('#login').val();
         var password = $(this).find('#password').val();
-        if(!(login === "Dinoaccount1") && !(password === "dinoaccount1")){
+        if((login !== "Dinoaccount1") && (password !== "dinoaccount1")){
             $(this).find('input').addClass('error');
             navigator.notification.alert("Invalid Login or Password");
             return false;
@@ -286,26 +286,34 @@ function getUser(userId, wishId){
     if(typeof userId === 'undefined'){
         return false;
     }
-    var userCurrent = {}
+    var userCurrent = {};
     userId = parseInt(userId);
     wishId = typeof wishId === 'undefined' ? false : parseInt(wishId);
     if(userId !== dinoProfile.id){
         for(i = 0; i < users.length; i++){
             if(users[i].id == userId){
                 if(wishId){
+                    if(!users[i].wishList){
+                        userCurrent.user = users[i];
+                        userCurrent.wish = 0;
+                        userCurrent.userIndex = i;
+                        userCurrent.wishIndex = false;
+                        current_user = userCurrent;
+                        return userCurrent;
+                    }
                     for(j = 0; j < users[i].wishList.length; j++){
                         if(users[i].wishList[j].id == wishId){
-                            userCurrent['user'] = users[i];
-                            userCurrent['wish'] = users[i].wishList[j];
-                            userCurrent['userIndex'] = i;
-                            userCurrent['wishIndex'] = j;
+                            userCurrent.user = users[i];
+                            userCurrent.wish = users[i].wishList[j];
+                            userCurrent.userIndex = i;
+                            userCurrent.wishIndex = j;
                             current_user = userCurrent;
                             return userCurrent;
                         }
                     }
                 }else{
-                    userCurrent['user'] = users[i];
-                    userCurrent['userIndex'] = i;
+                    userCurrent.user = users[i];
+                    userCurrent.userIndex = i;
                     current_user = userCurrent;
                     return userCurrent;
                 }
@@ -315,17 +323,17 @@ function getUser(userId, wishId){
         if(wishId){
             for(j = 0; j < dinoProfile.wishList.length; j++){
                 if(dinoProfile.wishList[j].id == wishId){
-                    userCurrent['user'] = dinoProfile;
-                    userCurrent['wish'] = dinoProfile.wishList[j];
-                    userCurrent['userIndex'] = false;
-                    userCurrent['wishIndex'] = j;
+                    userCurrent.user = dinoProfile;
+                    userCurrent.wish = dinoProfile.wishList[j];
+                    userCurrent.userIndex = false;
+                    userCurrent.wishIndex = j;
                     current_user = userCurrent;
                     return userCurrent;
                 }
             }
         }else{
-            userCurrent['user'] = dinoProfile;
-            userCurrent['userIndex'] = false;
+            userCurrent.user = dinoProfile;
+            userCurrent.userIndex = false;
             current_user = userCurrent;
             return userCurrent;
         }
@@ -353,7 +361,7 @@ function openPage(){
     if(pageName === 'user'){
         var urlData = getJsonFromHashUrl();
         var user = getUser(urlData.userId).user;
-        pagesList['profile']({
+        pagesList.profile({
             user      : false,
             pageName  : 'user-' + user.id,
             pageTitle : 'Profile',
@@ -362,7 +370,7 @@ function openPage(){
                 if(this.userData.invited && this.userData.wishListShow){
                     return true;
                 }else{
-                    return false
+                    return false;
                 }
             }
         });
@@ -424,10 +432,16 @@ window.addEventListener('scroll', function(e) {
     e.stopPropagation();
     clearTimeout(timer);
     if(!document.body.classList.contains('disable-hover')) {
-        document.body.classList.add('disable-hover')
+        document.body.classList.add('disable-hover');
     }
 
     var timer = setTimeout(function(){
-        document.body.classList.remove('disable-hover')
+        document.body.classList.remove('disable-hover');
     },500);
 }, false);
+
+var obj1 = {
+    obj2 : {
+        key : val
+    }
+}

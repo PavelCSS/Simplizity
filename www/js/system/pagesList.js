@@ -1,12 +1,12 @@
 var app_name = 'Simpliziti';
 var pagesList = {
-    'login'       : function(){
+    'login'        : function(){
         parseTemplate('_login.tmpl', {
             pageName  : 'login',
             pageTitle : app_name
         }, false)
     },
-    'home'        : function(){
+    'home'         : function(){
         parseTemplate('_home.tmpl', {
             pageName      : 'home',
             pageTitle     : app_name,
@@ -16,7 +16,7 @@ var pagesList = {
             usersBirthday : usersBirthday
         }, false);
     },
-    'profile'     : function(profile){
+    'profile'      : function(profile){
         if(typeof profile === 'undefined'){
             profile = {
                 user      : true,
@@ -28,38 +28,38 @@ var pagesList = {
                 wishListing : readTextFileReturn('_wish-list_.tmpl')
             }, false, function(html){
                 $('main').replaceWith(html);
-                                eventsList.wish.swipe();
+                eventsList.wish.swipe();
             });
             return false;
         }
         parseTemplate('_profile.tmpl', profile, {
             wishListing : readTextFileReturn('_wish-list_.tmpl')
-        })
-    },
-    'sendMoney'   : function(){
-        var newUserList = users.sort(function (a, b) {
-            if (a.name > b.name) {
-                return 1;
-            }
-            if (a.name < b.name) {
-                return -1;
-            }
-            return 0;
         });
+    },
+    'sendMoney'    : function(){
+//        var newUserList = users.sort(function(a, b){
+//            if(a.name > b.name){
+//                return 1;
+//            }
+//            if(a.name < b.name){
+//                return -1;
+//            }
+//            return 0;
+//        });
         parseTemplate('_send-money.tmpl', {
             pageName  : 'send-money',
             pageTitle : 'Contribute',
-            users     : newUserList
-        })
+            users     : users
+        });
     },
-    'newRequests' : function(){
+    'newRequests'  : function(){
         parseTemplate('_new-requests.tmpl', {
             pageName     : 'new-requests',
             pageTitle    : 'New Requests',
             usersRequest : usersRequest
-        })
+        });
     },
-    'addWish'     : function(url){
+    'addWish'      : function(url){
         var urlData = getJsonFromHashUrl();
         var wishItem = getUser(urlData.userId, urlData.wishId);
         if(typeof wishItem !== 'undefined' && wishItem){
@@ -73,46 +73,46 @@ var pagesList = {
                 price       : wishItem.wish.price,
                 description : wishItem.wish.description,
                 private     : wishItem.wish.private
-            })
+            });
         }else{
             parseTemplate('_add-wish.tmpl', {
                 pageName  : 'add-wish',
                 pageTitle : 'Add Wish',
                 photo     : url || ''
-            })
+            });
         }
     },
-    'myDonation'  : function(){
+    'myDonation'   : function(){
         parseTemplate('_my-contribute.tmpl', {
             pageName  : 'my-contribute',
             pageTitle : 'My contribute',
             donations : donationsDino
         })
     },
-    'donationMe'  : function(){
+    'donationMe'   : function(){
         var urlData = getJsonFromHashUrl();
         var user = getUser(urlData.userId).user;
         parseTemplate('_contribute-me.tmpl', user)
     },
-    'donationList'  : function(){
+    'donationList' : function(){
         parseTemplate('_contribute-list.tmpl', {
             users : usersSent
         })
     },
-    'settings'  : function(){
+    'settings'     : function(){
         parseTemplate('_settings.tmpl', {
             pageName  : 'settings',
             pageTitle : 'My account',
             userData  : dinoProfile
         })
     },
-    'comment'  : function(){
+    'comment'      : function(){
         parseTemplate('_comment.tmpl', {
             pageName  : 'comment',
             pageTitle : 'Comment'
         })
     },
-    'register'  : function(){
+    'register'     : function(){
         parseTemplate('_register.tmpl', {
             pageName  : 'register',
             pageTitle : 'Register'
