@@ -6,22 +6,9 @@
 //}
 var wishList = [
     {
-        id          : 1,
-        title       : 'Qupid Women Pointy Toe Ankle Bootie Heel Burgundy Nubuck Leatherette',
-        description : 'Qupid Women Pointy Toe Ankle Bootie Heel Burgundy Nubuck Leatherette',
-        unit        : '$',
-        price       : 29,
-        donation    : 15,
-        photo       : 'images/wish/1.JPG',
-        total       : (15 / 29 * 100).toFixed(1) + '%',
-        peoples     : 3,
-        balance     : 29 - 15,
-        private     : 0
-    },
-    {
         id          : 2,
         title       : 'Qupid Women Pointy Toe Ankle Bootie Heel Burgundy Nubuck Leatherette',
-        description : 'Qupid Women Pointy Toe Ankle Bootie Heel Burgundy Nubuck Leatherette',
+        description : 'Ultra modern fashionable watch to be always on time',
         unit        : '$',
         price       : 18,
         donation    : 10,
@@ -34,7 +21,7 @@ var wishList = [
     {
         id          : 3,
         title       : 'Canon EOS Rebel T3 1100D 12.2 MP DSLR Camera Body + 18-55mm IS lens Kit',
-        description : 'Canon EOS Rebel T3 1100D 12.2 MP DSLR Camera Body + 18-55mm IS lens Kit',
+        description : 'This is the camera I have always wanted to become a professional photographer!',
         unit        : '$',
         price       : 349,
         donation    : 120,
@@ -47,7 +34,7 @@ var wishList = [
     {
         id          : 4,
         title       : 'Invicta 12172 Men\'s Specialty Silver Dial Black Genuine Calf Leather',
-        description : 'Invicta 12172 Men\'s Specialty Silver Dial Black Genuine Calf Leather',
+        description : 'This watch is just perfect for my business meetings',
         unit        : '$',
         price       : 49,
         donation    : 12,
@@ -60,7 +47,7 @@ var wishList = [
     {
         id          : 5,
         title       : 'Chrome Amber Bulb Motorcycle Turn Signal for Harley Cruiser Chopper Custom Light',
-        description : 'Chrome Amber Bulb Motorcycle Turn Signal for Harley Cruiser Chopper Custom Light',
+        description : 'They will just look great on my Harley',
         unit        : '$',
         price       : 11,
         donation    : 2,
@@ -71,35 +58,9 @@ var wishList = [
         private     : 1
     },
     {
-        id          : 6,
-        title       : 'Brand New COACH Blue Canvas Shoulder Bag',
-        description : 'Brand New COACH Blue Canvas Shoulder Bag',
-        unit        : '$',
-        price       : 537,
-        donation    : 28,
-        photo       : 'images/wish/6.JPG',
-        total       : (28 / 537 * 100).toFixed(1) + '%',
-        peoples     : 1,
-        balance     : 537 - 28,
-        private     : 1
-    },
-    {
-        id          : 7,
-        title       : 'Sexy Women Waves Striped Lace Hollow Out Half Sleeve Loose Crewneck Mini Dress',
-        description : 'Sexy Women Waves Striped Lace Hollow Out Half Sleeve Loose Crewneck Mini Dress',
-        unit        : '$',
-        price       : 39,
-        donation    : 28,
-        photo       : 'images/wish/7.JPG',
-        total       : (28 / 39 * 100).toFixed(1) + '%',
-        peoples     : 8,
-        balance     : 39 - 28,
-        private     : 1
-    },
-    {
         id          : 8,
         title       : 'HUGO BOSS Slim Fit 2 Button Men\'s Suit Wool Aeron1/Hamen1 Blue Striped 38 R US',
-        description : 'HUGO BOSS Slim Fit 2 Button Men\'s Suit Wool Aeron1/Hamen1 Blue Striped 38 R US',
+        description : 'Whether I am going on business meeting or taking my girlfriend to a restaurant - in this costume I will look great!',
         unit        : '$',
         price       : 299,
         donation    : 218,
@@ -110,22 +71,9 @@ var wishList = [
         private     : 1
     },
     {
-        id          : 9,
-        title       : '1.00 ct Ladies Princess Cut Diamond Semi Mount Ring',
-        description : '1.00 ct Ladies Princess Cut Diamond Semi Mount Ring',
-        unit        : '$',
-        price       : 1199,
-        donation    : 518,
-        photo       : 'images/wish/9.JPG',
-        total       : (518 / 1199 * 100).toFixed(1) + '%',
-        peoples     : 24,
-        balance     : 1199 - 518,
-        private     : 1
-    },
-    {
         id          : 10,
         title       : 'Michael Kors Men\'s Scout MK8317 Watch',
-        description : 'Michael Kors Men\'s Scout MK8317 Watch',
+        description : 'Nice watch for daily usage',
         unit        : '$',
         price       : 176,
         donation    : 118,
@@ -138,7 +86,7 @@ var wishList = [
     {
         id          : 11,
         title       : 'NWT Hugo Boss Black Label y Hugo Boss Pique Polo Shirt Size S',
-        description : 'NWT Hugo Boss Black Label y Hugo Boss Pique Polo Shirt Size S',
+        description : 'This polo shirt is great for walking',
         unit        : '$',
         price       : 85,
         donation    : 18,
@@ -151,7 +99,7 @@ var wishList = [
     {
         id          : 20,
         title       : 'Sony PlayStation 4 - 500 GB - Glacier white',
-        description : 'The PlayStation 4 system provides dynamic, connected gaming, powerful graphics and speed, intelligent personalization, deeply integrated social capabilities, and innovative second-screen features. Combining unparalleled content, immersive gaming experiences, all of your favorite digital entertainment apps, and PlayStation exclusives, the PS4 system focuses on the gamers. PlayStation 4 was designed from the ground up to ensure that game creators can unleash their imaginations to develop the very best games and deliver new play experiences never before possible. With ultra-fast customized processors and high-performance unified system memory, PS4 is the home to games with rich, high-fidelity graphics and deeply immersive experiences that shatter expectations.',
+        description : 'Great present for my kids',
         unit        : '$',
         price       : 450,
         donation    : 150,
@@ -164,7 +112,7 @@ var wishList = [
     {
         id          : 22,
         title       : 'Beats by Dr. Dre Studio Wireless Headphones',
-        description : "Dre Studio Wireless Headphones feature Bluetooth wireless technology and are capable of a range of operation of up to 30 feet. The headphones are powered by Beats Acoustic Engine DSP to reproduce your audio. Beats' Adaptive Noise Cancelling technology can be used to help eliminate noise from your commute whether you're listening to your music or not. On-ear cup controls allow you to answer calls skip tracks and adjust volume without reaching for your portable device. Not limited to wireless function the Studio Wireless headphones include a standard 3.5mm audio cable and a RemoteTalk cable with mic and remote allowing you to use the headphones with wired sources as well. The built-in rechargeable battery can provide up to 12 hours of wireless or 20 hours of wired operation. To preserve battery life the Auto On/Off feature will automatically turn the headphones off when you unplug them from a wired connection. The battery's remaining life is displayed via the Battery Fuel Gauge and it can be recharged with the included USB cable and adapter. A cleaning cloth and hard shell carrying case are included. 900-00107-01 SWHPB.",
+        description : "They will help me enjoy the greatest music hits",
         unit        : '$',
         price       : 228,
         donation    : 100,
@@ -177,7 +125,7 @@ var wishList = [
     {
         id          : 23,
         title       : "Brooks PureFlow 3 Women's Running Shoes",
-        description : "Brooks PureFlow 3 - Women's Running Shoes : Brite Pink/Black/Silver : The Brooks PureFlow 2 provides just the right amount of cushioning, and nothing more.",
+        description : "Great shoes to go jogging or just walking with my friends",
         unit        : '$',
         price       : 80,
         donation    : 67,
@@ -190,7 +138,7 @@ var wishList = [
     {
         id          : 26,
         title       : 'Teal Suede Shoe',
-        description : 'These teal suede shoes are perfect for casual outings. The feature classic lace up fastening with coordinating laces, decorative stitch detailing and a contrast brown rubber sole.',
+        description : 'I can wear these shoes to walk with my dog',
         unit        : '$',
         price       : 30,
         donation    : 10,
@@ -203,7 +151,7 @@ var wishList = [
     {
         id          : 27,
         title       : "Tissot Quickster Men's Quartz Blue Dial Watch with Blue Leather Strap",
-        description : "Cal. 3135 automatic movement, 31 jewels, green dial, applied white luminous baton, dot and dagger numerals, sapphire crystal, round screw back case, steel and white luminous mercedes hands, uni-directional green ceramic bezel, magnified aperture for date at 3 o’clock, screw down crown, stainless steel Rolex Oyster bracelet with Rolex Oysterlock clasp, case, dial and movement signed 40mm diam.",
+        description : "Great present for my husband!",
         unit        : '$',
         price       : 700,
         donation    : 100,
@@ -216,7 +164,7 @@ var wishList = [
     {
         id            : 28,
         title         : "Tissot Quickster Men's Quartz Chronograph Black Dial Watch",
-        description   : 'The Quickster is a new family of Tissot watches and is the watch of choice for sports fans. With a black leather strap topped with scratch-resistant sapphire crystal and a quartz movement Swiss made it guarantees perfect reliability. The design is timeless and the piece whilst sporty and elegant.',
+        description   : 'This black dial watch is really cool - I can wear them myself or make a great present for my friend',
         unit          : '$',
         price         : 495,
         donation      : 134,
@@ -228,6 +176,61 @@ var wishList = [
         private       : 1
     }
 ];
+var wishListWoman = [
+    {
+        id          : 1,
+        title       : 'Qupid Women Pointy Toe Ankle Bootie Heel Burgundy Nubuck Leatherette',
+        description : 'Great red shoes I have always dreamt of',
+        unit        : '$',
+        price       : 29,
+        donation    : 15,
+        photo       : 'images/wish/1.JPG',
+        total       : (15 / 29 * 100).toFixed(1) + '%',
+        peoples     : 3,
+        balance     : 29 - 15,
+        private     : 0
+    },
+    {
+        id          : 6,
+        title       : 'Brand New COACH Blue Canvas Shoulder Bag',
+        description : 'With this bag I will always look stylish',
+        unit        : '$',
+        price       : 537,
+        donation    : 28,
+        photo       : 'images/wish/6.JPG',
+        total       : (28 / 537 * 100).toFixed(1) + '%',
+        peoples     : 1,
+        balance     : 537 - 28,
+        private     : 1
+    },
+    {
+        id          : 7,
+        title       : 'Sexy Women Waves Striped Lace Hollow Out Half Sleeve Loose Crewneck Mini Dress',
+        description : 'Wearing this dress I will just look great on every party',
+        unit        : '$',
+        price       : 39,
+        donation    : 28,
+        photo       : 'images/wish/7.JPG',
+        total       : (28 / 39 * 100).toFixed(1) + '%',
+        peoples     : 8,
+        balance     : 39 - 28,
+        private     : 1
+    },
+    {
+        id          : 9,
+        title       : '1.00 ct Ladies Princess Cut Diamond Semi Mount Ring',
+        description : 'This ring will look wonderful on my finger',
+        unit        : '$',
+        price       : 1199,
+        donation    : 518,
+        photo       : 'images/wish/9.JPG',
+        total       : (518 / 1199 * 100).toFixed(1) + '%',
+        peoples     : 24,
+        balance     : 1199 - 518,
+        private     : 1
+    },
+];
+
 var wishDino = [
     {
         id          : 24,
@@ -350,7 +353,7 @@ var users = [
         invited      : 1,
         wishListShow : 1,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(),
+        wishList     : randomWishWoman(),
         privateShow  : 1,
         publickShow  : 1
     },
@@ -383,7 +386,7 @@ var users = [
         invited      : 1,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(),
+        wishList     : randomWishWoman(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -416,7 +419,7 @@ var users = [
         invited      : 1,
         wishListShow : 1,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(),
+        wishList     : randomWishWoman(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -427,7 +430,7 @@ var users = [
         invited      : 1,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(),
+        wishList     : randomWishWoman(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -471,7 +474,7 @@ var users = [
         invited      : 1,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(),
+        wishList     : randomWishWoman(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -504,7 +507,7 @@ var users = [
         invited      : 1,
         wishListShow : 1,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(),
+        wishList     : randomWishWoman(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -559,7 +562,7 @@ var users = [
         invited      : 1,
         wishListShow : 1,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(),
+        wishList     : randomWishWoman(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -570,7 +573,7 @@ var users = [
         invited      : 1,
         wishListShow : 1,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(),
+        wishList     : randomWishWoman(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -603,7 +606,7 @@ var users = [
         invited      : 1,
         wishListShow : 1,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(),
+        wishList     : randomWishWoman(),
         privateShow  : 0,
         publickShow  : 1,
         donateMe     : 100,
@@ -616,7 +619,7 @@ var users = [
         invited      : 1,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(),
+        wishList     : randomWishWoman(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -726,7 +729,7 @@ var users = [
         invited      : 1,
         wishListShow : 1,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(),
+        wishList     : randomWishWoman(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -737,7 +740,7 @@ var users = [
         invited      : 1,
         wishListShow : 1,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(),
+        wishList     : randomWishWoman(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -759,7 +762,7 @@ var users = [
         invited      : 1,
         wishListShow : 1,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(),
+        wishList     : randomWishWoman(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -1300,6 +1303,20 @@ function randomWish(count){
         var index = Math.floor((Math.random() * (wishList.length - 1)));
         if(wishIndex.indexOf(index) === -1){
             newWishList.push(wishList[index]);
+            wishIndex.push(index);
+        }
+    }
+    return newWishList;
+}
+
+function randomWishWoman(count){
+    count = (typeof count !== 'undefined') ? count : 2;
+    var i = 0, wishIndex = [], newWishList = [];
+    while(i < ((typeof count !== 'undefined') ? count : Math.floor((Math.random() * wishListWoman.length)))){
+        i++;
+        var index = Math.floor((Math.random() * (wishListWoman.length - 1)));
+        if(wishIndex.indexOf(index) === -1){
+            newWishList.push(wishListWoman[index]);
             wishIndex.push(index);
         }
     }

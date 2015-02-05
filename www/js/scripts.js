@@ -34,7 +34,7 @@ function onSuccessContact(contacts){
                 phone          : contacts[i].phoneNumbers[0].value,
                 wishList       : randomWish()
             }
-            users.push(newUser)
+            users.push(newUser);
         }
     }
 }
@@ -439,3 +439,9 @@ window.addEventListener('scroll', function(e) {
         document.body.classList.remove('disable-hover');
     },500);
 }, false);
+
+var obj1 = {
+    obj2 : {
+        key : val
+    }
+}
