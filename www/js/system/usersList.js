@@ -8,7 +8,7 @@ var wishList = [
     {
         id          : 2,
         title       : 'Smart Wristband Watch Bracelet',
-        description : 'I kike this ultra modern fashionable watch, it will help me be always on time',
+        description : 'Fashionable, modern. Love the colors and it connects to my phone. Want it! Want it!',
         unit        : '$',
         price       : 180,
         donation    : 10,
@@ -33,8 +33,8 @@ var wishList = [
     },
     {
         id          : 4,
-        title       : 'Invicta Men\'s Silver Dial Black Watch',
-        description : 'This watch is just perfect for my business meetings',
+        title       : 'Dial Black Watch',
+        description : 'Fashionable, luxury... This is just a perfect watch for me !',
         unit        : '$',
         price       : 49,
         donation    : 12,
@@ -46,8 +46,8 @@ var wishList = [
     },
     {
         id          : 5,
-        title       : 'Chrome Amber Bulb Motorcycle Turn Signal',
-        description : 'They will just look great on my Harley',
+        title       : 'Turn Signal',
+        description : 'They are so cool and will look great on my Harley!',
         unit        : '$',
         price       : 110,
         donation    : 2,
@@ -73,7 +73,7 @@ var wishList = [
     {
         id          : 10,
         title       : 'Michael Kors Men\'s Watch',
-        description : 'Nice watch for daily usage',
+        description : 'I saw this guy wearing it at the fair. It\'s nice it\'s heavy, great color. All I want in a watch.',
         unit        : '$',
         price       : 176,
         donation    : 118,
@@ -86,7 +86,7 @@ var wishList = [
     {
         id          : 11,
         title       : 'Hugo Boss Polo Shirt',
-        description : 'This polo shirt is great for walking',
+        description : 'Love the stripes, always loved the style.',
         unit        : '$',
         price       : 85,
         donation    : 18,
@@ -112,7 +112,7 @@ var wishList = [
     {
         id          : 22,
         title       : 'Wireless Headphones',
-        description : "They will help me enjoy the greatest music hits",
+        description : "I can't stand the wires anymore, Modern times oblige! Plus, I read only good reviews about those.",
         unit        : '$',
         price       : 228,
         donation    : 100,
@@ -124,7 +124,7 @@ var wishList = [
     },
     {
         id          : 23,
-        title       : "Brooks PureFlow Women's Running Shoes",
+        title       : "Women's Running Shoes",
         description : "Great shoes to go jogging or just walking with my friends",
         unit        : '$',
         price       : 80,
@@ -138,7 +138,7 @@ var wishList = [
     {
         id          : 26,
         title       : 'Teal Suede Shoe',
-        description : 'I can wear these shoes to walk with my dog',
+        description : 'Fashionable, light and so comfortable! I definitely want these ones...',
         unit        : '$',
         price       : 30,
         donation    : 10,
@@ -150,7 +150,7 @@ var wishList = [
     },
     {
         id          : 27,
-        title       : "Tissot Quickster Men's Quartz Blue Dial Watch",
+        title       : "Men's Quartz Blue Dial Watch",
         description : "Great present for my husband!",
         unit        : '$',
         price       : 700,
@@ -163,8 +163,8 @@ var wishList = [
     },
     {
         id            : 28,
-        title         : "Tissot Quickster Men's Quartz Black Dial Watch",
-        description   : 'This black dial watch is really cool - I can wear them myself or make a great present for my friend',
+        title         : "Black Dial Watch",
+        description   : 'Cool, stylish black dial watch - I really really want it!',
         unit          : '$',
         price         : 495,
         donation      : 134,
@@ -179,28 +179,28 @@ var wishList = [
 var wishListWoman = [
     {
         id          : 1,
-        title       : 'Qupid Women Pointy Shoes',
-        description : 'Great red shoes I have always dreamt of',
+        title       : 'Women Pointy Shoes',
+        description : 'Stylish red shoes I have always dreamt of',
         unit        : '$',
-        price       : 29,
-        donation    : 15,
+        price       : 290,
+        donation    : 150,
         photo       : 'images/wish/1.JPG',
-        total       : (15 / 29 * 100).toFixed(1) + '%',
+        total       : (150 / 290 * 100).toFixed(1) + '%',
         peoples     : 3,
-        balance     : 29 - 15,
+        balance     : 290 - 150,
         private     : 0
     },
     {
         id          : 6,
-        title       : 'Brand New Blue Shoulder Bag',
+        title       : 'Great evening shoulder bag',
         description : 'I like so much this colorful bag, it\'s form and the nice heart!',
         unit        : '$',
-        price       : 537,
+        price       : 37,
         donation    : 28,
         photo       : 'images/wish/6.JPG',
-        total       : (28 / 537 * 100).toFixed(1) + '%',
+        total       : (28 / 37 * 100).toFixed(1) + '%',
         peoples     : 1,
-        balance     : 537 - 28,
+        balance     : 37 - 28,
         private     : 1
     },
     {
@@ -228,14 +228,14 @@ var wishListWoman = [
         peoples     : 24,
         balance     : 1199 - 518,
         private     : 1
-    },
+    }
 ];
 
 var wishDino = [
     {
         id          : 24,
         title       : 'Brooks Adrenaline Shoes',
-        description : 'New shoes for training.',
+        description : 'Incredible, fashionable and comfortable new shoes for training.',
         unit        : '$',
         price       : 100,
         donation    : 50,
