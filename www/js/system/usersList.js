@@ -7,8 +7,8 @@
 var wishList = [
     {
         id          : 2,
-        title       : 'Qupid Women Pointy Toe Ankle Bootie Heel Burgundy Nubuck Leatherette',
-        description : 'Ultra modern fashionable watch to be always on time',
+        title       : 'Smart Wristband Watch Bracelet',
+        description : 'I kike this ultra modern fashionable watch, it will help me be always on time',
         unit        : '$',
         price       : 18,
         donation    : 10,
@@ -20,7 +20,7 @@ var wishList = [
     },
     {
         id          : 3,
-        title       : 'Canon EOS Rebel T3 1100D 12.2 MP DSLR Camera Body + 18-55mm IS lens Kit',
+        title       : 'Canon EOS Rebel Camera',
         description : 'This is the camera I have always wanted to become a professional photographer!',
         unit        : '$',
         price       : 349,
@@ -33,7 +33,7 @@ var wishList = [
     },
     {
         id          : 4,
-        title       : 'Invicta 12172 Men\'s Specialty Silver Dial Black Genuine Calf Leather',
+        title       : 'Invicta Men\'s Silver Dial Black Watch',
         description : 'This watch is just perfect for my business meetings',
         unit        : '$',
         price       : 49,
@@ -46,7 +46,7 @@ var wishList = [
     },
     {
         id          : 5,
-        title       : 'Chrome Amber Bulb Motorcycle Turn Signal for Harley Cruiser Chopper Custom Light',
+        title       : 'Chrome Amber Bulb Motorcycle Turn Signal',
         description : 'They will just look great on my Harley',
         unit        : '$',
         price       : 11,
@@ -59,8 +59,8 @@ var wishList = [
     },
     {
         id          : 8,
-        title       : 'HUGO BOSS Slim Fit 2 Button Men\'s Suit Wool Aeron1/Hamen1 Blue Striped 38 R US',
-        description : 'Whether I am going on business meeting or taking my girlfriend to a restaurant - in this costume I will look great!',
+        title       : 'HUGO BOSS Slim Fit',
+        description : 'Great suit to go to work or to a restaurant, I really like it !',
         unit        : '$',
         price       : 299,
         donation    : 218,
@@ -72,7 +72,7 @@ var wishList = [
     },
     {
         id          : 10,
-        title       : 'Michael Kors Men\'s Scout MK8317 Watch',
+        title       : 'Michael Kors Men\'s Watch',
         description : 'Nice watch for daily usage',
         unit        : '$',
         price       : 176,
@@ -85,7 +85,7 @@ var wishList = [
     },
     {
         id          : 11,
-        title       : 'NWT Hugo Boss Black Label y Hugo Boss Pique Polo Shirt Size S',
+        title       : 'Hugo Boss Polo Shirt',
         description : 'This polo shirt is great for walking',
         unit        : '$',
         price       : 85,
@@ -98,8 +98,8 @@ var wishList = [
     },
     {
         id          : 20,
-        title       : 'Sony PlayStation 4 - 500 GB - Glacier white',
-        description : 'Great present for my kids',
+        title       : 'Sony PlayStation',
+        description : 'This is just a great present for my kids',
         unit        : '$',
         price       : 450,
         donation    : 150,
@@ -111,7 +111,7 @@ var wishList = [
     },
     {
         id          : 22,
-        title       : 'Beats by Dr. Dre Studio Wireless Headphones',
+        title       : 'Wireless Headphones',
         description : "They will help me enjoy the greatest music hits",
         unit        : '$',
         price       : 228,
@@ -124,7 +124,7 @@ var wishList = [
     },
     {
         id          : 23,
-        title       : "Brooks PureFlow 3 Women's Running Shoes",
+        title       : "Brooks PureFlow Women's Running Shoes",
         description : "Great shoes to go jogging or just walking with my friends",
         unit        : '$',
         price       : 80,
@@ -150,7 +150,7 @@ var wishList = [
     },
     {
         id          : 27,
-        title       : "Tissot Quickster Men's Quartz Blue Dial Watch with Blue Leather Strap",
+        title       : "Tissot Quickster Men's Quartz Blue Dial Watch",
         description : "Great present for my husband!",
         unit        : '$',
         price       : 700,
@@ -163,7 +163,7 @@ var wishList = [
     },
     {
         id            : 28,
-        title         : "Tissot Quickster Men's Quartz Chronograph Black Dial Watch",
+        title         : "Tissot Quickster Men's Quartz Black Dial Watch",
         description   : 'This black dial watch is really cool - I can wear them myself or make a great present for my friend',
         unit          : '$',
         price         : 495,
@@ -179,7 +179,7 @@ var wishList = [
 var wishListWoman = [
     {
         id          : 1,
-        title       : 'Qupid Women Pointy Toe Ankle Bootie Heel Burgundy Nubuck Leatherette',
+        title       : 'Qupid Women Pointy Shoes',
         description : 'Great red shoes I have always dreamt of',
         unit        : '$',
         price       : 29,
@@ -192,8 +192,8 @@ var wishListWoman = [
     },
     {
         id          : 6,
-        title       : 'Brand New COACH Blue Canvas Shoulder Bag',
-        description : 'With this bag I will always look stylish',
+        title       : 'Brand New Blue Shoulder Bag',
+        description : 'I like so much this colorful bag, it\'s form and the nice heart!',
         unit        : '$',
         price       : 537,
         donation    : 28,
@@ -205,8 +205,8 @@ var wishListWoman = [
     },
     {
         id          : 7,
-        title       : 'Sexy Women Waves Striped Lace Hollow Out Half Sleeve Loose Crewneck Mini Dress',
-        description : 'Wearing this dress I will just look great on every party',
+        title       : 'Sexy Women Mini Dress',
+        description : 'I adore this dress, it\'s so glamorous',
         unit        : '$',
         price       : 39,
         donation    : 28,
@@ -218,7 +218,7 @@ var wishListWoman = [
     },
     {
         id          : 9,
-        title       : '1.00 ct Ladies Princess Cut Diamond Semi Mount Ring',
+        title       : 'Diamond Ring',
         description : 'This ring will look wonderful on my finger',
         unit        : '$',
         price       : 1199,
@@ -234,7 +234,7 @@ var wishListWoman = [
 var wishDino = [
     {
         id          : 24,
-        title       : 'Brooks Adrenaline GTS 14',
+        title       : 'Brooks Adrenaline Shoes',
         description : 'New shoes for training.',
         unit        : '$',
         price       : 100,
@@ -260,7 +260,7 @@ var wishDino = [
     },
     {
         id          : 21,
-        title       : 'Fujifilm X100S 16.3 MP Digital Camera',
+        title       : 'Fujifilm Digital Camera',
         description : 'My dream camera!  Make effort to save for this for upcoming trip.',
         unit        : '$',
         price       : 799,
@@ -331,7 +331,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 1,
         publickShow  : 0
     },
@@ -441,7 +441,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -452,7 +452,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -485,7 +485,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -529,7 +529,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -540,7 +540,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -551,7 +551,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -595,7 +595,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -606,7 +606,7 @@ var users = [
         invited      : 1,
         wishListShow : 1,
         phone        : '(123) 456 7890',
-        wishList     : randomWishWoman(),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1,
         donateMe     : 100,
@@ -630,7 +630,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -641,7 +641,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -652,7 +652,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -663,7 +663,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -674,7 +674,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -685,7 +685,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -696,7 +696,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -707,7 +707,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -718,7 +718,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -850,7 +850,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -861,7 +861,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -872,7 +872,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -883,7 +883,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -894,7 +894,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -905,7 +905,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -916,7 +916,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -927,7 +927,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -938,7 +938,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -949,7 +949,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -960,7 +960,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -971,7 +971,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -979,10 +979,10 @@ var users = [
         id           : 62,
         name         : 'Michael Karim',
         photo        : 'images/users/Michael Karim.jpg',
-        invited      : 0,
-        wishListShow : 0,
+        invited      : 1,
+        wishListShow : 1,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -993,7 +993,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -1004,7 +1004,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -1015,7 +1015,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -1026,7 +1026,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -1037,7 +1037,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -1048,7 +1048,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -1059,7 +1059,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -1070,7 +1070,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -1081,7 +1081,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -1092,7 +1092,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -1103,7 +1103,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -1114,7 +1114,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -1125,7 +1125,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -1136,7 +1136,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -1147,7 +1147,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -1158,7 +1158,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -1169,7 +1169,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -1180,7 +1180,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -1191,7 +1191,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -1202,7 +1202,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -1213,7 +1213,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1,
         donateMe     : 50,
@@ -1226,7 +1226,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -1237,7 +1237,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -1248,7 +1248,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -1259,7 +1259,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -1270,7 +1270,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     },
@@ -1281,7 +1281,7 @@ var users = [
         invited      : 0,
         wishListShow : 0,
         phone        : '(123) 456 7890',
-        wishList     : randomWish(0),
+        wishList     : randomWish(),
         privateShow  : 0,
         publickShow  : 1
     }

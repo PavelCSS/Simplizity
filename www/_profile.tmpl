@@ -38,17 +38,12 @@
         {{/user}}
         {{^user}}
         {{#showBlock}}
-            <ul class="_column_2 bottom white friend-info m0px p0px">
-                <li class="icon-bg bg-icon9em icon-birthday-cake">
-                    <div class="content large">
-                        28th August
-                    </div>
+            <ul class="white m0px p0px mt1em mb1em">
+                <li class="fs32">
+                    <i class="icon-phone2"></i> {{userData.phone}}
                 </li>
-                <li class="icon-bg bg-icon9em icon-bars">
-                    <div class="content large my-dotation">
-                        <span class="larger">6</span> Contributions <br>
-                        <span class="primary fs32"><i class="icon-dollar3 fs48 mr-grid lh-small"></i>325.00</span>
-                    </div>
+                <li class="fs24">
+                    <i class="icon-birthday-cake"></i> 28th August
                 </li>
             </ul>
         {{/showBlock}}

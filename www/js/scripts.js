@@ -439,9 +439,3 @@ window.addEventListener('scroll', function(e) {
         document.body.classList.remove('disable-hover');
     },500);
 }, false);
-
-var obj1 = {
-    obj2 : {
-        key : val
-    }
-}
