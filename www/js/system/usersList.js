@@ -10,12 +10,12 @@ var wishList = [
         title       : 'Smart Wristband Watch Bracelet',
         description : 'I kike this ultra modern fashionable watch, it will help me be always on time',
         unit        : '$',
-        price       : 18,
+        price       : 180,
         donation    : 10,
         photo       : 'images/wish/2.JPG',
-        total       : (18 / 10 * 100).toFixed(1) + '%',
+        total       : (180 / 10 * 100).toFixed(1) + '%',
         peoples     : 5,
-        balance     : 28 - 10,
+        balance     : 180 - 10,
         private     : 0
     },
     {
@@ -49,12 +49,12 @@ var wishList = [
         title       : 'Chrome Amber Bulb Motorcycle Turn Signal',
         description : 'They will just look great on my Harley',
         unit        : '$',
-        price       : 11,
+        price       : 110,
         donation    : 2,
         photo       : 'images/wish/5.JPG',
-        total       : (2 / 11 * 100).toFixed(1) + '%',
+        total       : (2 / 110 * 100).toFixed(1) + '%',
         peoples     : 1,
-        balance     : 11 - 2,
+        balance     : 110 - 2,
         private     : 1
     },
     {
