@@ -1,0 +1,33 @@
+<main id="{{pageName}}">
+
+    <header class="fixed large">
+        <button class="back-btn btn icon-arrow-left6 fl-left">{{pageTitle}}</button>
+        <a class="btn icon icon-user fl-right" href="#profile">Profile</a>
+    </header>
+
+    <article class="mtH pb0em">
+        <ul class="user-list list-bordered m0px">
+            {{#users}}
+            <li class="user-item" data-user-id="{{id}}" data-user-name="{{name}}">
+                <span class="w50px fl-left mr-grid">
+                    <span class="user-photo responsive-image _1x1">
+                        <img src="{{photo}}" alt=""/>
+                    </span>
+                </span>
+                <h3 class="user-name wrap">
+                    {{name}}
+                    {{#invited}}
+                        {{^wishListShow}}
+                            <span class="subtitle block">No list</span>
+                        {{/wishListShow}}
+                    {{/invited}}
+                    {{^invited}}
+                    <span class="subtitle block">NON registered users</span>
+                    {{/invited}}
+                </h3>
+            </li>
+            {{/users}}
+        </ul>
+    </article>
+
+</main>

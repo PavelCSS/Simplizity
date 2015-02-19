@@ -20,14 +20,15 @@
             </span>
         </div>
         {{#user}}
-            <h2 class="inherit mt0-5em">{{userData.name}}</h2>
+            <h2 class="inherit mt0-5em mb0em">{{userData.name}}</h2>
+            <span class="large">Current balance <span class="text-bold larger success align-middle">$356</span></span>
             <ul class="_column_3 m0px p0px">
-                <li class="contact-list">
+                <li class="user-list">
                     <span class="block larger">25</span>
                     Following
                 </li>
-                <li class="contact-list">
-                    <span class="block larger">64</span>
+                <li class="user-list">
+                    <span class="block larger">22</span>
                     Followers
                 </li>
                 <li class="my-dotation">
@@ -49,7 +50,7 @@
         {{/showBlock}}
         {{^showBlock}}
             {{#userData.invited}}
-            <h4 class="large inherit">{{userData.name}} is a SIM user</h4>
+            <h4 class="large inherit">{{userData.name}} is a Simpliziti user</h4>
             {{/userData.invited}}
             {{^userData.invited}}
             <h4 class="large inherit">{{userData.name}}<br> is not a Simpliziti user yet</h4>
@@ -64,6 +65,7 @@
             {{>wishListing}}
             <div class="gray-darker-bg p10px">
                 <a class="btn success block outline-bg" href="#addWish">Add Wish</a>
+                <a class="btn info block outline-bg" href="#trendingPage">What now in the trend?!</a>
             </div>
         {{/user}}
         {{^user}}

@@ -71,12 +71,12 @@
     // Inherit button appears as transparent bg => primary color
     &.inherit{
         padding          : 0;
-        color            : #fff;
-        background-color : transparent;
-        border-color     : transparent;
+        color            : inherit;
+        background-color : inherit;
+        border-color     : inherit;
 
-        &.touch{
-            color : @brand-primary;
+        &.touch, &.active{
+            background-color : fade(#000, 30%);
         }
     }
 

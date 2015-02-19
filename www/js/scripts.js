@@ -103,6 +103,10 @@ $('body')
         e.stopImmediatePropagation();
         window.location.hash = 'sendMoney';
     })
+    .on('tap', '.user-list', function(e){
+        e.stopImmediatePropagation();
+        window.location.hash = 'userList';
+    })
     .on('tap', '.my-dotation', function(e){
         e.stopImmediatePropagation();
         window.location.hash = 'myDonation';
@@ -158,20 +162,22 @@ $('body')
             donate : donate
         });
 
-        window.plugin.notification.local.add({
-            autoCancel : true,
-            id         : current_user.user.id,
-            title      : 'You sent you money!',
-            message    : 'You sent $' + donate + ' to ' + current_user.user.name,
-            json       : JSON.stringify({
-                userId : current_user.user.id,
-                wishId : current_user.wish.id
-            })
-        });
-        window.plugin.notification.local.onclick = function (id, state, json) {
-            window.plugin.notification.local.cancel(id);
-            window.location.hash = 'wish?userId=' + JSON.parse(json).userId + '&wishId=' + JSON.parse(json).wishId;
-        };
+        if(window.plugin){
+            window.plugin.notification.local.add({
+                autoCancel : true,
+                id         : current_user.user.id,
+                title      : 'You sent you money!',
+                message    : 'You sent $' + donate + ' to ' + current_user.user.name,
+                json       : JSON.stringify({
+                    userId : current_user.user.id,
+                    wishId : current_user.wish.id
+                })
+            });
+            window.plugin.notification.local.onclick = function (id, state, json) {
+                window.plugin.notification.local.cancel(id);
+                window.location.hash = 'wish?userId=' + JSON.parse(json).userId + '&wishId=' + JSON.parse(json).wishId;
+            };
+        }
     })
     .on('tap', '#new-wish button', function(e){
         e.preventDefault();
@@ -439,3 +445,17 @@ window.addEventListener('scroll', function(e) {
         document.body.classList.remove('disable-hover');
     },500);
 }, false);
+
+$('body')
+    .on('tap', '.tabs-btn', function(e){
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        $(this).parent().find('.tabs-btn').removeClass('active');
+        $(this).addClass('active');
+        var idEl = $(this).data('id');
+        var indexEl = $('#'+idEl).index();
+        var parent = $('#'+idEl).parent();
+        parent.children().eq(0).css({
+            marginLeft : -(100 * indexEl)+'%'
+        });
+    });

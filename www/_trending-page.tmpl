@@ -1,0 +1,18 @@
+<main id="{{pageName}}">
+    <header class="fixed large gray-darker-bg">
+        <button class="back-btn btn icon-arrow-left6 pl0em fl-left">{{pageTitle}}</button>
+    </header>
+
+    <article class="p0px mtH gray-lighter-bg pt0-5em">
+        <ul class="trend-list list-unstyled m0px t-column_2 column_3">
+            {{#trendList}}
+            <li>
+                <div class="trend-photo responsive-image _16x9">
+                    <img src="{{photo}}" alt="{{title}}" width="150" height="100"/>
+                </div>
+                <span class="trend-title">{{title}}</span>
+            </li>
+            {{/trendList}}
+        </ul>
+    </article>
+</main>

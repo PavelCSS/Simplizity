@@ -45,7 +45,7 @@
             & ~ .checkbox_radio{
 
                 &:before{
-                    background : @input-border-color;
+                    background : @gray-lighter;
                 }
             }
         }
@@ -57,6 +57,34 @@
                 &:before{
                     background : @primary-bg;
                 }
+            }
+        }
+        .success& ~ .checkbox_radio{
+            border-color : @brand-success;
+
+            &:before{
+                background : @brand-success;
+            }
+        }
+        .error& ~ .checkbox_radio{
+            border-color : @brand-error;
+
+            &:before{
+                background : @brand-error;
+            }
+        }
+        .warning& ~ .checkbox_radio{
+            border-color : @brand-warning;
+
+            &:before{
+                background : @brand-warning;
+            }
+        }
+        .info& ~ .checkbox_radio{
+            border-color : @brand-info;
+
+            &:before{
+                background : @brand-info;
             }
         }
 
@@ -88,7 +116,7 @@
     }
 
     .checkbox-upgrade{
-        .styles() when (@checkbox-checkmark-style = true){
+        & when (@checkbox-checkmark-style = true){
             & ~ .checkbox_radio{
                 &:before{
                     content : none;
@@ -106,7 +134,7 @@
             &.touch{
                 & ~ .checkbox_radio{
                     &:after{
-                        color : @input-border-color;
+                        color : @gray-lighter;
                     }
                 }
             }
@@ -117,9 +145,28 @@
                         color : @primary-bg;
                     }
                 }
+                .success& ~ .checkbox_radio{
+                    &:after{
+                        color : @brand-success;
+                    }
+                }
+                .error& ~ .checkbox_radio{
+                    &:after{
+                        color : @brand-error;
+                    }
+                }
+                .warning& ~ .checkbox_radio{
+                    &:after{
+                        color : @brand-warning;
+                    }
+                }
+                .info& ~ .checkbox_radio{
+                    &:after{
+                        color : @brand-info;
+                    }
+                }
             }
         }
-        .styles();
 
         &.switcher when (@switcher-style = true){
             & ~ .checkbox_radio{
@@ -135,6 +182,8 @@
                     line-height : @font-size-mini * 2.5;
                     font-weight : bold;
                     width       : 50%;
+                    height      : 100%;
+                    background  : transparent;
                     text-align  : center;
                     float       : left;
                     margin      : 0;
@@ -153,7 +202,7 @@
                 span{
                     .transition(all, 0.3s);
                     .box-sizing();
-                    background : @input-border-color;
+                    background : @gray-lighter;
                     position   : absolute;
                     border     : 1px solid @input-bg;
                     z-index    : 5;
@@ -167,7 +216,8 @@
             &:checked{
                 & ~ .checkbox_radio{
                     span{
-                        left : 50%;
+                        left       : 50%;
+                        background : @brand-success;
                     }
                 }
             }

@@ -36,6 +36,13 @@ var pagesList = {
             wishListing : readTextFileReturn('_wish-list_.tmpl')
         });
     },
+    'trendingPage'      : function(profile){
+        parseTemplate('_trending-page.tmpl', {
+            pageName  : 'trending-page',
+            pageTitle : 'Trending page',
+            trendList : [wishList[10], wishList[5], wishList[3]]
+        });
+    },
     'sendMoney'    : function(){
 //        var newUserList = users.sort(function(a, b){
 //            if(a.name > b.name){
@@ -49,6 +56,13 @@ var pagesList = {
         parseTemplate('_send-money.tmpl', {
             pageName  : 'send-money',
             pageTitle : 'Contribute',
+            users     : users
+        });
+    },
+    'userList'    : function(){
+        parseTemplate('_user-list.tmpl', {
+            pageName  : 'user-list',
+            pageTitle : 'Contact list',
             users     : users
         });
     },
