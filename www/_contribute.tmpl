@@ -14,7 +14,11 @@
 
         {{^donate}}
         <form id="donate-form" class="p10px text-center">
-            <label class="large mb1em"><input type="checkbox"/> Yes, I want to Contribute for this item</label>
+            <label class="large mb1em" for="anonymous">
+                <input id="anonymous" class="success processed checkbox-upgrade filed-upgrade" type="checkbox"/>
+                <span class="checkbox_radio"></span>
+                Contribute anonymously
+            </label>
             <input class="dial" type="text" value="0"
                     data-width="250"
                     data-height="200"
