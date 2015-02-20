@@ -346,6 +346,18 @@ function getUser(userId, wishId){
     }
 }
 
+function getWish(wishId){
+    if(typeof wishId === 'undefined'){
+        return false;
+    }
+    wishId = parseInt(wishId);
+    for(var i = 0; i < wishList.length; i++){
+        if(wishList[i].id == wishId){
+            return wishList[i];
+        }
+    }
+}
+
 function goBack(){
     var pageName = window.location.hash.replace('#', '');
     if(pageName !== 'home'){

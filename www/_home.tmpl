@@ -71,6 +71,20 @@
                     {{/usersBirthday}}
                 </div>
             </li>
+
+            <li class="p5px m5px white-bg clearfix">
+                <h4>What's trendy!</h4>
+                <a href="#trendingPage" class="inherit fl-right text-center small ml0-5em">See their Wish List<br> and Contribute</a>
+                <div class="scroll text-overflow">
+                    {{#trendList}}
+                    <a href="#addWish?wishId={{id}}">
+                        <img
+                            data-wish-id="{{id}}"
+                            src="{{photo}}" alt="{{name}}" width="45"/>
+                    </a>
+                    {{/trendList}}
+                </div>
+            </li>
         </ul>
     </article>
 
