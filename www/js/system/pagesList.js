@@ -13,7 +13,8 @@ var pagesList = {
             user          : dinoProfile,
             usersSent     : usersSent,
             usersRequest  : usersRequest,
-            usersBirthday : usersBirthday
+            usersBirthday : usersBirthday,
+            trendList : [wishList[10], wishList[5], wishList[3]]
         }, false);
     },
     'profile'      : function(profile){
@@ -75,18 +76,18 @@ var pagesList = {
     },
     'addWish'      : function(url){
         var urlData = getJsonFromHashUrl();
-        var wishItem = getUser(urlData.userId, urlData.wishId);
+        var wishItem = getUser(urlData.userId, urlData.wishId).wish || getWish(urlData.wishId);
         if(typeof wishItem !== 'undefined' && wishItem){
             parseTemplate('_add-wish.tmpl', {
-                edit        : true,
+                edit        : urlData.userId ? true : false,
                 pageName    : 'edit-wish',
                 pageTitle   : 'Edit Wish',
-                id          : wishItem.wish.id,
-                photo       : wishItem.wish.photo,
-                title       : wishItem.wish.title,
-                price       : wishItem.wish.price,
-                description : wishItem.wish.description,
-                private     : wishItem.wish.private
+                id          : wishItem.id,
+                photo       : wishItem.photo,
+                title       : wishItem.title,
+                price       : wishItem.price,
+                description : urlData.userId ? wishItem.description : '',
+                private     : urlData.userId ? wishItem.private : ''
             });
         }else{
             parseTemplate('_add-wish.tmpl', {
