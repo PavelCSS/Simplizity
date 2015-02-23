@@ -272,7 +272,49 @@ var wishDino = [
         private     : 0
     }
 ];
-var donationsDino = [
+var donationsDinoMade = [
+    {
+        id       : 1,
+        name     : 'Alexandra Gallardo',
+        photo    : 'images/users/Alexandra Gallardo.jpg',
+        donation : 35,
+        unit     : '$',
+        date     : 'Aug 12 2014'
+    },
+    {
+        id       : 3,
+        name     : 'Alejandro Tani',
+        photo    : 'images/users/Alejandro Tani.jpg',
+        donation : 355,
+        unit     : '$',
+        date     : 'Sep 12 2015'
+    },
+    {
+        id       : 6,
+        name     : 'Alberto Echegaray',
+        photo    : 'images/users/Alberto Echegaray.jpg',
+        donation : 5,
+        unit     : '$',
+        date     : 'Aug 12 2015'
+    },
+    {
+        id       : 7,
+        name     : 'Alia Haj-Hasan',
+        photo    : 'images/users/Alia Haj-Hasan.jpg',
+        donation : 25,
+        unit     : '$',
+        date     : 'Aug 12 2015'
+    },
+    {
+        id       : 23,
+        name     : 'Chris Cronan',
+        photo    : 'images/users/Chris Cronan.jpg',
+        donation : 55,
+        unit     : '$',
+        date     : 'Aug 10 2015'
+    }
+];
+var donationsDinoReceived = [
     {
         id       : 1,
         name     : 'Alexandra Gallardo',
@@ -1305,6 +1347,33 @@ var usersSent = [
 ], usersBirthday = [
     users[60], users[4], users[48]
 ];
+
+var trendList = [
+    {
+        id          : 24,
+        title       : 'iPhone 6 Gold',
+//        description : 'Fashionable, modern. Love the colors and it connects to my phone. Want it! Want it!',
+        unit        : '$',
+        price       : 700,
+        photo       : 'images/wish/iphone6.jpg'
+    },
+    {
+        id          : 34,
+        title       : 'MacBook Pro 13"',
+//        description : 'This is the camera I have always wanted to become a professional photographer!',
+        unit        : '$',
+        price       : 1500,
+        photo       : 'images/wish/macbook.jpg'
+    },
+    {
+        id          : 45,
+        title       : 'iPad',
+//        description : 'Fashionable, luxury... This is just a perfect watch for me !',
+        unit        : '$',
+        price       : 600,
+        photo       : 'images/wish/ipad.png'
+    }
+]
 
 function randomWish(count){
     count = (typeof count !== 'undefined') ? count : 2;

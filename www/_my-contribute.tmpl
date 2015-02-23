@@ -22,7 +22,7 @@
                 </ul>
             </div>
             <ul class="list-unstyled m0px">
-                {{#donations}}
+                {{#donationsMade}}
                 <li class="user-item gray-lighter-bg clearfix p5px" data-user-id="{{id}}">
                     <img class="fl-left ml0-5em mr0-5em img-circle" src="{{photo}}" alt="{{name}}" width="50" height="50"/>
                     <span class="fl-right p5px larger success text-bold mt0-25em">{{unit}}{{donation}}</span>
@@ -31,7 +31,7 @@
                         {{date}}
                     </div>
                 </li>
-                {{/donations}}
+                {{/donationsMade}}
             </ul>
         </article>
 
@@ -52,7 +52,7 @@
                 </ul>
             </div>
             <ul class="list-unstyled m0px">
-                {{#donations}}
+                {{#donationsReceived}}
                 <li class="user-item gray-lighter-bg clearfix p5px" data-user-id="{{id}}">
                     <img class="fl-left ml0-5em mr0-5em img-circle" src="{{photo}}" alt="{{name}}" width="50" height="50"/>
                     <span class="fl-right p5px larger success text-bold mt0-25em">{{unit}}{{donation}}</span>
@@ -61,7 +61,7 @@
                         {{date}}
                     </div>
                 </li>
-                {{/donations}}
+                {{/donationsReceived}}
             </ul>
         </article>
     </section>

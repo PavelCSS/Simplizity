@@ -346,14 +346,15 @@ function getUser(userId, wishId){
     }
 }
 
-function getWish(wishId){
+function getWish(wishId, arr){
+    arr = arr || wishList;
     if(typeof wishId === 'undefined'){
         return false;
     }
     wishId = parseInt(wishId);
-    for(var i = 0; i < wishList.length; i++){
-        if(wishList[i].id == wishId){
-            return wishList[i];
+    for(var i = 0; i < arr.length; i++){
+        if(arr[i].id == wishId){
+            return arr[i];
         }
     }
 }
