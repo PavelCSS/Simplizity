@@ -14,7 +14,7 @@ var pagesList = {
             usersSent     : usersSent,
             usersRequest  : usersRequest,
             usersBirthday : usersBirthday,
-            trendList : [wishList[10], wishList[5], wishList[3]]
+            trendList     : trendList
         }, false);
     },
     'profile'      : function(profile){
@@ -37,30 +37,30 @@ var pagesList = {
             wishListing : readTextFileReturn('_wish-list_.tmpl')
         });
     },
-    'trendingPage'      : function(profile){
+    'trendingPage' : function(profile){
         parseTemplate('_trending-page.tmpl', {
             pageName  : 'trending-page',
             pageTitle : 'Trending page',
-            trendList : [wishList[10], wishList[5], wishList[3]]
+            trendList : trendList
         });
     },
     'sendMoney'    : function(){
-//        var newUserList = users.sort(function(a, b){
-//            if(a.name > b.name){
-//                return 1;
-//            }
-//            if(a.name < b.name){
-//                return -1;
-//            }
-//            return 0;
-//        });
+        //        var newUserList = users.sort(function(a, b){
+        //            if(a.name > b.name){
+        //                return 1;
+        //            }
+        //            if(a.name < b.name){
+        //                return -1;
+        //            }
+        //            return 0;
+        //        });
         parseTemplate('_send-money.tmpl', {
             pageName  : 'send-money',
             pageTitle : 'Contribute',
             users     : users
         });
     },
-    'userList'    : function(){
+    'userList'     : function(){
         parseTemplate('_user-list.tmpl', {
             pageName  : 'user-list',
             pageTitle : 'Contact list',
@@ -76,7 +76,7 @@ var pagesList = {
     },
     'addWish'      : function(url){
         var urlData = getJsonFromHashUrl();
-        var wishItem = getUser(urlData.userId, urlData.wishId).wish || getWish(urlData.wishId);
+        var wishItem = getUser(urlData.userId, urlData.wishId).wish || getWish(urlData.wishId, trendList);
         if(typeof wishItem !== 'undefined' && wishItem){
             parseTemplate('_add-wish.tmpl', {
                 edit        : urlData.userId ? true : false,
@@ -99,10 +99,11 @@ var pagesList = {
     },
     'myDonation'   : function(){
         parseTemplate('_my-contribute.tmpl', {
-            pageName  : 'my-contribute',
-            pageTitle : 'My contribute',
-            donations : donationsDino
-        })
+            pageName          : 'my-contribute',
+            pageTitle         : 'My contributions',
+            donationsMade     : donationsDinoMade,
+            donationsReceived : donationsDinoReceived
+        });
     },
     'donationMe'   : function(){
         var urlData = getJsonFromHashUrl();

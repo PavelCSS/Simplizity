@@ -24,7 +24,7 @@
             <li class="newRequests p5px m5px white-bg clearfix" style="border-bottom: 2px solid rgba(0,0,0,.1);">
                 <span class="text-bold text-center fl-left gray-dark mt0-5em mr0-5em pl0-5em">
                     <i class="icon-announcement icon24 success"></i>
-                    <span class="inline-block ml0-5em">New Request</span>
+                    <span class="inline-block ml0-5em">New Requests</span>
                 </span>
                 <div class="scroll text-overflow text-right">
                     {{#usersRequest}}
@@ -73,11 +73,10 @@
             </li>
 
             <li class="p5px m5px white-bg clearfix">
-                <h4>What's trendy!</h4>
-                <a href="#trendingPage" class="inherit fl-right text-center small ml0-5em">See their Wish List<br> and Contribute</a>
+                <a href="#trendingPage" class="inherit fl-right text-center text-bold small mt0-5em ml0-5em">See what's trendy!</a>
                 <div class="scroll text-overflow">
                     {{#trendList}}
-                    <a href="#addWish?wishId={{id}}">
+                    <a href="#addWish?wishId={{id}}&trend=1">
                         <img
                             data-wish-id="{{id}}"
                             src="{{photo}}" alt="{{name}}" width="45"/>
