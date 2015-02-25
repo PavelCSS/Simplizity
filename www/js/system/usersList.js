@@ -375,7 +375,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 1,
-        publickShow  : 0
+        publickShow  : 0,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 3,
@@ -386,7 +388,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 0,
-        publickShow  : 0
+        publickShow  : 0,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 5,
@@ -397,7 +401,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWishWoman(),
         privateShow  : 1,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 6,
@@ -408,7 +414,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 1,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 7,
@@ -419,7 +427,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 1,
-        publickShow  : 0
+        publickShow  : 0,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 8,
@@ -430,7 +440,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWishWoman(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 9,
@@ -441,7 +453,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 1,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 10,
@@ -452,7 +466,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 1,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 11,
@@ -463,7 +479,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWishWoman(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 12,
@@ -474,7 +492,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWishWoman(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 13,
@@ -485,7 +505,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 14,
@@ -496,7 +518,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 15,
@@ -507,7 +531,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 16,
@@ -518,7 +544,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWishWoman(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 17,
@@ -529,7 +557,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 18,
@@ -540,7 +570,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 90,
@@ -551,7 +583,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 19,
@@ -562,7 +596,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWishWoman(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 20,
@@ -573,7 +609,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 21,
@@ -584,7 +622,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 22,
@@ -595,7 +635,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 23,
@@ -606,7 +648,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 24,
@@ -617,7 +661,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWishWoman(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 25,
@@ -628,7 +674,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWishWoman(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 26,
@@ -639,18 +687,22 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 27,
         name         : 'Coryn Blina',
         photo        : 'images/users/Coryn Blina.jpg',
-        invited      : 0,
+        invited      : 1,
         wishListShow : 0,
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 150,
+        donateWish   : wishDino[1]
     },
     {
         id           : 28,
@@ -674,7 +726,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWishWoman(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 30,
@@ -685,7 +739,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 31,
@@ -696,7 +752,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 32,
@@ -707,7 +765,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 33,
@@ -718,7 +778,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 34,
@@ -729,7 +791,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 35,
@@ -740,7 +804,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 36,
@@ -751,7 +817,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 37,
@@ -762,7 +830,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 38,
@@ -773,7 +843,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 39,
@@ -784,7 +856,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWishWoman(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 40,
@@ -795,7 +869,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWishWoman(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 41,
@@ -806,7 +882,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 42,
@@ -817,7 +895,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWishWoman(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 43,
@@ -828,7 +908,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 44,
@@ -839,7 +921,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 45,
@@ -850,7 +934,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 46,
@@ -861,7 +947,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 47,
@@ -872,7 +960,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 48,
@@ -883,7 +973,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 49,
@@ -894,7 +986,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 50,
@@ -905,7 +999,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 51,
@@ -916,7 +1012,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 52,
@@ -927,7 +1025,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 53,
@@ -938,7 +1038,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 54,
@@ -949,7 +1051,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 55,
@@ -960,7 +1064,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 56,
@@ -971,7 +1077,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 57,
@@ -982,7 +1090,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 58,
@@ -993,7 +1103,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 59,
@@ -1004,7 +1116,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 60,
@@ -1015,7 +1129,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 61,
@@ -1026,7 +1142,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 62,
@@ -1037,7 +1155,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 63,
@@ -1048,7 +1168,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 64,
@@ -1059,7 +1181,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 65,
@@ -1070,7 +1194,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 66,
@@ -1081,7 +1207,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 67,
@@ -1092,7 +1220,9 @@ var users = [
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 30,
+        donateWish   : wishDino[0]
     },
     {
         id           : 68,
@@ -1252,12 +1382,14 @@ var users = [
         id           : 82,
         name         : 'Sumaya Abughazaleh',
         photo        : 'images/users/Sumaya Abughazaleh.jpg',
-        invited      : 0,
-        wishListShow : 0,
+        invited      : 1,
+        wishListShow : 1,
         phone        : '(123) 456 7890',
         wishList     : randomWish(),
         privateShow  : 0,
-        publickShow  : 1
+        publickShow  : 1,
+        donateMe     : 50,
+        donateWish   : wishDino[2]
     },
     {
         id           : 83,
