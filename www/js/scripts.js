@@ -23,7 +23,7 @@ function onDeviceReady(){
 
 function onSuccessContact(contacts){
     users = [profile];
-    for(i = 0; i < contacts.length; i++){
+    for(var i = 0; i < contacts.length; i++){
         if(contacts[i].phoneNumbers !== null){
             var newUser = {
                 id             : contacts[i].id,
@@ -33,7 +33,7 @@ function onSuccessContact(contacts){
                 wishListShowm  : Math.floor((Math.random() * 2)),
                 phone          : contacts[i].phoneNumbers[0].value,
                 wishList       : randomWish()
-            }
+            };
             users.push(newUser);
         }
     }
@@ -50,6 +50,10 @@ var fieldPos,
     current_user = {};
 
 $('body')
+    .on('tap', '.close-welcome', function(e){
+        e.stopImmediatePropagation();
+        $('#welcome').remove();
+    })
     .on('tap', '.wish', function(e){
         e.stopImmediatePropagation();
         var userId = $(this).data('user-id');
@@ -106,6 +110,10 @@ $('body')
     .on('tap', '.user-list', function(e){
         e.stopImmediatePropagation();
         window.location.hash = 'userList';
+    })
+    .on('tap', '.follow-list', function(e){
+        e.stopImmediatePropagation();
+        window.location.hash = 'userFollowList?follow=' + $(this).data('follow');
     })
     .on('tap', '.my-dotation', function(e){
         e.stopImmediatePropagation();
@@ -296,7 +304,7 @@ function getUser(userId, wishId){
     userId = parseInt(userId);
     wishId = typeof wishId === 'undefined' ? false : parseInt(wishId);
     if(userId !== dinoProfile.id){
-        for(i = 0; i < users.length; i++){
+        for(var i = 0; i < users.length; i++){
             if(users[i].id == userId){
                 if(wishId){
                     if(!users[i].wishList){
@@ -307,7 +315,7 @@ function getUser(userId, wishId){
                         current_user = userCurrent;
                         return userCurrent;
                     }
-                    for(j = 0; j < users[i].wishList.length; j++){
+                    for(var j = 0; j < users[i].wishList.length; j++){
                         if(users[i].wishList[j].id == wishId){
                             userCurrent.user = users[i];
                             userCurrent.wish = users[i].wishList[j];
@@ -327,7 +335,7 @@ function getUser(userId, wishId){
         }
     }else{
         if(wishId){
-            for(j = 0; j < dinoProfile.wishList.length; j++){
+            for(var j = 0; j < dinoProfile.wishList.length; j++){
                 if(dinoProfile.wishList[j].id == wishId){
                     userCurrent.user = dinoProfile;
                     userCurrent.wish = dinoProfile.wishList[j];
@@ -346,6 +354,23 @@ function getUser(userId, wishId){
     }
 }
 
+function getUserInvited(userCount){
+    var userInvited = [];
+    for(var i = users.length; i--;){
+        if(users[i].invited){
+            userInvited.push(users[i]);
+        }
+    }
+    if(userCount){
+        var newUserInvited = [];
+        for(var j = userCount; j--;){
+            newUserInvited.push(userInvited[j]);
+        }
+        userInvited = newUserInvited;
+    }
+    return userInvited;
+}
+
 function getWish(wishId, arr){
     arr = arr || wishList;
     if(typeof wishId === 'undefined'){
@@ -353,7 +378,7 @@ function getWish(wishId, arr){
     }
     wishId = parseInt(wishId);
     for(var i = 0; i < arr.length; i++){
-        if(arr[i].id == wishId){
+        if(arr[i].id === wishId){
             return arr[i];
         }
     }

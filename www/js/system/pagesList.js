@@ -67,6 +67,14 @@ var pagesList = {
             users     : users
         });
     },
+    'userFollowList'     : function(){
+        var urlData = getJsonFromHashUrl();
+        parseTemplate('_user-list.tmpl', {
+            pageName  : 'follow-list',
+            pageTitle : 'Follow list',
+            users     : getUserInvited(urlData.follow)
+        });
+    },
     'newRequests'  : function(){
         parseTemplate('_new-requests.tmpl', {
             pageName     : 'new-requests',

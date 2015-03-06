@@ -21,6 +21,24 @@ main{
     .box-shadow(0 0 10px fade(#000, 50%));
 }
 
+#welcome{
+    position   : fixed;
+    left       : 0;
+    top        : 0;
+    bottom     : 0;
+    right      : 0;
+    z-index    : 100;
+    background : @brand-primary;
+    color      : #fff;
+    text-align : justify;
+
+    .close-welcome{
+//        position : absolute;
+//        top      : 2em;
+//        right    : 2em;
+    }
+}
+
 //	HEADER Style
 //==================================================
 @import "../components/header";

@@ -39,6 +39,16 @@ blockquote{
         }
     }
 
+    cite{
+        margin-top : 1em;
+        display    : block;
+        font-size  : @font-size-small;
+
+        &:before{
+            content : "\2014";
+        }
+    }
+
     p{
         margin-bottom : 0;
 
@@ -75,7 +85,6 @@ blockquote{
         background-color : @gray-lighter;
         .border-radius(5px);
         .arrow-border(bottom-right; center; @gray-lighter);
-
         @indent: 100px;
         @border-width: 1px;
 
@@ -106,7 +115,7 @@ blockquote{
         }
 
         &.right when (@blockquote-cloud-right = true) and (@blockquote-types = true){
-            zoom: 1;
+            zoom : 1;
 
             &:after{
                 left  : auto;
@@ -120,7 +129,7 @@ blockquote{
         }
 
         &.left when (@blockquote-cloud-left = true) and (@blockquote-types = true){
-            zoom: 1;
+            zoom : 1;
 
             &:after{
                 left               : @indent;
